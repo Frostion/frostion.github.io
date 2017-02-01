@@ -2,3 +2,10 @@ a:link { color: #FF00FF; }
 a:visited { color: #AA00AA; }
 a:hover { color: #00FFFF; }
 a:active { color: #00FFFF; }
+
+@font-face { font-family: Adam; src: url('assets/Adam.otf'); }
+@font-face { font-family: Lane; src: url('assets/Lanereg.ttf'); }
+h1 { font-family: Adam; color: white; font-size: 24pt; }
+h2 { font-family: Adam; color: white; font-size: 24pt; }
+h3 { font-family: Adam; color: white; font-size: 24pt; }
+p { font-family: Lane; color: white; font-size: 18pt; }
