@@ -1,6 +1,0 @@
-<font face="Times New Roman" color="#00FFFF"><h2 align="center">TITLE</h2></font>
-		<font face="Times New Roman" color="#FFFFFF">
-			<p align="left">
-				<b><i>January 3, 2017</i></b> - Some content goes here.
-			</p>
-		</font>

@@ -1,13 +1,17 @@
 body { background: linear-gradient(to right, #550055, #005555); }
 
-a:link { color: #FF00FF; }
-a:visited { color: #AA00AA; }
-a:hover { color: #00FFFF; }
-a:active { color: #00FFFF; }
+a:link { color: white; text-decoration: none; }
+a:visited { color: white; }
+a:hover { color: white; text-decoration: underline; }
+a:active { color: white; }
 
 @font-face { font-family: Adam; src: url('assets/Adam.otf'); }
 @font-face { font-family: Lane; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: Adam; color: white; font-size: 24pt; }
-h2 { font-family: Adam; color: white; font-size: 24pt; }
-h3 { font-family: Adam; color: white; font-size: 24pt; }
-p { font-family: Lane; color: white; font-size: 18pt; }
+h1 { font-family: Adam; color: white; line-height: 0.4; font-size: 36pt; }
+h2 { font-family: Adam; color: white; line-height: 0.4; font-size: 24pt; }
+h3 { font-family: Adam; color: white; line-height: 0.4; font-size: 20pt; }
+p { font-family: Lane; color: white; line-height: 0.4; font-size: 16pt; }
+
+table { border: 0; }
+
+hr { border: 1px solid #ffffff; }
