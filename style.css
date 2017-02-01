@@ -1,9 +1,9 @@
 body { background: linear-gradient(to right, #550055, #005555); }
 
-a:link { color: #66FFFF; text-decoration: none; }
-a:visited { color: #00CCFF; text-decoration: none; }
-a:hover { color: #66FFFF; text-decoration: underline; }
-a:active { color: #66FFFF; text-decoration: none; }
+a:link { color: #44FFFF; text-decoration: none; }
+a:visited { color: #44FFFF; text-decoration: none; }
+a:hover { color: #44FFFF; text-decoration: underline; }
+a:active { color: #44FFFF; text-decoration: none; }
 
 @font-face { font-family: Adam; src: url('assets/Adam.otf'); }
 @font-face { font-family: Lane; src: url('assets/Lanereg.ttf'); }
@@ -15,3 +15,5 @@ p { font-family: Lane; color: white; line-height: 1.0; font-size: 16pt; }
 table { border: 0; }
 
 hr { border: 1px solid #ffffff; }
+
+iframe { border: 0; }
