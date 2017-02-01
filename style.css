@@ -1,3 +1,5 @@
+body { background: linear-gradient(#990099, #009999); }
+
 a:link { color: #FF00FF; }
 a:visited { color: #AA00AA; }
 a:hover { color: #00FFFF; }
