@@ -7,7 +7,6 @@ a:active { color: white; text-decoration: none; }
 
 @font-face { font-family: Adam; src: url('assets/Adam.otf'); }
 @font-face { font-family: Lane; src: url('assets/Lanereg.ttf'); }
-
 h1 { font-family: Adam; color: white; line-height: 0.4; font-size: 36pt; text-align: center; }
 h2 { font-family: Adam; color: white; line-height: 0; font-size: 24pt; }
 h3 { font-family: Adam; color: white; line-height: 0; font-size: 20pt; }
