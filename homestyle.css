@@ -15,3 +15,9 @@ p { font-family: Lane; color: white; line-height: 0.4; font-size: 16pt; text-ali
 table { border: 0; }
 
 hr { border: 1px solid #ffffff; }
+
+@keyframes bkgfade
+{
+  from { background: linear-gradient(to right, #000000, #000000); }
+  to { background: linear-gradient(to right, #550055, #005555); }
+}
