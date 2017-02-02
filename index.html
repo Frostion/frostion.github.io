@@ -2,6 +2,21 @@
 	<head>
 		<link rel="stylesheet" href="homestyle.css" type="text/css" />
 		<title>frostion</title>
+		<style>
+			@keyframes slidein
+			{
+				from { opacity: 0.0; left: -50px; }
+				to { opacity: 1.0; left: 0px; }
+			}
+			@keyframes fadein
+			{
+				from { opacity: 0.0; }
+				to { opacity: 1.0; }
+			}
+			hr { animation-name: fadein; animation-duration: 3s; }
+			h1, p { opacity: 0.0; animation-name: slidein; animation-duration: 1s; position: relative; animation-fill-mode: forwards; }
+			h1 {  animation-delay: 0.5s; }
+		</style>
 	</head>
 	
 	<body>
@@ -9,10 +24,10 @@
 			<tr height="200px">
 				<td><h1>frostion</h1><hr></td>
 			</tr>
-			<tr height="50px"><td><p><a href="placeholder.html">SYNTHESIS</a></p></td></tr>
-			<tr height="50px"><td><p><a href="placeholder.html">RETRO TECH</a></p></td></tr>
-			<tr height="50px"><td><p><a href="placeholder.html">PROJECTS</a></p></td></tr>
-			<tr height="50px"><td><p><a href="about/index.html">ABOUT/CONTACT</a></p></td></tr>
+			<tr height="50px"><td><p style="animation-delay: 1s;"><a href="placeholder.html">SYNTHESIS</a></p></td></tr>
+			<tr height="50px"><td><p style="animation-delay: 1.2s;"><a href="placeholder.html">RETRO TECH</a></p></td></tr>
+			<tr height="50px"><td><p style="animation-delay: 1.4s;"><a href="placeholder.html">PROJECTS</a></p></td></tr>
+			<tr height="50px"><td><p style="animation-delay: 1.6s;"><a href="about/index.html">ABOUT/CONTACT</a></p></td></tr>
 			
 		</table>
 	</body>

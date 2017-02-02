@@ -1,4 +1,4 @@
-body { background: linear-gradient(to right, #550055, #005555); }
+body { background: linear-gradient(to right, #550055, #005555); overflow: hidden; }
 
 a:link { color: white; text-decoration: none; }
 a:visited { color: white; text-decoration: none; }
@@ -15,10 +15,3 @@ p { font-family: Lane; color: white; line-height: 0.4; font-size: 16pt; text-ali
 table { border: 0; }
 
 hr { border: 1px solid #ffffff; }
-
-@keyframes bodyfade
-{
-  from { opacity: 0.0; }
-  to { opacity: 1.0; }
-}
-body { animation-name: bodyfade; animation-duration: 1.5s; }
