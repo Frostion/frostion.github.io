@@ -17,3 +17,10 @@ table { border: 0; }
 hr { border: 1px solid #ffffff; }
 
 iframe { border: 0; }
+
+@keyframes bodyfade
+{
+  from { opacity: 0.0; }
+  to { opacity: 1.0; }
+}
+body { animation-name: bodyfade; animation-duration: 1.5s; }
