@@ -3,7 +3,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
 
 div.wrapper { display: flex; min-height: 100%; flex-direction: column; border: 0; }
 div.nav { height: 50px; border: 0; }
-div.body { flex: 1; border: 0; }
+div.body { flex: 1; border: 0; width: 85%; margin: 0 auto; }
 
 a:link { color: #44FFFF; text-decoration: none; }
 a:visited { color: #44FFFF; text-decoration: none; }
