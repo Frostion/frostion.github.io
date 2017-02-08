@@ -14,5 +14,5 @@ p { font-family: Lane; color: white; line-height: 0.4; font-size: 16pt; text-ali
 
 table { border: 0; }
 
-hr { border: 1px solid #ffffff; }
+hr { border: 1px solid #ffffff; width: 95%; }
 
