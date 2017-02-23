@@ -2,15 +2,18 @@ body { background: linear-gradient(to right, #550055, #005555); overflow: hidden
 
 a:link { color: white; text-decoration: none; }
 a:visited { color: white; text-decoration: none; }
-a:hover { color: white; text-decoration: underline; }
+a:hover { color: white; text-decoration: none; }
 a:active { color: white; text-decoration: none; }
 
 @font-face { font-family: Adam; src: url('assets/Adam.otf'); }
 @font-face { font-family: Lane; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: Adam; color: white; line-height: 0.4; font-size: 36pt; text-align: center; }
-h2 { font-family: Adam; color: white; line-height: 0; font-size: 24pt; }
+h1 { font-family: Adam; color: white; line-height: 0.4; font-size: 36pt; text-align: center; transition: letter-spacing 1s; }
+h2 { font-family: Adam; color: white; line-height: 0; font-size: 24pt; transition: letter-spacing 1s; }
 h3 { font-family: Adam; color: white; line-height: 0; font-size: 20pt; }
-p { font-family: Lane; color: white; line-height: 0.4; font-size: 16pt; text-align: center; }
+p { font-family: Lane; color: white; line-height: 0.4; font-size: 16pt; text-align: center; transition: letter-spacing 1s; }
+
+h2:hover { letter-spacing: 5px; }
+p:hover { letter-spacing: 5px; }
 
 table { border: 0; }
 

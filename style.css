@@ -3,10 +3,10 @@ body { background: linear-gradient(to right, #550055, #005555); overflow-y: auto
 div.nav { height: 50px; border: 0; width: 85%; margin: 0 auto; }
 div.body { border: 0; width: 85%; margin: 0 auto; }
 
-a:link { color: #44FFFF; text-decoration: none; }
-a:visited { color: #44FFFF; text-decoration: none; }
-a:hover { color: #44FFFF; text-decoration: underline; }
-a:active { color: #44FFFF; text-decoration: none; }
+a:link { color: #44FFFF; text-decoration: none; transition: color 1s; }
+a:visited { color: #44FFFF; text-decoration: none; transition: color 1s; }
+a:hover { color: #FFAAFF; text-decoration: none; transition: color 1s; }
+a:active { color: #44FFFF; text-decoration: none; transition: color 1s; }
 
 @font-face { font-family: Adam; src: url('assets/Adam.otf'); }
 @font-face { font-family: Lane; src: url('assets/Lanereg.ttf'); }
