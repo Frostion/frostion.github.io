@@ -4,19 +4,22 @@
 		<link rel="stylesheet" href="../homestyle.css" type="text/css" />
 		<style>
 			body { background:none transparent; }
-			h1:hover { letter-spacing: 5px; }
-			p { text-align: center; white-space: nowrap; padding: 0px 2px 0px 2px; }
+			h1:hover { letter-spacing: 5px; display: table-cell; vertical-align: middle; }
+			p { text-align: center; white-space: pre-wrap; line-height: 1; padding: 0px 5px 0px 5px; display: table-cell; vertical-align: middle; }
 			div.wrapper { width: 100%; overflow: hidden; }
 			.wrapper > div { display: inline-block; width: *; }
 			
 			div.linkwrapper
 			{
 				width: 100%;
+				height: 50px;
 				overflow: hidden;
 				display: flex;
 				flex-direction: row;
 				flex-grow: 1;
 				justify-content: space-between;
+				flex-wrap: nowrap;
+				align-items: center;
 			}
 		</style>
 	</head>
@@ -28,7 +31,7 @@
 			<div><p><a href="../projects/" target="_parent">PROJECTS</a></p></div>
 			<div><p><a href="../other/" target="_parent">PLUSHIES & OTHER STUFF</a></p></div>
 			<div><p><a href="../about/" target="_parent">ABOUT & CONTACT</a></p></div>
-			<div><p><a href="https://frostion.wordpress.com/" target="_parent">BLOG</a></p></div>
+			<div><p><a href="http://frostion.tumblr.com/" target="_parent">BLOG</a></p></div>
 		</div>
 	</body>
 </html>
