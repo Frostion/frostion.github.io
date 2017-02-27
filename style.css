@@ -8,7 +8,7 @@ a:visited { color: #44FFFF; text-decoration: none; transition: color 1s; }
 a:hover { color: #FFAAFF; text-decoration: none; transition: color 1s; }
 a:active { color: #44FFFF; text-decoration: none; transition: color 1s; }
 
-@font-face { font-family: title_font; src: url('assets/Unified-Regular.ttf'); }
+@font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
 h1 { font-family: title_font; color: white; line-height: 1.1; font-size: 36pt; }
 h2 { font-family: title_font; color: white; line-height: 1.1; font-size: 24pt; }
