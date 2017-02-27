@@ -5,7 +5,7 @@ a:visited { color: white; text-decoration: none; }
 a:hover { color: white; text-decoration: none; }
 a:active { color: white; text-decoration: none; }
 
-@font-face { font-family: title_font; src: url('assets/Unified-Regular.ttf'); }
+@font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
 h1 { font-family: title_font; color: white; line-height: 0.4; font-size: 36pt; text-align: center; transition: letter-spacing 1s; }
 h2 { font-family: title_font; color: white; line-height: 0; font-size: 24pt; transition: letter-spacing 1s; }
