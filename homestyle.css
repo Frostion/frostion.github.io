@@ -12,9 +12,6 @@ h2 { font-family: title_font; color: white; line-height: 0; font-size: 24pt; tra
 h3 { font-family: title_font; color: white; line-height: 0; font-size: 20pt; }
 p { font-family: body_font; color: white; line-height: 0.4; font-size: 16pt; text-align: center; transition: letter-spacing 1s; }
 
-h2:hover { letter-spacing: 5px; }
-p:hover { letter-spacing: 5px; }
-
 table { border: 0; }
 
 hr { border: 1px solid #ffffff; width: 95%; }

@@ -5,10 +5,10 @@
 		<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 		<title>frostion</title>
 		<style>
-			@keyframes slidein
+			@keyframes squishin
 			{
-				from { opacity: 0.0; left: -50px; }
-				to { opacity: 1.0; left: 0px; }
+				from { opacity: 0.0; letter-spacing: 25px; }
+				to { opacity: 1.0; letter-spacing: 1px; }
 			}
 			@keyframes fadein
 			{
@@ -16,8 +16,10 @@
 				to { opacity: 1.0; }
 			}
 			hr { animation-name: fadein; animation-duration: 3s; }
-			h1, p { opacity: 0.0; animation-name: slidein; animation-duration: 1s; position: relative; animation-fill-mode: forwards; }
+			h1, p { opacity: 0.0; animation-name: squishin; animation-duration: 1.2s; animation-fill-mode: forwards; }
 			h1 {  animation-delay: 0.5s; }
+			p { transition: text-shadow 0.5s; }
+			p:hover { text-shadow: -5px 0 15px white, 5px 0 15px white; }
 		</style>
 	</head>
 	
@@ -27,10 +29,10 @@
 				<td><h1>frostion</h1><hr></td>
 			</tr>
 			<tr height="50px" class="title"><td><p style="animation-delay: 1s;"><a href="plushies/">PLUSHIE REVIEWS</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.2s;"><a href="diysynths/">DIY/CUSTOM SYNTHS</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.4s;"><a href="other/">OTHER STUFF</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.6s;"><a href="about/">ABOUT & CONTACT</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.8s;"><a href="http://frostion.tumblr.com/">BLOG</a></p></td></tr>
+			<tr height="50px" class="title"><td><p style="animation-delay: 1.3s;"><a href="diysynths/">DIY/CUSTOM SYNTHS</a></p></td></tr>
+			<tr height="50px" class="title"><td><p style="animation-delay: 1.6s;"><a href="other/">OTHER STUFF</a></p></td></tr>
+			<tr height="50px" class="title"><td><p style="animation-delay: 1.9s;"><a href="about/">ABOUT & CONTACT</a></p></td></tr>
+			<tr height="50px" class="title"><td><p style="animation-delay: 2.2s;"><a href="http://frostion.tumblr.com/">BLOG</a></p></td></tr>
 		</table>
 	</body>
 </html>
