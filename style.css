@@ -25,6 +25,9 @@ hr { border: 1px solid #ffffff; width: 100%; }
 
 iframe { border: 0; }
 
+img.zoomable { transition: width 0.5s; }
+img:active.zoomable { width: 50%; }
+
 @keyframes bodyfade
 {
   from { opacity: 0.0; }
