@@ -7,7 +7,7 @@
 		<style>
 			@keyframes squishin
 			{
-				from { opacity: 0.0; letter-spacing: 25px; }
+				from { opacity: 0.0; letter-spacing: 35px; }
 				to { opacity: 1.0; letter-spacing: 1px; }
 			}
 			@keyframes fadein
@@ -18,25 +18,72 @@
 			@keyframes widthin
 			{
 				from { width: 1%; }
-				to { width: 95%; }
+				to { width: 100%; }
 			}
-			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; }
-			h1, p { opacity: 0.0; animation-name: squishin; animation-duration: 1.2s; animation-fill-mode: forwards; }
-			h1 {  animation-delay: 0.5s; }
-			p { transition: text-shadow 0.5s; }
-			p:hover { text-shadow: -5px 0 15px white, 5px 0 15px white; }
+			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; position: absolute; bottom: 0; }
+			h1, p { opacity: 0.0; animation-fill-mode: forwards; text-align: left; }
+			h1 { animation-name: squishin; animation-duration: 3s; animation-delay: 0.5s; position: absolute; position: absolute; left: 10%; }
+			p { font-size: 19pt; }
+			p.links { transition: text-shadow 0.5s; animation-name: squishin; animation-duration: 1.5s; }
+			p:hover.links { text-shadow: -5px 0 15px white, 5px 0 15px white; }
+			img { width: 32px; padding: 0; transition: width 0.5s; }
+			img:hover { width: 42px; }
+			div.titlewrapper
+			{
+				position: relative;
+				height: 50%;
+				width: 100%;
+			}
+			div.buttonwrapper
+			{
+				opacity: 0.0;
+				position: absolute;
+				height: *;
+				width: *;
+				bottom: 50%;
+				right: 10%;
+				animation-name: fadein; animation-duration: 1s; animation-delay: 1.5s; animation-fill-mode: forwards;
+			}
+			
+			div.contentwrapper
+			{
+				position: absolute;
+				top: 55%;
+				left: 10%;
+				width: 100%;
+				height: 45%;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				justify-content: flex-start;
+				flex-wrap: nowrap;
+				align-items: flex-start;
+			}
+			img
+			{
+				width: 32px;
+				padding: 0;
+				padding-left: 5px;
+			}
 		</style>
 	</head>
 	
 	<body>
-		<table width="100%" cellpadding="7" cellspacing="0" border="0">
-			<tr height="200px" class="title">
-				<td><h1>frostion</h1><hr></td>
-			</tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1s;"><a href="plushies/">PLUSHIE REVIEWS</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.3s;"><a href="diysynths/">DIY/CUSTOM SYNTHS</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.6s;"><a href="about/">ABOUT & CONTACT</a></p></td></tr>
-			<tr height="50px" class="title"><td><p style="animation-delay: 1.9s;"><a href="http://frostion.tumblr.com/">BLOG</a></p></td></tr>
-		</table>
+		<div class="titlewrapper">
+			<h1 style="bottom: 0">frostion</h1>
+			<hr style="left: 0">
+		</div>
+		<div class="contentwrapper">
+			<div><p class="links" style="animation-delay: 1s"><a href="plushies/">PLUSHIE REVIEWS</a></p></div>
+			<div><p class="links" style="animation-delay: 1.3s"><a href="diysynths/">DIY/CUSTOM SYNTHS</a></p></div>
+			<div><p class="links" style="animation-delay: 1.6s"><a href="about/">ABOUT & CONTACT</a></p></div>
+		</div>
+		<div class="buttonwrapper">
+			<p style="opacity: 1.0">find me on:
+			<a href="https://www.youtube.com/channel/UCuSdqbugbozZUJuzuDip0eA"><img src="assets/websiteicons/youtube.png"></a>
+			<a href="https://soundcloud.com/frostion"><img src="assets/websiteicons/soundcloud.png"></a>
+			<a href="http://frostion.tumblr.com/"><img src="assets/websiteicons/tumblr.png"></a></p>
+		</div>
 	</body>
 </html>
