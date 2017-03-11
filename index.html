@@ -18,14 +18,14 @@
 			@keyframes widthin
 			{
 				from { width: 1%; }
-				to { width: 100%; }
+				to { width: 99%; }
 			}
 			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; position: absolute; bottom: 0; }
 			h1, p { opacity: 0.0; animation-fill-mode: forwards; text-align: left; }
 			h1 { animation-name: squishin; animation-duration: 3s; animation-delay: 0.5s; position: absolute; position: absolute; left: 10%; }
 			p { font-size: 19pt; }
 			p.links { transition: text-shadow 0.5s; animation-name: squishin; animation-duration: 1.5s; }
-			p:hover.links { text-shadow: -5px 0 15px white, 5px 0 15px white; }
+			p:hover.links { text-shadow: 0 -5px 3px white, 0 5px 3px white; }
 			img { width: 32px; padding: 0; transition: width 0.5s; }
 			img:hover { width: 42px; }
 			div.titlewrapper
@@ -59,12 +59,6 @@
 				justify-content: flex-start;
 				flex-wrap: nowrap;
 				align-items: flex-start;
-			}
-			img
-			{
-				width: 32px;
-				padding: 0;
-				padding-left: 5px;
 			}
 		</style>
 	</head>
