@@ -1,4 +1,4 @@
-body { background: linear-gradient(to right, #550055, #005555); overflow-y: auto; }
+/* body { background: linear-gradient(to right, #550055, #005555); overflow-y: auto; } */
 
 div.nav { height: 50px; border: 0; width: 85%; margin: 0 auto; }
 div.body { border: 0; width: 85%; margin: 0 auto; }

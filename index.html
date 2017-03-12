@@ -20,6 +20,7 @@
 				from { width: 1%; }
 				to { width: 99%; }
 			}
+			body { background-color: #555555; overflow: hidden; transition: background-color 3s; }
 			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; position: absolute; bottom: 0; }
 			h1, p { opacity: 0.0; animation-fill-mode: forwards; text-align: left; }
 			h1 { animation-name: squishin; animation-duration: 3s; animation-delay: 0.5s; position: absolute; position: absolute; left: 10%; }
@@ -69,9 +70,9 @@
 			<hr style="left: 0">
 		</div>
 		<div class="contentwrapper">
-			<div><p class="links" style="animation-delay: 1s"><a href="plushies/">PLUSHIE REVIEWS</a></p></div>
-			<div><p class="links" style="animation-delay: 1.3s"><a href="diysynths/">DIY/CUSTOM SYNTHS</a></p></div>
-			<div><p class="links" style="animation-delay: 1.6s"><a href="about/">ABOUT & CONTACT</a></p></div>
+			<div onmouseover="document.body.style.backgroundColor='#550055';" onmouseout="document.body.style.backgroundColor='#555555';"><p class="links" style="animation-delay: 1s"><a href="plushies/">PLUSHIE REVIEWS</a></p></div>
+			<div onmouseover="document.body.style.backgroundColor='#005555';" onmouseout="document.body.style.backgroundColor='#555555';"><p class="links" style="animation-delay: 1.3s"><a href="diysynths/">DIY/CUSTOM SYNTHS</a></p></div>
+			<div onmouseover="document.body.style.backgroundColor='#552200';" onmouseout="document.body.style.backgroundColor='#555555';"><p class="links" style="animation-delay: 1.6s"><a href="about/">ABOUT & CONTACT</a></p></div>
 		</div>
 		<div class="buttonwrapper">
 			<p style="opacity: 1.0">find me on:
