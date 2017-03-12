@@ -20,7 +20,12 @@
 				from { width: 1%; }
 				to { width: 99%; }
 			}
-			body { background-color: #555555; overflow: hidden; transition: background-color 3s; }
+			@keyframes colorin
+			{
+				from { background-color: #000000; }
+				to { background-color: #555555; }
+			}
+			body { background-color: #555555; overflow: hidden; transition: background-color 3s; animation-name: colorin; animation-duration: 2s; }
 			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; position: absolute; bottom: 0; }
 			h1, p { opacity: 0.0; animation-fill-mode: forwards; text-align: left; }
 			h1 { animation-name: squishin; animation-duration: 3s; animation-delay: 0.5s; position: absolute; position: absolute; left: 10%; }
