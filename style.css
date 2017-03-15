@@ -17,6 +17,17 @@ p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; }
 
 ul { list-style-image: url('assets/bullet.png'); }
 
+img.totop
+{
+	opacity: 0.5;
+	transition: opacity 0.5s;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 32px;
+}
+img:hover.totop { opacity: 1.0; }
+
 table { border: 0; border-collapse: collapse; }
 tr { border-bottom: 1px solid #ffffff; }
 tr.title { border-bottom: 0; }
