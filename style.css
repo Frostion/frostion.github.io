@@ -11,10 +11,12 @@ a:active { color: #44FFFF; text-decoration: none; transition: text-shadow 0.5s, 
 @font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
 h1 { font-family: title_font; color: white; line-height: 1.1; font-size: 36pt; text-align: center; }
+h1.title { text-align: left; }
 h2 { font-family: title_font; color: white; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
 h3 { font-family: title_font; color: white; line-height: 1.1; font-size: 20pt; text-align: left; }
 p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: left; }
 p.header { text-align: center; }
+p.links { text-align: right; }
 
 ul { list-style-image: url('assets/bullet.png'); }
 
