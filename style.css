@@ -14,6 +14,7 @@ h1 { font-family: title_font; color: white; line-height: 1.1; font-size: 36pt; t
 h2 { font-family: title_font; color: white; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
 h3 { font-family: title_font; color: white; line-height: 1.1; font-size: 20pt; text-align: left; }
 p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: left; }
+p.header { text-align: center; }
 
 ul { list-style-image: url('assets/bullet.png'); }
 
