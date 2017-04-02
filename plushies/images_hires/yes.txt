@@ -1,2 +1,0 @@
--crop to square
--downsize to 40% (734x734px)
