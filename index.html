@@ -67,43 +67,15 @@
 				flex-wrap: nowrap;
 				align-items: flex-start;
 			}
-			img.notifopen
+			div.timerwrapper
 			{
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				width: 32px;
-				transition: transform 0.5s;
-			}
-			img:hover.notifopen
-			{
-				transform: rotate(180deg);
-			}
-			div.notifwrapper
-			{
-				position: absolute;
-				right: 10px;
-				bottom: 10px;
-				width: 60%;
-				height: 30%;
-				opacity: 0.0;
-				/*overflow-x: hidden;
-				overflow-y: auto;*/
-				overflow: hidden;
-				animation-name: fadein; animation-duration: 1s; animation-delay: 1.5s; animation-fill-mode: forwards;
-			}
-			img:hover.notifopen + .notif { opacity: 1.0; }
-			p.notif
-			{
-				position: absolute;
-				right: 0;
-				bottom: 5px;
-				left: 0;
-				text-align: right;
-				line-height: 1.4;
-				opacity: 0.0;
-				transition: opacity 1s;
-				user-select: none;
+				animation-name: fadein; animation-duration: 1s; animation-delay: 3s; animation-fill-mode: forwards;
+				opacity: 0;
+				position: fixed;
+				right: 5%;
+				bottom: 5%;
+				width: *;
+				height: *;
 			}
 		</style>
 	</head>
@@ -124,13 +96,10 @@
 			<a href="https://soundcloud.com/frostion"><img src="assets/websiteicons/soundcloud.png"></a>
 			<a href="http://frostion.tumblr.com/"><img src="assets/websiteicons/tumblr.png"></a>
 			<a href="https://www.instagram.com/frostion_online/"><img src="assets/websiteicons/instagram.png"></a>
-			<!--<a href="https://twitter.com/Frostion_Online"><img src="assets/websiteicons/twitter.png"></a></p>-->
 		</div>
-		<div class="notifwrapper">
-			<img class="notifopen" src="assets/websiteicons/notif.png">
-			<p class="notif">
-				<b>this is a test of the notification station</b><br>remember that lucarios are people too ♥♥♥
-			</p>
+		<div class="timerwrapper">
+			<p class="header" style="opacity: 1.0">Time until Lucario arrives:</p>
+			<iframe src="http://free.timeanddate.com/countdown/i5oor05z/n415/cf100/cm0/cu4/ct0/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tc66c/fs225/szw256/szh108/iso2017-05-26T00:00:00" allowTransparency="true" frameborder="0" width="256" height="108"></iframe>
 		</div>
 	</body>
 </html>
