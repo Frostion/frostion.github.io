@@ -1,0 +1,82 @@
+---
+permalink: /404.html
+---
+<html>
+	<head>
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="homestyle.css" type="text/css" />
+		<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+		<title>not found | frostion</title>
+		<style>
+			@keyframes squishin
+			{
+				from { opacity: 0.0; letter-spacing: 35px; }
+				to { opacity: 1.0; letter-spacing: 1px; }
+			}
+			@keyframes squishinp
+			{
+				from { opacity: 0.0; letter-spacing: 16px; }
+				to { opacity: 1.0; letter-spacing: 1px; }
+			}
+			@keyframes fadein
+			{
+				from { opacity: 0.0; }
+				to { opacity: 1.0; }
+			}
+			@keyframes widthin
+			{
+				from { width: 1%; }
+				to { width: 99%; }
+			}
+			@keyframes colorchange
+			{
+				0% { background-color: #550055; }
+				33% { background-color: #005555; }
+				66% { background-color: #224400; }
+				100% { background-color: #550055; }
+			}
+			body { overflow: hidden; animation-name: colorchange; animation-duration: 7s; animation-iteration-count: infinite; }
+			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; position: absolute; bottom: 0; }
+			h1, p { opacity: 0.0; animation-fill-mode: forwards; text-align: left; }
+			h1 { animation-name: squishin; animation-duration: 3s; animation-delay: 0.5s; position: absolute; position: absolute; left: 10%; }
+			p { font-size: 19pt; }
+			p.links { transition: text-shadow 0.5s; animation-name: squishinp; animation-duration: 1.5s; }
+			p:hover.links { text-shadow: 0 -5px 4px white, 0 5px 4px white; }
+			
+			div.titlewrapper
+			{
+				position: relative;
+				height: 50%;
+				width: 100%;
+			}
+			
+			div.contentwrapper
+			{
+				position: absolute;
+				top: 55%;
+				left: 10%;
+				width: 100%;
+				height: 45%;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				justify-content: flex-start;
+				flex-wrap: nowrap;
+				align-items: flex-start;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="titlewrapper">
+			<h1 style="bottom: 0">page not found</h1>
+			<hr style="left: 0">
+		</div>
+		<div class="contentwrapper">
+			<div><p class="links" style="animation-delay: 1s"><a href="plushies/">the page you were looking for doesn't seem to exist.</p></div>
+			<div><p class="links" style="animation-delay: 1.3s"><a href="index.html">click here to return to the home page.</a></p></div>
+		</div>
+	</body>
+</html>
