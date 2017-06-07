@@ -30,6 +30,8 @@ img.totop
 	width: 32px;
 }
 img:hover.totop { opacity: 1.0; }
+img.zoomable { float: right; width: 30%; padding: 7px; }
+img.icon { padding-left: 0.5em; }
 
 table { border: 0; border-collapse: collapse; }
 tr { border-bottom: 1px solid #ffffff; }
