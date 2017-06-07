@@ -1,0 +1,50 @@
+/* body { background: linear-gradient(to right, #550055, #005555); overflow-y: auto; } */
+
+div.nav { height: 50px; border: 0; width: 85%; margin: 0 auto; }
+div.body { border: 0; width: 85%; margin: 0 auto; }
+
+a:link { color: #44FFFF; text-decoration: none; transition: text-shadow 0.5s, color 0.5s; text-shadow: 0 0 0px #44FFFF; }
+a:visited { color: #44FFFF; text-decoration: none; transition: text-shadow 0.5s, color 0.5s; text-shadow: 0 0 0px #44FFFF; }
+a:hover { color: #FFAAFF; text-decoration: none; transition: text-shadow 0.5s, color 0.5s; text-shadow: 0 0 7px #FFFFFF; }
+a:active { color: #44FFFF; text-decoration: none; transition: text-shadow 0.5s, color 0.5s; text-shadow: 0 0 0px #44FFFF; }
+
+@font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
+@font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
+h1 { font-family: title_font; color: white; line-height: 1.1; font-size: 36pt; text-align: center; }
+h1.title { text-align: left !important; }
+h2 { font-family: title_font; color: white; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
+h3 { font-family: title_font; color: white; line-height: 1.1; font-size: 20pt; text-align: left; }
+p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: left; }
+p.header { text-align: center !important; }
+p.links { text-align: right !important; }
+
+ul { list-style-image: url('assets/bullet.png'); }
+
+img.totop
+{
+	opacity: 0.5;
+	transition: opacity 0.5s;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 32px;
+}
+img:hover.totop { opacity: 1.0; }
+
+table { border: 0; border-collapse: collapse; }
+tr { border-bottom: 1px solid #ffffff; }
+tr.title { border-bottom: 0; }
+
+hr { border: 1px solid #ffffff; width: 100%; }
+
+iframe { border: 0; }
+
+img.zoomable { transition: width 0.5s; }
+img:active.zoomable { width: 50%; }
+
+@keyframes bodyfade
+{
+  from { opacity: 0.0; }
+  to { opacity: 1.0; }
+}
+body { animation-name: bodyfade; animation-duration: 1.5s; }

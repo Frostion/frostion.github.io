@@ -7,76 +7,59 @@ permalink: /404.html
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="homestyle.css" type="text/css" />
 		<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
-		<title>not found | frostion</title>
+		<title>frostion</title>
 		<style>
-			@keyframes squishin
+			@keyframes div_in
 			{
-				from { opacity: 0.0; letter-spacing: 35px; }
-				to { opacity: 1.0; letter-spacing: 1px; }
+				from { height: 1%; }
+				to { height: 15%; }
 			}
-			@keyframes squishinp
+			@keyframes img_in
 			{
-				from { opacity: 0.0; letter-spacing: 16px; }
-				to { opacity: 1.0; letter-spacing: 1px; }
+				from { filter: blur(20px); }
+				to { filter: blur(0); }
 			}
-			@keyframes fadein
+			body { overflow: hidden; }
+			h1
 			{
-				from { opacity: 0.0; }
-				to { opacity: 1.0; }
+				position: absolute; left: 0; right: 0; bottom: 15%;
 			}
-			@keyframes widthin
+			h2
 			{
-				from { width: 1%; }
-				to { width: 99%; }
+				position: absolute; left: 0; right: 0; top: 15%;
 			}
-			@keyframes colorchange
+			p
 			{
-				0% { background-color: #550055; }
-				33% { background-color: #005555; }
-				66% { background-color: #224400; }
-				100% { background-color: #550055; }
+				transition: opacity 0.5s; opacity: 0;
+				position: absolute; left: 0; right: 0; top: 40%;
 			}
-			body { overflow: hidden; animation-name: colorchange; animation-duration: 7s; animation-iteration-count: infinite; }
-			hr { width: 1%; animation-name: widthin; animation-duration: 3s; animation-fill-mode: forwards; position: absolute; bottom: 0; }
-			h1, p { opacity: 0.0; animation-fill-mode: forwards; text-align: left; }
-			h1 { animation-name: squishin; animation-duration: 3s; animation-delay: 0.5s; position: absolute; position: absolute; left: 10%; }
-			p { font-size: 19pt; }
-			p.links { transition: text-shadow 0.5s; animation-name: squishinp; animation-duration: 1.5s; }
-			p:hover.links { text-shadow: 0 -5px 4px white, 0 5px 4px white; }
-			
-			div.titlewrapper
+			div.topwrapper
 			{
-				position: relative;
-				height: 50%;
-				width: 100%;
+				position: fixed; top: 0; left: 0; width: 100%; height: 15%; z-index: 1;
+				background-color: #440000;
+				animation-name: div_in; animation-duration: 1s;
 			}
-			
-			div.contentwrapper
+			div.bottomwrapper
 			{
-				position: absolute;
-				top: 55%;
-				left: 10%;
-				width: 100%;
-				height: 45%;
-				overflow: hidden;
-				display: flex;
-				flex-direction: column;
-				flex-grow: 1;
-				justify-content: flex-start;
-				flex-wrap: nowrap;
-				align-items: flex-start;
+				position: fixed; bottom: 0; left: 0; width: 100%; height: 15%; z-index: 1;
+				background-color: #440000;
+				animation-name: div_in; animation-duration: 1s;
+			}
+			img.header
+			{
+				position: fixed; left: 0; width: 100%; z-index: 0;
+				animation-name: img_in; animation-duration: 2s;
 			}
 		</style>
 	</head>
 	
 	<body>
-		<div class="titlewrapper">
-			<h1 style="bottom: 0">page not found</h1>
-			<hr style="left: 0">
+		<div class="topwrapper">
+			<h1>404 error</h1>
 		</div>
-		<div class="contentwrapper">
-			<div><p class="links" style="animation-delay: 1s"><a href="plushies/">the page you were looking for doesn't seem to exist.</p></div>
-			<div><p class="links" style="animation-delay: 1.3s"><a href="index.html">click here to return to the home page.</a></p></div>
+		<div class="bottomwrapper">
+			<h2>sorry, the page you were looking for doesn't exist.</h2>
 		</div>
+		<img class="header" src="assets/lucario_hires.jpg">
 	</body>
 </html>
