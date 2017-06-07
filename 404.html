@@ -19,7 +19,7 @@ permalink: /404.html
 				from { filter: blur(20px); }
 				to { filter: blur(0); }
 			}
-			body { overflow: hidden; }
+			body { overflow: hidden; background-color: #333333; }
 			h1
 			{
 				position: absolute; left: 0; right: 0; bottom: 15%;
@@ -45,10 +45,19 @@ permalink: /404.html
 				background-color: #440000;
 				animation-name: div_in; animation-duration: 1s;
 			}
+			div.headerwrapper
+			{
+				display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;
+			}
 			img.header
 			{
 				position: fixed; left: 0; width: 100%; z-index: 0;
 				animation-name: img_in; animation-duration: 2s;
+			}
+			img.bkg
+			{
+				position: fixed; top: 0; height: 100%; width: 100%; z-index: -1;
+				filter: blur(30px);
 			}
 		</style>
 	</head>
@@ -60,6 +69,10 @@ permalink: /404.html
 		<div class="bottomwrapper">
 			<h2>sorry, the page you were looking for doesn't exist.</h2>
 		</div>
+		<div class="headerwrapper">
+		
 		<img class="header" src="assets/lucario_hires.jpg">
+		<img class="bkg" src="assets/lucario_hires.jpg">
+		</div>
 	</body>
 </html>
