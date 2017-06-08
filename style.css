@@ -48,9 +48,6 @@ img.totop
 {
 	opacity: 0.5;
 	transition: opacity 0.5s;
-	position: absolute;
-	left: 5px;
-	top: 5px;
 	width: 48px;
 }
 img:hover.totop { opacity: 1.0; }
