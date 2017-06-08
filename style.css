@@ -33,7 +33,7 @@ a:hover, a:active { color: #FF88FF; text-decoration: underline; transition: colo
 
 @font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: white; font-size: 36pt; text-align: center; }
+h1 { font-family: title_font; color: white; font-size: 36pt; text-align: center; margin: 0px; padding: 0px; }
 h1.title { text-align: left !important; }
 h1.header { position: absolute; left: 0; right: 0; bottom: 15%; line-height: 0; }
 h2 { font-family: title_font; color: white; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
