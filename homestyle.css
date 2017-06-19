@@ -6,7 +6,7 @@ a:hover, a:active { color: white; text-decoration: underline; }
 h1 { font-family: title_font; color: white; line-height: 0.4; font-size: 36pt; text-align: center; transition: letter-spacing 1s; }
 h2 { font-family: title_font; color: white; line-height: 0; font-size: 24pt; text-align: center; transition: letter-spacing 1s; }
 h3 { font-family: title_font; color: white; line-height: 0; font-size: 20pt; text-align: center; }
-p { font-family: body_font; color: white; line-height: 0.4; font-size: 16pt; text-align: center; transition: letter-spacing 1s; }
+p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: center; transition: letter-spacing 1s; }
 
 table { border: 0; }
 
