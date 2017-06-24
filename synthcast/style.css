@@ -1,0 +1,72 @@
+div.topwrapper
+{
+	position: fixed; top: 5%; left: 5%; right: 5%; height: 15%; z-index: 1;
+	background-color: #222222;
+	opacity: 0;
+	border: 0;
+	animation-name: fade_in; animation-duration: 1.5s; animation-fill-mode: forwards;
+}
+div.bodywrapper
+{
+	position: fixed; top: 20%; bottom: 5%; left: 5%; right: 5%; z-index: 1;
+	background-color: #444444;
+	opacity: 0;
+	border: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 1%;
+	animation-name: fade_in; animation-duration: 1.5s; animation-fill-mode: forwards;
+}
+div.headerwrapper
+{
+	display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;
+}
+img.bkg
+{
+	position: fixed; top: 0; max-height: 100%; min-width: 100%; z-index: -1;
+	filter: blur(25px);
+}
+
+body { overflow: hidden; background-color: #444444; }
+a:link, a:visited  { color: #55FFFF; text-decoration: none; transition: color 0.5s; }
+a:hover, a:active { color: #FF88FF; text-decoration: underline; transition: color 0.5s; }
+
+@font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
+@font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
+h1 { font-family: title_font; color: white; font-size: 36pt; text-align: center; }
+h1.title { text-align: left !important; }
+h1.header { position: absolute; left: 0; right: 0; bottom: 25%; line-height: 0; margin: 0px; padding: 0px; }
+h2 { font-family: title_font; color: white; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
+h3 { font-family: title_font; color: white; line-height: 1.1; font-size: 20pt; text-align: left; }
+p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: left; }
+p.header { text-align: center !important; }
+p.links { text-align: right !important; }
+
+ul { list-style-image: url('assets/bullet.png'); }
+
+img.totop
+{
+	opacity: 0.5;
+	transition: opacity 0.5s;
+	width: 48px;
+	vertical-align: middle;
+}
+img:hover.totop { opacity: 1.0; }
+
+table { border: 0; border-collapse: collapse; }
+tr { border-bottom: 1px solid #ffffff; }
+tr.title { border-bottom: 0; }
+
+hr { border: 1px solid #ffffff; width: 100%; }
+
+iframe { border: 0; }
+
+img:active.zoomable { width: 50%; }
+img.zoomable { transition: width 0.5s; float: right; width: 30%; padding: 7px; }
+img.icon { padding-left: 0.5em; }
+
+@keyframes fade_in
+{
+  from { opacity: 0.0; }
+  to { opacity: 0.8; }
+}
