@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="homestyle.css" type="text/css" />
+		<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+		<title>frostion</title>
+		<style>
+			@keyframes div_in
+			{
+				from { left: 50%; right: 50%; }
+				to { left: 4vh; right: 4vh; }
+			}
+			@keyframes text_in
+			{
+				from { opacity: 0; letter-spacing: 50px; }
+				to { opactiy: 1; letter-spacing: initial; }
+			}
+			@keyframes fade_in
+			{
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			body { overflow: hidden; background: linear-gradient(#000022,#0000AA); }
+			h1.title
+			{
+				position: fixed; left: 0; right: 0; bottom: 52vh;
+				text-shadow: 1vh 1vh #444444;
+				animation-name: text_in;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+			}
+			h1.button
+			{
+				
+				opacity: 0;
+				animation-name: fade_in;
+				animation-delay: 1s;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
+				position: absolute; bottom: 30%; left: 0; right: 0;
+			}
+			div.container
+			{
+				position: fixed; left: 4vh; right: 4vh;
+				height: 20vh;
+				box-shadow: 1vh 1vh #444444;
+				transition: background-color 0.5s;
+				animation-name: div_in;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+			}
+			div.outline
+			{
+				position: absolute; left: 1vh; right: 1vh; top: 1vh; bottom: 1vh;
+				border-style: solid; border-color: #FFFFFF; border-width: 1px;
+			}
+			div.button1
+			{
+				background-color: #880088;
+				bottom: 28vh;
+			}
+			div.button1:hover
+			{
+				background-color: #CC00CC;
+			}
+			div.button2
+			{
+				background-color: #008888;
+				bottom: 4vh;
+			}
+			div.button2:hover
+			{
+				background-color: #00CCCC;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container button1">
+			<div class="outline">
+				<h1 class="button">my projects</h1>
+			</div>
+		</div>
+		<div class="container button2">
+			<div class="outline">
+				<h1 class="button">about me</h1>
+			</div>
+		</div>
+		<h1 class="title">FROSTION THE JACKAL</h1>
+	</body>
+</html>
