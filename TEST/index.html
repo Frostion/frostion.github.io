@@ -32,13 +32,6 @@
 			}
 			h1.button
 			{
-				
-				opacity: 0;
-				animation-name: fade_in;
-				animation-delay: 1s;
-				animation-duration: 1s;
-				animation-timing-function: linear;
-				animation-fill-mode: forwards;
 				position: absolute; bottom: 30%; left: 0; right: 0;
 			}
 			div.container
@@ -53,6 +46,12 @@
 			}
 			div.outline
 			{
+				opacity: 0;
+				animation-name: fade_in;
+				animation-delay: 1s;
+				animation-duration: 0.5s;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
 				position: absolute; left: 1vh; right: 1vh; top: 1vh; bottom: 1vh;
 				border-style: solid; border-color: #FFFFFF; border-width: 1px;
 			}
@@ -78,16 +77,16 @@
 	</head>
 	
 	<body>
-		<div class="container button1">
+		<a href="projects/"><div class="container button1">
 			<div class="outline">
 				<h1 class="button">my projects</h1>
 			</div>
-		</div>
-		<div class="container button2">
+		</div></a>
+		<a href="about/"><div class="container button2">
 			<div class="outline">
 				<h1 class="button">about me</h1>
 			</div>
-		</div>
+		</div></a>
 		<h1 class="title">FROSTION THE JACKAL</h1>
 	</body>
 </html>
