@@ -2,83 +2,118 @@
 	<head>
 		<meta http-equiv="Cache-Control" content="no-store" />
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="homestyle.css" type="text/css" />
 		<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 		<title>frostion</title>
 		<style>
-			@font-face { font-family: title_font; src: url('assets/VCR.ttf'); }
-			h1 { font-family: title_font; color: white; line-height: 0.4; font-size: 36pt; text-align: center;}
 			@keyframes div_in
 			{
-				from { left: 50%; right: 50%; }
-				to { left: 4vh; right: 4vh; }
+				from { height: 1%; }
+				to { height: 20%; }
 			}
-			@keyframes text_in
+			@keyframes img_in
 			{
-				from { opacity: 0; letter-spacing: 50px; }
-				to { opactiy: 1; letter-spacing: initial; }
+				from { filter: blur(20px); }
+				to { filter: blur(0); }
 			}
-			@keyframes fade_in
+			body { overflow: hidden; background-color: #222222; }
+			h1
 			{
-				from { opacity: 0; }
-				to { opacity: 1; }
+				position: absolute; left: 0; right: 0; bottom: 15%;
 			}
-			body { overflow: hidden; background: linear-gradient(#000022,#0000AA); }
-			h1.title
+			h2
 			{
-				position: fixed; left: 0; right: 0; bottom: 52vh;
-				text-shadow: 1vh 1vh #444444;
-				animation-name: text_in;
-				animation-duration: 1s;
-				animation-timing-function: linear;
+				position: absolute; left: 0; right: 0; top: 15%;
 			}
-			h1.button
+			p
 			{
-				
-				opacity: 0;
-				animation-name: fade_in;
-				animation-delay: 1s;
-				animation-duration: 1s;
-				animation-timing-function: linear;
-				animation-fill-mode: forwards;
-				position: absolute; bottom: 30%; left: 0; right: 0;
+				transition: opacity 0.5s; opacity: 0;
+				position: absolute; left: 0; right: 0; top: 50%;
 			}
-			div.container
+			div.topwrapper
 			{
-				position: fixed; left: 4vh; right: 4vh;
-				height: 20vh;
-				box-shadow: 1vh 1vh #444444;
-				transition: background-color 0.5s;
-				animation-name: div_in;
-				animation-duration: 1s;
-				animation-timing-function: linear;
+				position: fixed; top: 0; left: 0; width: 100%; height: 20%; z-index: 1;
+				background-color: #444444;
+				animation-name: div_in; animation-duration: 1s;
 			}
-			div.outline
+			div.bottomwrapper
 			{
-				position: absolute; left: 1vh; right: 1vh; top: 1vh; bottom: 1vh;
-				border-style: solid; border-color: #FFFFFF; border-width: 1px;
+				position: fixed; bottom: 0; height: 20%; z-index: 1;
+				width: calc(100% / 3);
+				animation-name: div_in; animation-duration: 1s;
+				transition: height 0.5s, background-color 0.5s;
 			}
-			div.button1
+			div.bottomwrapper:hover
 			{
-				background-color: #880088;
-				bottom: 28vh;
+				height: 25%;
 			}
-			div.button1:hover
+			div.bottomwrapper:hover p
 			{
-				background-color: #CC00CC;
+				opacity: 1;
 			}
-			div.button2
+			div.bottomleft
 			{
-				background-color: #008888;
-				bottom: 4vh;
+				background-color: #440044;
+				left: 0;
 			}
-			div.button2:hover
+			div.bottomleft:hover
 			{
-				background-color: #00CCCC;
+				background-color: #660066;
+			}
+			div.bottomcenter
+			{
+				background-color: #004400;
+				left: calc(100% / 3);
+			}
+			div.bottomcenter:hover
+			{
+				background-color: #006600;
+			}
+			div.bottomright
+			{
+				background-color: #004444;
+				right: 0;
+			}
+			div.bottomright:hover
+			{
+				background-color: #006666;
+			}
+			div.headerwrapper
+			{
+				display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;
+			}
+			img.header
+			{
+				position: fixed; left: 0; width: 100%; z-index: 0;
+				animation-name: img_in; animation-duration: 2s;
+			}
+			img.bkg
+			{
+				position: fixed; top: 0; max-height: 100%; min-width: 100%; z-index: -1;
+				filter: blur(30px);
 			}
 		</style>
 	</head>
 	
 	<body>
-		<h1 class="title">UNDER CONSTRUCTION</h1>
+		<div class="topwrapper">
+			<h1>frostion</h1>
+		</div>
+		<div class="bottomwrapper bottomleft">
+			<h2>pokémon plushies</h2>
+			<p><a href="reviews/">reviews</a> • <a href="https://www.furaffinity.net/gallery/frostion/folder/374975/Photography">photography</a></p>
+		</div>
+		<div class="bottomwrapper bottomcenter">
+			<h2>synthesizers</h2>
+			<p><a href="synths/microjackal">microjackal</a> • <a href="synths/">all projects</a></p>
+		</div>
+		<div class="bottomwrapper bottomright">
+			<h2>about & contact</h2>
+			<p><a href="about/">about me</a> • <a href="http://t.me/frostion">telegram</a> • <a href="http://frostion.tumblr.com/">tumblr</a> • <a href="https://www.instagram.com/frostion_online/">instagram</a></p>
+		</div>
+		<div class="headerwrapper">
+			<img class="header" src="assets/lucario_hires.jpg">
+			<img class="bkg" src="assets/lucario_hires.jpg">
+		</div>
 	</body>
 </html>
