@@ -8,85 +8,112 @@
 		<style>
 			@keyframes div_in
 			{
-				from { left: 50%; right: 50%; }
-				to { left: 4vh; right: 4vh; }
-			}
-			@keyframes text_in
-			{
-				from { opacity: 0; letter-spacing: 50px; }
-				to { opactiy: 1; letter-spacing: initial; }
-			}
-			@keyframes fade_in
-			{
 				from { opacity: 0; }
 				to { opacity: 1; }
 			}
-			body { overflow: hidden; background: linear-gradient(#000022,#0000AA); }
-			h1.title
+			@keyframes text_in
 			{
-				position: absolute; left: 0; right: 0; bottom: 52vh;
-				text-shadow: 1vh 1vh #444444;
-				animation-name: text_in;
-				animation-duration: 1s;
-				animation-timing-function: linear;
+				from { opacity: 0; letter-spacing: 60px; }
+				to { opactiy: 1; letter-spacing: 5px; }
 			}
-			h1.button
+			@keyframes img_in
 			{
-				position: absolute; bottom: 30%; left: 0; right: 0;
+				from { opacity: 0; filter: blur(20px); }
+				to { opacity: 1; filter: initial; }
+			}
+			body
+			{
+				overflow: hidden;
+				background: linear-gradient(#AAA,#FFF);
+			}
+			h1
+			{
+				position: absolute; left: 0; right: 0; top: 51%;
+				text-shadow: 1vh 1vh 2 #FFFFFF;
+				animation-name: text_in;
+				animation-duration: 2s;
+				animation-fill-mode: forwards;
+			}
+			p
+			{
+				position: absolute; bottom: 45%; left: 0; right: 0;
+				transition: color 1s;
+			}
+			img
+			{
+				position: absolute; left: 50%; bottom: 51%;
+				margin-left: -12.5vh;
+				width: 25vh;
+				border-radius: 50%;
+				animation-name: img_in;
+				animation-duration: 2s;
 			}
 			div.container
 			{
-				position: absolute; left: 4vh; right: 4vh;
-				height: 20vh;
-				box-shadow: 1vh 1vh #444444;
-				transition: background-color 0.5s;
-				animation-name: div_in;
-				animation-duration: 1.5s;
-				animation-timing-function: linear;
-			}
-			div.outline
-			{
 				opacity: 0;
-				animation-name: fade_in;
+				position: absolute; bottom: 5%;
+				height: 25vh;
+				width: 25vh;
+				border-radius: 50%;
+				transition: background-color 1s;
+				animation-name: div_in;
+				animation-duration: 2s;
 				animation-delay: 1s;
-				animation-duration: 0.5s;
-				animation-timing-function: linear;
 				animation-fill-mode: forwards;
-				position: absolute; left: 1vh; right: 1vh; top: 1vh; bottom: 1vh;
-				border-style: solid; border-color: #FFFFFF; border-width: 1px;
 			}
+			
 			div.button1
 			{
-				background-color: #880088;
-				bottom: 28vh;
+				background-color: transparent;
+				border: 5px solid #660066;
+				right: 60%;
+			}
+			div.button1 > p
+			{
+				color: #660066;
 			}
 			div.button1:hover
 			{
-				background-color: #CC00CC;
+				background-color: #660066;
 			}
+			div.button1:hover > p
+			{
+				color: #FFFFFF;
+			}
+			
 			div.button2
 			{
-				background-color: #008888;
-				bottom: 4vh;
+				background-color: transparent;
+				border: 5px solid #006666;
+				left: 60%;
+			}
+			div.button2 > p
+			{
+				color: #006666;
 			}
 			div.button2:hover
 			{
-				background-color: #00CCCC;
+				background-color: #006666;
+			}
+			div.button2:hover > p
+			{
+				color: #FFFFFF;
 			}
 		</style>
 	</head>
 	
 	<body>
-		<a href="projects/"><div class="container button1">
-			<div class="outline">
-				<h1 class="button">my projects</h1>
+		<h1 class="title">frostion</h1>
+		<img src="assets/frostion_icon.png"></img>
+		<a href="projects/">
+			<div class="container button1">
+				<p>my projects</p>
 			</div>
-		</div></a>
-		<a href="about/"><div class="container button2">
-			<div class="outline">
-				<h1 class="button">about me</h1>
+		</a>
+		<a href="projects/">
+			<div class="container button2">
+				<p>about me</p>
 			</div>
-		</div></a>
-		<h1 class="title">FROSTION THE JACKAL</h1>
+		</a>
 	</body>
 </html>

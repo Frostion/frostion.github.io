@@ -1,68 +1,70 @@
-a:link, a:visited { color: white; text-decoration: none; }
-a:hover, a:active { color: white; text-decoration: underline; }
+div.topwrapper
+{
+	position: fixed; top: 5%; left: 5%; right: 5%; height: 15%; z-index: 1;
+	background-color: #222222;
+	opacity: 0;
+	border: 0;
+	animation-name: fade_in; animation-duration: 1.5s; animation-fill-mode: forwards;
+}
+div.bodywrapper
+{
+	position: fixed; top: 20%; bottom: 5%; left: 5%; right: 5%; z-index: 1;
+	background-color: #444444;
+	opacity: 0;
+	border: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 1%;
+	animation-name: fade_in; animation-duration: 1.5s; animation-fill-mode: forwards;
+}
+div.headerwrapper
+{
+	display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;
+}
+img.bkg
+{
+	position: fixed; top: 0; max-height: 100%; min-width: 100%; z-index: -1;
+	filter: blur(25px);
+}
 
-@font-face { font-family: title_font; src: url('assets/VCR.ttf'); }
+body { overflow: hidden; background: linear-gradient(#AAA,#FFF); }
+a:link, a:visited  { color: #55FFFF; text-decoration: none; transition: color 0.5s; }
+a:hover, a:active { color: #FF88FF; text-decoration: underline; transition: color 0.5s; }
+
+@font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: white; line-height: 0.4; font-size: 36pt; text-align: center; transition: letter-spacing 1s; }
-h2 { font-family: title_font; color: white; line-height: 0; font-size: 24pt; text-align: center; transition: letter-spacing 1s; }
-h3 { font-family: title_font; color: white; line-height: 0; font-size: 20pt; text-align: center; }
-p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: center; transition: letter-spacing 1s; }
+h1 { font-family: title_font; color: #444; font-size: 36pt; text-align: center; }
+h2 { font-family: title_font; color: #444; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
+h3 { font-family: title_font; color: #444; line-height: 1.1; font-size: 20pt; text-align: left; }
+p { font-family: body_font; color: #444; line-height: 1.1; font-size: 16pt; text-align: left; }
+p.header { text-align: center !important; }
+p.links { text-align: right !important; }
 
-table { border: 0; }
+ul { list-style-image: url('assets/bullet.png'); }
 
-hr { border: 1px solid #ffffff; width: 95%; }
-
-@keyframes div_in
+img.totop
 {
-	0% { left: 50%; right: 50%; top: 45%; bottom: 45%; }
-	50% { left: 4vh; right: 4vh; top: 45%; bottom: 45%; }
-	100% { left: 4vh; right: 4vh; top: 4vh; bottom: 4vh; }
+	opacity: 0.5;
+	transition: opacity 0.5s;
+	width: 48px;
+	vertical-align: middle;
 }
-@keyframes text_in
-{
-	from { opacity: 0; letter-spacing: 50px; }
-	to { opactiy: 1; letter-spacing: initial; }
-}
+img:hover.totop { opacity: 1.0; }
+
+table { border: 0; border-collapse: collapse; }
+tr { border-bottom: 1px solid #ffffff; }
+tr.title { border-bottom: 0; }
+
+hr { border: 1px solid #ffffff; width: 100%; }
+
+iframe { border: 0; }
+
+img:active.zoomable { width: 50%; }
+img.zoomable { transition: width 0.5s; float: right; width: 30%; padding: 7px; }
+img.icon { padding-left: 0.5em; }
+
 @keyframes fade_in
 {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-body { overflow: hidden; background: linear-gradient(#000022,#0000AA); }
-h1.title
-{
-	position: absolute; left: 0; right: 0; bottom: 0;
-}
-h1.exit
-{
-	position: absolute; text-align: right !important; right: 1%; bottom: 0;
-}
-div.container
-{
-	position: absolute; left: 4vh; right: 4vh;
-	box-shadow: 1vh 1vh #444444;
-	animation-name: div_in;
-	animation-duration: 1.5s;
-	animation-timing-function: linear;
-	animation-fill-mode: forwards;
-	
-}
-div.outline
-{
-	opacity: 0;
-	animation-name: fade_in;
-	animation-delay: 1s;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-fill-mode: forwards;
-	border-style: solid; border-color: #FFFFFF; border-width: 1px;
-}
-div.outlineheader
-{
-	position: absolute; left: 1vh; right: 1vh; top: 1vh;
-	height: 10vh;
-}
-div.outlinebody
-{
-	position: absolute; left: 1vh; right: 1vh; top: 12vh; bottom: 1vh;
+  from { opacity: 0.0; }
+  to { opacity: 0.8; }
 }
