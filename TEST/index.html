@@ -8,17 +8,17 @@
 		<style>
 			@keyframes div_in
 			{
-				from { opacity: 0; }
-				to { opacity: 1; }
+				from { opacity: 0; width: 0vw; }
+				to { opacity: 1; width: 90vw; }
 			}
 			@keyframes text_in
 			{
-				from { opacity: 0; letter-spacing: 60px; }
-				to { opactiy: 1; letter-spacing: 5px; }
+				from { opacity: 0.5; color: transparent; text-shadow: 0 0 50px #444; }
+				to { opacity: 1; color: transparent; text-shadow: 0 0 0px #444; }
 			}
 			@keyframes img_in
 			{
-				from { opacity: 0; filter: blur(20px); }
+				from { opacity: 0.5; filter: blur(50px); }
 				to { opacity: 1; filter: initial; }
 			}
 			body
@@ -36,7 +36,7 @@
 			}
 			p
 			{
-				position: absolute; bottom: 45%; left: 0; right: 0;
+				text-align: center; vertical-align: middle; display: table-cell;
 				transition: color 1s;
 			}
 			img
@@ -50,11 +50,12 @@
 			}
 			div.container
 			{
+				display: table;
 				opacity: 0;
-				position: absolute; bottom: 5%;
-				height: 25vh;
-				width: 25vh;
-				border-radius: 50%;
+				position: absolute; left: 5vw;
+				width: 90vw;
+				height: 10vh;
+				border-radius: 10vh;
 				transition: background-color 1s;
 				animation-name: div_in;
 				animation-duration: 2s;
@@ -65,8 +66,8 @@
 			div.button1
 			{
 				background-color: transparent;
-				border: 5px solid #660066;
-				right: 60%;
+				border: 3px solid #660066;
+				bottom: 3vh;
 			}
 			div.button1 > p
 			{
@@ -84,8 +85,8 @@
 			div.button2
 			{
 				background-color: transparent;
-				border: 5px solid #006666;
-				left: 60%;
+				border: 3px solid #006666;
+				bottom: 16vh;
 			}
 			div.button2 > p
 			{
@@ -103,7 +104,7 @@
 	</head>
 	
 	<body>
-		<h1 class="title">frostion</h1>
+		<h1 class="title">frostion the jackal</h1>
 		<img src="assets/frostion_icon.png"></img>
 		<a href="projects/">
 			<div class="container button1">
