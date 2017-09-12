@@ -10,11 +10,14 @@ div.topwrapper
 	border-radius: 10vh;
 	height: 16vh;
 	position: absolute; left: 2vh; right: 2vh; top: 2vh;
-	display: flex; align-items: center; justify-content: center;
+	display: flex; align-items: center; justify-content: center; flex-direction: column;
 	animation-name: fade_in;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 }
+div.topwrapper > h3 { margin: 0.5vh; line-height: 1; }
+div.topwrapper > h1 { margin: 0.5vh; line-height: 1; }
+
 div.button
 {
 	position: absolute; top: 2vh; bottom: 2vh;
@@ -78,22 +81,87 @@ div.bodywrapper
 	position: fixed; top: 20vh; left: 0; right: 0; bottom: 0;
 	overflow-y: auto;
 	overflow-x: hidden;
-	padding: 4vh;
+	padding-top: 3vh;
+	padding-left: 10vw;
+	padding-right: 10vw;
 	animation-name: fade_in;
 	animation-duration: 1.5s;
 	animation-delay: 0.5s;
 	animation-fill-mode: forwards;
 }
 
+div.projectbutton
+{
+	position: relative;
+	background-color: #AAA;
+	border-radius: 10vh;
+	height: 16vh;
+	width: 100%;
+	border: 0px solid #444444;
+	transition: background-color 0.5s, border 0.5s;
+	margin-bottom: 2vh;
+	border: 3px solid #AAA;
+}
+div.projectbutton:hover
+{
+	background-color: #CCC;
+}
+div.projectbutton > h3
+{
+	position: absolute;
+	left: 16vh;
+	right: 2vh;
+	bottom: 50%;
+	margin: 0;
+	margin-bottom: 2vh;
+	line-height: 0 !important;
+}
+div.projectbutton > p
+{
+	position: absolute;
+	left: 16vh;
+	right: 2vh;
+	top: 50%;
+	margin: 0;
+	margin-top: 1vh;
+}
+
+div.buttonlink
+{
+	position: relative;
+	width: 100%;
+	height: 6vh;
+	margin-bottom: 2vh;
+	border-radius: 6vh;
+	background-color: transparent;
+	transition: background-color 0.5s;
+	display: flex; align-items: center; justify-content: center;
+	border: 3px solid #660066;
+}
+div.buttonlink > p
+{
+	font-weight: bold;
+	color: #660066;
+	transition: color 0.5s;
+}
+div.buttonlink:hover
+{
+	background-color: #660066;
+}
+div.buttonlink:hover > p
+{
+	color: #FFFFFF;
+}
+
 
 body { overflow: hidden; background: linear-gradient(#AAA,#FFF); }
 a:link, a:visited  { color: #008888; text-decoration: none; transition: color 0.5s; font-weight: bold; }
-a:hover, a:active { color: #880088; text-decoration: underline; transition: color 0.5s; font-weight: bold; }
+a:hover, a:active { color: #880088; text-decoration: none; transition: color 0.5s; font-weight: bold; }
 
 @font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
 h1 { font-family: title_font; color: #444; font-size: 36pt; text-align: center; }
-h2 { font-family: title_font; color: #444; line-height: 1.1; font-size: 24pt; text-align: center; margin-top: 2em; }
+h2 { font-family: title_font; color: #444; line-height: 1.1; font-size: 24pt; text-align: center; }
 h3 { font-family: title_font; color: #444; line-height: 1.1; font-size: 20pt; text-align: left; }
 p { font-family: body_font; color: #222; line-height: 1.1; font-size: 16pt; text-align: left; }
 p.header { text-align: center !important; }
