@@ -97,7 +97,6 @@ div.projectbutton
 	border-radius: 10vh;
 	height: 16vh;
 	width: 100%;
-	border: 0px solid #444444;
 	transition: background-color 0.5s, border 0.5s;
 	margin-bottom: 2vh;
 	border: 3px solid #AAA;
