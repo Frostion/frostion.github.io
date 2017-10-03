@@ -13,8 +13,8 @@
 			}
 			@keyframes text_in
 			{
-				from { opacity: 0.5; color: transparent; text-shadow: 0 0 50px #444; }
-				to { opacity: 1; color: transparent; text-shadow: 0 0 0px #444; }
+				from { opacity: 0.5; color: transparent; text-shadow: 0 0 50px #FFF; }
+				to { opacity: 1; color: transparent; text-shadow: 0 0 0px #FFF; }
 			}
 			@keyframes img_in
 			{
@@ -24,7 +24,7 @@
 			body
 			{
 				overflow: hidden;
-				background: linear-gradient(#AAA,#FFF);
+				background: linear-gradient(to bottom right,#005151,#00458E);
 			}
 			h1
 			{
@@ -62,44 +62,26 @@
 				animation-duration: 2s;
 				animation-delay: 1s;
 				animation-fill-mode: forwards;
+				
+				background-color: rgba(255,255,255,0.3);
+				border: 3px solid rgba(255,255,255,0);
+				transition: background-color 0.5s, border 0.5s;
+			}
+			
+			div.container:hover
+			{
+				border: 3px solid #FFF;
+				background-color: rgba(255,255,255,0.5);
 			}
 			
 			div.button1
 			{
-				background-color: transparent;
-				border: 3px solid #660066;
 				bottom: 3vh;
-			}
-			div.button1 > p
-			{
-				color: #660066;
-			}
-			div.button1:hover
-			{
-				background-color: #660066;
-			}
-			div.button1:hover > p
-			{
-				color: #FFFFFF;
 			}
 			
 			div.button2
 			{
-				background-color: transparent;
-				border: 3px solid #006666;
 				bottom: 16vh;
-			}
-			div.button2 > p
-			{
-				color: #006666;
-			}
-			div.button2:hover
-			{
-				background-color: #006666;
-			}
-			div.button2:hover > p
-			{
-				color: #FFFFFF;
 			}
 		</style>
 	</head>

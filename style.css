@@ -6,7 +6,7 @@
 
 div.topwrapper
 {
-	background-color: #999;
+	background-color: rgba(255,255,255,0.3);
 	border-radius: 10vh;
 	height: 16vh;
 	position: absolute; left: 2vh; right: 2vh; top: 2vh;
@@ -31,41 +31,41 @@ div.button
 div.home
 {
 	right: 2vh;
-	border: 3px solid #660066;
+	border: 3px solid #FFF;
 }
 div.home > p
 {
 	font-weight: bold;
-	color: #660066;
+	color: #FFF;
 	transition: color 0.5s;
 }
 div.home:hover
 {
-	background-color: #660066;
+	background-color: #FFF;
 }
 div.home:hover > p
 {
-	color: #FFFFFF;
+	color: #00458E;
 }
 
 div.back
 {
 	left: 2vh;
-	border: 3px solid #006666;
+	border: 3px solid #FFF;
 }
 div.back > p
 {
 	font-weight: bold;
-	color: #006666;
+	color: #FFF;
 	transition: color 0.5s;
 }
 div.back:hover
 {
-	background-color: #006666;
+	background-color: #FFF;
 }
 div.back:hover > p
 {
-	color: #FFFFFF;
+	color: #005151;
 }
 
 img.avatar
@@ -93,17 +93,18 @@ div.bodywrapper
 div.projectbutton
 {
 	position: relative;
-	background-color: #AAA;
+	background-color: rgba(255,255,255,0.3);
 	border-radius: 10vh;
 	height: 16vh;
 	width: 100%;
 	transition: background-color 0.5s, border 0.5s;
 	margin-bottom: 2vh;
-	border: 3px solid #AAA;
+	border: 3px solid rgba(255,255,255,0);
 }
 div.projectbutton:hover
 {
-	background-color: #CCC;
+	border: 3px solid #FFF;
+	background-color: rgba(255,255,255,0.5);
 }
 div.projectbutton > h3
 {
@@ -132,37 +133,33 @@ div.buttonlink
 	height: 6vh;
 	margin-bottom: 2vh;
 	border-radius: 6vh;
-	background-color: transparent;
-	transition: background-color 0.5s;
+	background-color: rgba(255,255,255,0.3);
+	transition: background-color 0.5s, border 0.5s;
 	display: flex; align-items: center; justify-content: center;
-	border: 3px solid #660066;
+	border: 3px solid rgba(255,255,255,0);
 }
 div.buttonlink > p
 {
 	font-weight: bold;
-	color: #660066;
-	transition: color 0.5s;
+	color: #FFF;
 }
 div.buttonlink:hover
 {
-	background-color: #660066;
-}
-div.buttonlink:hover > p
-{
-	color: #FFFFFF;
+	border: 3px solid #FFF;
+	background-color: rgba(255,255,255,0.5);
 }
 
 
-body { overflow: hidden; background: linear-gradient(#AAA,#FFF); }
-a:link, a:visited  { color: #008888; text-decoration: none; transition: color 0.5s; font-weight: bold; }
-a:hover, a:active { color: #880088; text-decoration: none; transition: color 0.5s; font-weight: bold; }
+body { overflow: hidden; background: linear-gradient(to bottom right,#005151,#00458E); }
+a:link, a:visited  { color: #0FF; text-decoration: none; transition: color 0.5s; font-weight: bold; }
+a:hover, a:active { color: #0FA; text-decoration: none; transition: color 0.5s; font-weight: bold; }
 
 @font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: #444; font-size: 36pt; text-align: center; }
-h2 { font-family: title_font; color: #444; line-height: 1.1; font-size: 24pt; text-align: center; }
-h3 { font-family: title_font; color: #444; line-height: 1.1; font-size: 20pt; text-align: left; }
-p { font-family: body_font; color: #222; line-height: 1.1; font-size: 16pt; text-align: left; }
+h1 { font-family: title_font; color: #FFF; font-size: 36pt; text-align: center; }
+h2 { font-family: title_font; color: #FFF; line-height: 1.1; font-size: 24pt; text-align: center; }
+h3 { font-family: title_font; color: #FFF; line-height: 1.1; font-size: 20pt; text-align: left; }
+p { font-family: body_font; color: #FFF; line-height: 1.1; font-size: 16pt; text-align: left; }
 p.header { text-align: center !important; }
 p.links { text-align: right !important; }
 
