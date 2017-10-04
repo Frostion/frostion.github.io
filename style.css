@@ -1,3 +1,23 @@
+div::-webkit-scrollbar
+{
+    width: 1em;
+}
+ 
+div::-webkit-scrollbar-track
+{
+    background-color: rgba(255,255,255,0.2);
+	border-radius: 1em;
+}
+ 
+div::-webkit-scrollbar-thumb
+{
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 1em;
+  transition: background-color 0.5s;
+  border: 2px solid rgba(255,255,255,0.0);  
+}
+
+
 @keyframes fade_in
 {
   from { opacity: 0.0; }
