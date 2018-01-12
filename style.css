@@ -110,21 +110,25 @@ div.bodywrapper
 	animation-fill-mode: forwards;
 }
 
-div.projectbutton
+div.cbutton
 {
-	position: relative;
 	background-color: rgba(255,255,255,0.3);
-	border-radius: 10vh;
-	height: 16vh;
-	width: 100%;
-	transition: background-color 0.5s, border 0.5s;
-	margin-bottom: 2vh;
 	border: 3px solid rgba(255,255,255,0);
+	transition: background-color 0.5s, border 0.5s;
 }
-div.projectbutton:hover
+div.cbutton:hover
 {
 	border: 3px solid #FFF;
 	background-color: rgba(255,255,255,0.5);
+}
+
+div.projectbutton
+{
+	position: relative;
+	border-radius: 10vh;
+	height: 16vh;
+	width: 100%;
+	margin-bottom: 2vh;
 }
 div.projectbutton > h3
 {
@@ -153,20 +157,18 @@ div.buttonlink
 	height: 6vh;
 	margin-bottom: 2vh;
 	border-radius: 6vh;
-	background-color: rgba(255,255,255,0.3);
-	transition: background-color 0.5s, border 0.5s;
 	display: flex; align-items: center; justify-content: center;
-	border: 3px solid rgba(255,255,255,0);
 }
 div.buttonlink > p
 {
 	font-weight: bold;
 	color: #FFF;
 }
-div.buttonlink:hover
+div.mediabutton
 {
-	border: 3px solid #FFF;
-	background-color: rgba(255,255,255,0.5);
+	border-radius: 2vw;
+	padding: 2vw;
+	margin: 1vw;
 }
 
 
