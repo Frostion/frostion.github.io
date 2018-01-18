@@ -178,9 +178,9 @@ a:hover, a:active { color: #0FA; text-decoration: none; transition: color 0.5s; 
 
 @font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: #FFF; font-size: 36pt; text-align: center; }
-h2 { font-family: title_font; color: #FFF; line-height: 1.1; font-size: 24pt; text-align: center; }
-h3 { font-family: title_font; color: #FFF; line-height: 1.1; font-size: 20pt; text-align: left; }
+h1 { font-family: title_font; color: #FFF; font-size: 36pt; text-align: center; font-weight: normal; }
+h2 { font-family: title_font; color: #FFF; line-height: 1.1; font-size: 24pt; text-align: center; font-weight: bold; }
+h3 { font-family: title_font; color: #FFF; line-height: 1.1; font-size: 20pt; text-align: left; font-weight: normal; }
 p { font-family: body_font; color: #FFF; line-height: 1.1; font-size: 16pt; text-align: left; }
 p.header { text-align: center !important; }
 p.links { text-align: right !important; }

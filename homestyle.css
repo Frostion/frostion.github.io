@@ -3,7 +3,7 @@ a:hover, a:active { color: white; text-decoration: underline; }
 
 @font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: #444; line-height: 0; font-size: 48pt; text-align: center; }
+h1 { font-family: title_font; color: #444; line-height: 0; font-size: 48pt; text-align: center; font-weight: normal; }
 p { font-family: body_font; line-height: 0; font-size: 21pt; text-align: center; font-weight: bold; }
 
 table { border: 0; }
