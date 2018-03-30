@@ -1,12 +1,166 @@
 a:link, a:visited { color: white; text-decoration: none; }
-a:hover, a:active { color: white; text-decoration: underline; }
+a:hover, a:active { color: white; text-decoration: none; }
+
+@keyframes fade_in
+{
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes fade_in_half
+{
+	from { opacity: 0; }
+	to { opacity: 0.5; }
+}
+@keyframes img_in
+{
+	from { opacity: 0.7; filter: blur(50px); }
+	to { opacity: 1; filter: initial; }
+}
 
 @font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: #444; line-height: 0; font-size: 48pt; text-align: center; font-weight: normal; }
-p { font-family: body_font; line-height: 0; font-size: 21pt; text-align: center; font-weight: bold; }
 
+h1 { font-family: title_font; color: #FFF; line-height: 0.9; font-size: 48pt; text-align: center; font-weight: bold; padding: 0px; }
+h2 { font-family: title_font; color: #FFF; line-height: 1; font-size: 30pt; text-align: center; font-weight: bold; padding: 0px; }
+h3 { font-family: title_font; color: #FFF; line-height: 1; font-size: 20pt; text-align: center; font-weight: bold; padding: 0px; }
+p { font-family: body_font; color: #FFF; line-height: 1; font-size: 16pt; text-align: center; font-weight: normal; padding: 0px; }
+body { overflow-x: hidden; margin: 0; padding: 0; display: block; background-color: white; }
 table { border: 0; }
+hr { margin: 0 auto; margin-top: 1em; border: 1px solid #ffffff; width: 100%; }
 
-hr { border: 1px solid #ffffff; width: 95%; }
-
+div.bkgimg
+{
+	background-image: url(assets/bkg.jpg);
+	z-index: -1;
+	position: fixed;
+	left: 0; right: 0; top: 0; bottom: 0;
+	background-size: cover;
+	background-position: center;
+	animation-name: img_in;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+div.page
+{
+	opacity: 0;
+	left: 0; right: 0;
+	box-sizing: border-box;
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	animation-name: fade_in;
+	animation-delay: 0.5s;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+div.home
+{
+	margin: 0; height: 100vh;
+}
+div.home > h1
+{
+	position: absolute; left: 0; right: 0; top: 51%;
+}
+img.frostlogo
+{
+	position: absolute; left: 50%; bottom: 51%;
+	margin-left: -15vh;
+	width: 30vh;
+	border-radius: 50%;
+}
+img.downarrow
+{
+	opacity: 0;
+	position: absolute; left: 50%; bottom: 5%;
+	margin-left: -5vh;
+	width: 10vh;
+	animation-name: fade_in_half;
+	animation-delay: 3s;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+}
+div.socialcontainer
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+div.socialcontainer > div
+{
+	margin-left: 0.6em;
+	margin-right: 0.6em;
+}
+img.socialicon
+{
+	width: 4em;
+	opacity: 0.5;
+	transition: opacity 0.5s;
+}
+img.socialicon:hover
+{
+	opacity: 1;
+}
+div.projectspage
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+div.projectcontainer
+{
+	background-color: rgba(0,130,130,1);
+	border-radius: 1em;
+	border: 3px solid rgba(255,255,255,0);
+	transition: border 0.5s, background-color 0.5s;
+	margin-bottom: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	max-width: 70vw;
+}
+div.projectcontainer:hover
+{
+	background-color: rgba(50,150,150,1);
+	border: 3px solid #FFF;
+}
+div.projectcontainer > p { padding-left: 0.5em; padding-right: 0.5em; }
+div.projectcontainer > h2 { padding-left: 0.5em; padding-right: 0.5em; }
+div.projectimage
+{
+	position: relative;
+	top: 0.5em;
+	width: calc(100% - 1em);
+	margin: 0 auto;
+	height: 25vh;
+	background-size: cover;
+	background-position: center;
+	border-radius: 1em;
+}
+div.projecttext
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 25vh;
+}
+div.gallerycontainer
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+div.photopreview
+{
+	width: 30vh;
+	height: 30vh;
+	margin-left: 0.5em; margin-right: 0.5em;
+	margin-bottom: 1em;
+	transition: filter 0.5s;
+	background-size: cover;
+	background-position: center;
+	border-radius: 1em;
+}
+div.photopreview:hover
+{
+	filter: brightness(150%);
+}

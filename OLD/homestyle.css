@@ -1,12 +1,10 @@
 a:link, a:visited { color: white; text-decoration: none; }
 a:hover, a:active { color: white; text-decoration: underline; }
 
-@font-face { font-family: title_font; src: url('assets/Roboto-Thin.ttf'); }
+@font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
-h1 { font-family: title_font; color: white; line-height: 0.4; font-size: 36pt; text-align: center; transition: letter-spacing 1s; }
-h2 { font-family: title_font; color: white; line-height: 0; font-size: 24pt; text-align: center; transition: letter-spacing 1s; }
-h3 { font-family: title_font; color: white; line-height: 0; font-size: 20pt; text-align: center; }
-p { font-family: body_font; color: white; line-height: 1.1; font-size: 16pt; text-align: center; transition: letter-spacing 1s; }
+h1 { font-family: title_font; color: #444; line-height: 0; font-size: 48pt; text-align: center; font-weight: normal; }
+p { font-family: body_font; line-height: 0; font-size: 21pt; text-align: center; font-weight: bold; }
 
 table { border: 0; }
 
