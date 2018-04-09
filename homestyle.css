@@ -24,7 +24,7 @@ h1 { font-family: title_font; color: #FFF; line-height: 0.9; font-size: 48pt; te
 h2 { font-family: title_font; color: #FFF; line-height: 1; font-size: 30pt; text-align: center; font-weight: bold; padding: 0px; }
 h3 { font-family: title_font; color: #FFF; line-height: 1; font-size: 20pt; text-align: center; font-weight: bold; padding: 0px; }
 p { font-family: body_font; color: #FFF; line-height: 1; font-size: 16pt; text-align: center; font-weight: normal; padding: 0px; }
-body { overflow-x: hidden; margin: 0; padding: 0; display: block; background-color: white; }
+body { overflow-x: hidden; margin: 0; padding: 0; display: block; background-color: #000; }
 table { border: 0; }
 hr { margin: 0 auto; margin-top: 1em; border: 1px solid #ffffff; width: 100%; }
 
@@ -39,6 +39,7 @@ div.bkgimg
 	animation-name: img_in;
 	animation-duration: 3s;
 	animation-fill-mode: forwards;
+	image-rendering: pixelated;
 }
 div.page
 {
