@@ -110,7 +110,6 @@ div.projectspage
 }
 div.projectcontainer
 {
-	background-color: rgba(0,130,130,1);
 	border-radius: 1em;
 	border: 3px solid rgba(255,255,255,0);
 	transition: border 0.5s, background-color 0.5s;
@@ -121,9 +120,13 @@ div.projectcontainer
 }
 div.projectcontainer:hover
 {
-	background-color: rgba(50,150,150,1);
 	border: 3px solid #FFF;
 }
+div.electronicsproject { background-color: rgba(0,130,130,1); }
+div.electronicsproject:hover { background-color: rgba(50,150,150,1); }
+div.androidproject { background-color: rgba(90,90,130,1); }
+div.androidproject:hover { background-color: rgba(120,120,150,1); }
+
 div.projectcontainer > p { padding-left: 0.5em; padding-right: 0.5em; }
 div.projectcontainer > h2 { padding-left: 0.5em; padding-right: 0.5em; }
 div.projectimage
