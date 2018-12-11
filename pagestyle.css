@@ -20,9 +20,22 @@ a:hover, a:active { color: white; text-decoration: none; }
 @font-face { font-family: title_font; src: url('assets/Adam.otf'); }
 @font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
 
+html
+{
+	min-height: 100%;
+}
+
 body
 {
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+hr
+{
+	border: 1px solid white;
+	width: 100%;
+	opacity: 0.7;
 }
 
 h1
@@ -37,21 +50,12 @@ h1
 }
 h2
 {
-	font-family: body_font;
+	font-family: title_font;
 	color: #FFF;
-	line-height: 0;
-	font-size: 20pt;
+	line-height: 1.1;
+	font-size: 30pt;
 	text-align: center;
 	padding: 0px;
-	opacity: 0.7;
-	text-shadow: 0;
-	transition: opacity 0.5s, text-shadow 0.5s;
-	
-}
-h2:hover
-{
-	text-shadow: 0 0 10px #FFF;
-	opacity: 1;
 }
 
 
@@ -71,7 +75,8 @@ div.bkgimg
 div.page
 {
 	opacity: 0;
-	position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+	position: absolute; left: 0; right: 0; top: 0;
+	min-height: 100vh;
 	box-sizing: border-box;
 	padding-top: 5vw;
 	padding-bottom: 5vw;
@@ -81,13 +86,12 @@ div.page
 	animation-delay: 0.5s;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
-	background-image: linear-gradient(to bottom right,#4B004B,#004B4B);
 	margin: 0;
 	
 	display: flex;
 	flex-wrap: no-wrap;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: flex-top;
 	align-items: center;
 }
 div.header
@@ -98,36 +102,32 @@ div.header
 	justify-content: flex-end;
 	align-items: center;
 }
-img.frostlogo
+div.headerbutton
 {
-	width: 30vh;
-}
-div.container
-{
+	width: 100%;
 	display: flex;
+	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
-}
-div.links
-{
-	flex-direction: column;
-}
-div.social
-{
-	margin-top: 2vh;
-}
-div.social > div
-{
-	margin-left: 0.6em;
-	margin-right: 0.6em;
-}
-img.socialicon
-{
-	width: 3em;
-	opacity: 0.5;
+	align-items: center;
+	opacity: 0.7;
 	transition: opacity 0.5s;
 }
-img.socialicon:hover
+div.headerbutton > img
+{
+	width: 4em;
+	margin-right: 0.6em;
+}
+div.headerbutton > h2
+{
+	font-family: body_font;
+	color: #FFF;
+	line-height: 0;
+	font-size: 20pt;
+	text-align: center;
+	padding: 0px;
+}
+div.headerbutton:hover
 {
 	opacity: 1;
 }

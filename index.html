@@ -1,32 +1,5 @@
 <!DOCTYPE html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-		$(document).ready(function(){
-		  // Add smooth scrolling to all links
-		  $("a").on('click', function(event) {
-
-			// Make sure this.hash has a value before overriding default behavior
-			if (this.hash !== "") {
-			  // Prevent default anchor click behavior
-			  event.preventDefault();
-
-			  // Store hash
-			  var hash = this.hash;
-
-			  // Using jQuery's animate() method to add smooth page scroll
-			  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-			  $('html, body').animate({
-				scrollTop: $(hash).offset().top
-			  }, 900, function(){
-		   
-				// Add hash (#) to URL when done scrolling (default click behavior)
-				window.location.hash = hash;
-			  });
-			} // End if
-		  });
-		});
-		</script>
 		<meta http-equiv="Cache-Control" content="no-store" />
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="homestyle.css" type="text/css" />
@@ -39,50 +12,21 @@
 	<body>
 		<div class="bkgimg"></div>
 		
-		<div class="page home" style="background-color:rgba(0,0,75,0.7);">
-			<img class="frostlogo" src="assets/frostion_icon.png"></img>
-			<h1>frost sheridan</h1>
-			<a href="#aboutme"><img class="downarrow" src="assets/downarrow.png"></img></a>
-		</div>
-		
-		<div id="aboutme" class="page" style="background-color:rgba(75,0,75,0.8);">
-			<h3>I'm Frost Sheridan, a black-backed jackal with an interest in electronics, synthesizers, photography, and making stuff.</h3>
-			<div class="socialcontainer">
-				<div><a href="http://t.me/frostion"><img class="socialicon" src="assets/icons/telegram.png"></img></a></div>
-				<div><a href="https://www.instagram.com/frostion_online/"><img class="socialicon" src="assets/icons/instagram.png"></img></a></div>
-				<div><a href="https://frostion.tumblr.com/"><img class="socialicon" src="assets/icons/tumblr.png"></img></a></div>
+		<div class="page">
+			<div class="header">
+				<img class="frostlogo" src="assets/frostion_icon.png"></img>
+				<h1>frost sheridan</h1>
 			</div>
-		</div>
-		
-		<div id="hardware" class="page" style="background-color:rgba(0,75,75,0.8);">
-			<h1>electronics projects</h1>
-			<div class="projectspage">
-				<a href=""><div class="projectcontainer electronicsproject">
-					<div class="projectimage" style="background-image: url(electronics/thumbnails/badge.jpg);"></div>
-					<h2>Digital fursona badge</h2>
-					<p>Electronic, animated fursona badge for my boyfriend!</p>
-				</div></a>
-				<a href=""><div class="projectcontainer electronicsproject">
-					<div class="projectimage" style="background-image: url(electronics/thumbnails/sequin.jpg);"></div>
-					<h2>Sequin</h2>
-					<p>Chiptune-inspired drum machine with Euclidean sequencing</p>
-				</div></a>
-				<a href=""><div class="projectcontainer electronicsproject">
-					<div class="projectimage" style="background-image: url(electronics/thumbnails/sergal.jpg);"></div>
-					<h2>Sergal</h2>
-					<p>Obnoxiously digital FM synth</p>
-				</div></a>
-			</div>
-		</div>
-		
-		<div id="android" class="page" style="background-color:rgba(35,35,75,0.8);">
-			<h1>android apps</h1>
-			<div class="projectspage">
-				<a href=""><div class="projectcontainer androidproject">
-					<div class="projectimage" style="background-image: url(android/thumbnails/orbital.jpg);"></div>
-					<h2>Orbital</h2>
-					<p>Mandelbrot orbit calculator/generator</p>
-				</div></a>
+			
+			<div class="container links">
+				<a href="comms/"><h2>commissions</h2></a>
+				<a href="#"><h2>electronics projects</h2></a>
+				<a href="#"><h2>android apps</h2></a>
+				<div class="container social">
+					<div><a href="http://t.me/frostion"><img class="socialicon" src="assets/icons/telegram.png"></img></a></div>
+					<div><a href="https://www.instagram.com/frostion_online/"><img class="socialicon" src="assets/icons/instagram.png"></img></a></div>
+					<div><a href="https://frostion.tumblr.com/"><img class="socialicon" src="assets/icons/tumblr.png"></img></a></div>
+				</div>
 			</div>
 		</div>
 	</body>
