@@ -4,7 +4,7 @@ a:hover, a:active { color: white; text-decoration: none; }
 @keyframes fade_in
 {
 	from { opacity: 0; }
-	to { opacity: 0.8; }
+	to { opacity: 1; }
 }
 @keyframes fade_in_half
 {
@@ -46,7 +46,11 @@ h1
 	font-size: 48pt;
 	text-align: center;
 	font-weight: bold;
-	padding: 0px;
+	padding: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.4em;
+	margin-left: 0;
+	margin-right: 0;
 }
 h2
 {
@@ -55,9 +59,33 @@ h2
 	line-height: 1.1;
 	font-size: 30pt;
 	text-align: center;
-	padding: 0px;
+	padding: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.4em;
+	margin-left: 0;
+	margin-right: 0;
 }
+p
+{
+	font-family: body_font;
+	color: #FFF;
+	line-height: 1.2;
+	font-size: 15pt;
+	text-align: center;
+	padding: 0;
+	margin-top: 0.4em;
+	margin-bottom: 0.5em;
+	margin-left: 0;
+	margin-right: 0;
+}
+.center { text-align: center !important; }
 
+img.float
+{
+	float: right;
+	max-width: 50%;
+	margin: 0.5em;
+}
 
 div.bkgimg
 {
@@ -86,6 +114,7 @@ div.page
 	animation-delay: 0.5s;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
+	background-image: linear-gradient(to bottom right,rgba(75,0,75,0.8),rgba(0,75,75,0.8));
 	margin: 0;
 	
 	display: flex;
@@ -112,6 +141,10 @@ div.headerbutton
 	align-items: center;
 	opacity: 0.7;
 	transition: opacity 0.5s;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
 }
 div.headerbutton > img
 {
@@ -125,9 +158,150 @@ div.headerbutton > h2
 	line-height: 0;
 	font-size: 20pt;
 	text-align: center;
-	padding: 0px;
 }
 div.headerbutton:hover
 {
 	opacity: 1;
+}
+
+div.contentcontainer
+{
+	background-image: linear-gradient(to bottom,rgba(255,255,255,0.4),rgba(255,255,255,0));
+	border-radius: 1em;
+	width: 100%;
+	padding: 2em;
+	margin-top: 1.1em;
+	border: 0;
+}
+div.contentcontainer > h1
+{
+	font-family: title_font;
+	color: #FFF;
+	line-height: 1.1;
+	font-size: 30pt;
+	padding: 0;
+	margin-top: 0;
+}
+div.contentcontainer > h2
+{
+	font-family: title_font;
+	color: #FFF;
+	line-height: 1.1;
+	font-size: 20pt;
+	text-align: left;
+	padding: 0;
+}
+div.contentcontainer > p
+{
+	text-align: left;
+}
+
+div.buttoncontainer
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+div.gallery
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.galleryitem
+{
+	margin: 0.6em;
+	height: 30vh;
+	max-width: 100%;
+}
+
+div.button
+{
+	margin: 0.3em;
+	padding: 0.6em;
+	border-radius: 50em/50em;
+	border: 0.2em solid transparent;
+	background-color: rgba(255,255,255,0.6);
+	transition: border 0.4s, background-color 0.4s;
+}
+div.button > p
+{
+	padding: 0;
+	margin: 0;
+	color: rgba(0,75,75,1);
+	font-weight: bold;
+	transition: color 0.4s;
+}
+div.button:hover
+{
+	border-color: rgba(255,255,255,0.7);
+	background-color: rgba(100,255,255,0.6);
+}
+div.button:hover > p
+{
+	color: rgba(255,255,255,1);
+}
+
+div.projectpage
+{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+div.projectcontainer
+{
+	width: 90%;
+	max-width: 20em;
+	border-radius: 1em;
+	padding: 0;
+	margin: 1em;
+	border: 0.3em solid transparent;
+	background-color: rgba(255,255,255,0.2);
+	transition: border 0.5s, background-color 0.5s;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+div.projectcontainer:hover
+{
+	border-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,0.4);
+}
+div.projectcontainer > h1
+{
+	font-family: title_font;
+	color: #FFF;
+	line-height: 1.1;
+	font-size: 30pt;
+	text-align: center;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0.3em;
+	margin-right: 0.3em;
+}
+div.projectcontainer > h2
+{
+	font-family: body_font;
+	color: #FFF;
+	line-height: 1.1;
+	font-size: 20pt;
+	text-align: center;
+	padding: 0;
+	font-weight: normal;
+	margin: 0;
+	margin-top: 0.3em;
+	margin-bottom: 1em;
+	margin-left: 0.3em;
+	margin-right: 0.3em;
+}
+div.projectcontainer > img
+{
+	width: 100%;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	margin-bottom: 1em;
 }
