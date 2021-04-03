@@ -1,24 +1,9 @@
-a:link, a:visited { color: white; text-decoration: none; }
-a:hover, a:active { color: white; text-decoration: none; }
+a:link, a:visited { color: #ffffff; text-decoration: none; }
+a:hover, a:active { color: #ffffff; text-decoration: none; }
 
-@keyframes fade_in
-{
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-@keyframes fade_in_half
-{
-	from { opacity: 0; }
-	to { opacity: 0.5; }
-}
-@keyframes img_in
-{
-	from { opacity: 1; filter: blur(50px); }
-	to { opacity: 1; filter: initial; }
-}
-
-@font-face { font-family: title_font; src: url('assets/Adam.otf'); }
-@font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
+@font-face { font-family: title_font; src: url('assets/header.ttf'); }
+@font-face { font-family: body_font; src: url('assets/body.ttf'); }
+@font-face { font-family: article_font; src: url('assets/article.otf'); }
 
 html
 {
@@ -41,11 +26,11 @@ hr
 h1
 {
 	font-family: title_font;
+	font-weight: normal;
 	color: #FFF;
 	line-height: 0.9;
 	font-size: 48pt;
 	text-align: center;
-	font-weight: bold;
 	padding: 0;
 	margin-top: 0.5em;
 	margin-bottom: 0.4em;
@@ -55,6 +40,7 @@ h1
 h2
 {
 	font-family: title_font;
+	font-weight: normal;
 	color: #FFF;
 	line-height: 1.1;
 	font-size: 30pt;
@@ -68,9 +54,10 @@ h2
 p
 {
 	font-family: body_font;
+	font-weight: normal;
 	color: #FFF;
 	line-height: 1.2;
-	font-size: 15pt;
+	font-size: 12pt;
 	text-align: center;
 	padding: 0;
 	margin-top: 0.4em;
@@ -83,26 +70,26 @@ p
 img.float
 {
 	float: right;
-	max-width: 50%;
+	max-width: 35%;
 	margin: 0.5em;
+}
+
+img.score
+{
+	height: 0.75em;
 }
 
 div.bkgimg
 {
-	background-image: url(assets/bkg.jpg);
+	background-image: url(assets/homebkg.gif);
 	z-index: -1;
 	position: fixed;
 	left: 0; right: 0; top: 0; bottom: 0;
-	background-size: cover;
-	background-position: center;
-	animation-name: img_in;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-	image-rendering: pixelated;
+	background-size: 8cm;
+	background-repeat: repeat;
 }
 div.page
 {
-	opacity: 0;
 	position: absolute; left: 0; right: 0; top: 0;
 	min-height: 100vh;
 	box-sizing: border-box;
@@ -110,11 +97,7 @@ div.page
 	padding-bottom: 5vw;
 	padding-left: 10vw;
 	padding-right: 10vw;
-	animation-name: fade_in;
-	animation-delay: 0.5s;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-	background-image: linear-gradient(to bottom right,rgba(75,0,75,0.8),rgba(0,75,75,0.8));
+	
 	margin: 0;
 	
 	display: flex;
@@ -131,6 +114,15 @@ div.header
 	justify-content: flex-end;
 	align-items: center;
 }
+div.header > a
+{
+	color: #ffffff; text-decoration: none;
+}
+@keyframes sawfadeopacity
+{
+	from { opacity: 1; animation-timing-function: linear; }
+	to { opacity: 0.2; }
+}
 div.headerbutton
 {
 	width: 100%;
@@ -139,8 +131,7 @@ div.headerbutton
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	opacity: 0.7;
-	transition: opacity 0.5s;
+	opacity: 0.75;
 	margin-left: 0;
 	margin-right: 0;
 	margin-top: 1em;
@@ -156,22 +147,24 @@ div.headerbutton > h2
 	font-family: body_font;
 	color: #FFF;
 	line-height: 0;
-	font-size: 20pt;
+	font-size: 15pt;
 	text-align: center;
 }
 div.headerbutton:hover
 {
-	opacity: 1;
+	animation-name: sawfadeopacity;
+    animation-iteration-count: infinite;
+    animation-duration: 0.4s;
 }
 
 div.contentcontainer
 {
-	background-image: linear-gradient(to bottom,rgba(255,255,255,0.4),rgba(255,255,255,0));
-	border-radius: 1em;
+	border: 0.3em solid rgba(0,180,255,1);
+	background-color: rgba(26,92,232,1);
+	border-radius: 2em 0;
 	width: 100%;
 	padding: 2em;
 	margin-top: 1.1em;
-	border: 0;
 }
 div.contentcontainer > h1
 {
@@ -194,7 +187,13 @@ div.contentcontainer > h2
 div.contentcontainer > p
 {
 	text-align: left;
+	font-family: article_font;
+	font-size: 13pt;
 }
+div.contentcontainer > p > a:link { color: #00ffff; text-decoration: none; }
+div.contentcontainer > p > a:visited { color: #00ffff; text-decoration: none; }
+div.contentcontainer > p > a:hover { color: #00ffff; text-decoration: underline; }
+div.contentcontainer > p > a:active { color: #00ffff; text-decoration: none; }
 
 div.buttoncontainer
 {
@@ -222,25 +221,20 @@ div.button
 	padding: 0.6em;
 	border-radius: 50em/50em;
 	border: 0.2em solid transparent;
-	background-color: rgba(255,255,255,0.6);
-	transition: border 0.4s, background-color 0.4s;
+	background-color: rgba(0,180,255,1);
 }
 div.button > p
 {
 	padding: 0;
 	margin: 0;
-	color: rgba(0,75,75,1);
-	font-weight: bold;
+	color: #ffffff;
 	transition: color 0.4s;
 }
 div.button:hover
 {
-	border-color: rgba(255,255,255,0.7);
-	background-color: rgba(100,255,255,0.6);
-}
-div.button:hover > p
-{
-	color: rgba(255,255,255,1);
+	animation-name: sawfadeoutline;
+    animation-iteration-count: infinite;
+    animation-duration: 0.4s;
 }
 
 div.projectpage
@@ -251,6 +245,12 @@ div.projectpage
 	justify-content: center;
 }
 
+
+@keyframes sawfadeoutline
+{
+	from { border-color: rgba(255,255,255,1); animation-timing-function: linear; }
+	to { border-color: rgba(0,180,255,1); }
+}
 div.projectcontainer
 {
 	width: 90%;
@@ -258,16 +258,18 @@ div.projectcontainer
 	border-radius: 1em;
 	padding: 0;
 	margin: 1em;
-	border: 0.3em solid transparent;
-	background-color: rgba(255,255,255,0.2);
-	transition: border 0.5s, background-color 0.5s;
+	border: 0.3em solid rgba(0,180,255,1);
+	background-color: rgba(26,92,232,1);
+	transition: background-color 0.5s;
 	box-sizing: border-box;
 	overflow: hidden;
 }
 div.projectcontainer:hover
 {
-	border-color: rgba(255,255,255,0.8);
-	background-color: rgba(255,255,255,0.4);
+	animation-name: sawfadeoutline;
+    animation-iteration-count: infinite;
+    animation-duration: 0.4s;
+	background-color: rgba(0,180,255,1);
 }
 div.projectcontainer > h1
 {
@@ -286,8 +288,8 @@ div.projectcontainer > h2
 {
 	font-family: body_font;
 	color: #FFF;
-	line-height: 1.1;
-	font-size: 20pt;
+	line-height: 1.2;
+	font-size: 12pt;
 	text-align: center;
 	padding: 0;
 	font-weight: normal;

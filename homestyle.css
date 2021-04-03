@@ -1,24 +1,8 @@
 a:link, a:visited { color: white; text-decoration: none; }
 a:hover, a:active { color: white; text-decoration: none; }
 
-@keyframes fade_in
-{
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-@keyframes fade_in_half
-{
-	from { opacity: 0; }
-	to { opacity: 0.5; }
-}
-@keyframes img_in
-{
-	from { opacity: 1; filter: blur(50px); }
-	to { opacity: 1; filter: initial; }
-}
-
-@font-face { font-family: title_font; src: url('assets/Adam.otf'); }
-@font-face { font-family: body_font; src: url('assets/Lanereg.ttf'); }
+@font-face { font-family: title_font; src: url('assets/header.ttf'); }
+@font-face { font-family: body_font; src: url('assets/body.ttf'); }
 
 body
 {
@@ -28,11 +12,11 @@ body
 h1
 {
 	font-family: title_font;
+	font-weight: normal;
 	color: #FFF;
 	line-height: 0.9;
 	font-size: 48pt;
 	text-align: center;
-	font-weight: bold;
 	padding: 0;
 	margin-top: 6vh;
 	margin-bottom: 6vh;
@@ -42,54 +26,48 @@ h1
 h2
 {
 	font-family: body_font;
+	font-weight: bold;
 	color: #FFF;
 	line-height: 0;
-	font-size: 20pt;
+	font-size: 17pt;
 	text-align: center;
 	padding: 0;
 	margin-top: 0;
-	margin-bottom: 6vh;
+	margin-bottom: 5vh;
 	margin-left: 0;
 	margin-right: 0;
 	opacity: 0.7;
 	text-shadow: 0;
-	transition: opacity 0.5s, text-shadow 0.5s;
+	transition: text-shadow 0.5s;
 	
 }
 h2:hover
 {
 	text-shadow: 0 0 10px #FFF;
-	opacity: 1;
+	animation-name: sawfade;
+    animation-iteration-count: infinite;
+    animation-duration: 0.4s;
 }
 
 
 div.bkgimg
 {
-	background-image: url(assets/bkg.jpg);
+	background-image: url(assets/homebkg.gif);
 	z-index: -1;
 	position: fixed;
 	left: 0; right: 0; top: 0; bottom: 0;
-	background-size: cover;
-	background-position: center;
-	animation-name: img_in;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-	image-rendering: pixelated;
+	background-size: 8cm;
+	background-repeat: repeat;
 }
 div.page
 {
-	opacity: 0;
 	position: fixed; left: 0; right: 0; top: 0; bottom: 0;
 	box-sizing: border-box;
 	padding-top: 5vw;
 	padding-bottom: 5vw;
 	padding-left: 10vw;
 	padding-right: 10vw;
-	animation-name: fade_in;
-	animation-delay: 0.5s;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-	background-image: linear-gradient(to bottom right,rgba(75,0,75,0.8),rgba(0,75,75,0.8));
+	
 	margin: 0;
 	
 	display: flex;
@@ -106,9 +84,26 @@ div.header
 	justify-content: flex-end;
 	align-items: center;
 }
+
+@keyframes rotateanim
+{
+	from { transform: perspective(55vh) rotateY(0deg); animation-timing-function: ease-in-out; }
+	to { transform: perspective(55vh) rotateY(360deg);  }
+}
+
+@keyframes sawfade
+{
+	from { opacity: 1; animation-timing-function: linear; }
+	to { opacity: 0.15; }
+}
+
 img.frostlogo
 {
 	width: 30vh;
+	animation-name: rotateanim;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+	animation-delay: 0.4s;
 }
 div.container
 {
@@ -133,9 +128,10 @@ img.socialicon
 {
 	width: 3em;
 	opacity: 0.5;
-	transition: opacity 0.5s;
 }
 img.socialicon:hover
 {
-	opacity: 1;
+	animation-name: sawfade;
+    animation-iteration-count: infinite;
+    animation-duration: 0.4s;
 }
