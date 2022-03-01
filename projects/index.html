@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 	<head>
 		<meta http-equiv="Cache-Control" content="no-store" />
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../pagestyle.css" type="text/css" />
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../style.css" type="text/css" />
 		<link rel="shortcut icon" type="image/png" href="../assets/favicon.png" />
 		<link rel="icon" sizes="192x192" href="../assets/frost192.png">
 		<meta name="theme-color" content="#000051">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>projects | frost sheridan</title>
+		<title>cyberdragon | projects</title>
 	</head>
 	<body>
 		<div class="bkgimg"></div>
 		
-		<div class="page">
-			<div class="header">
-				<a href="../"><div class="headerbutton">
-					<img src="../assets/frostion_icon.png"></img>
-					<h2>frost sheridan</h2>
-				</div></a>
-				<h1>projects</h1>
+		<div class="mainitem navbar">
+			<img src="../assets/navbar/header.png"></img>
+			<div class="navbaritems">
+				<a href="../"><img src="../assets/navbar/home_off.png" onmouseover="this.src='../assets/navbar/home_on.png';" onmouseout="this.src='../assets/navbar/home_off.png';"></img></a>
+				<a href="../pooltoys/"><img src="../assets/navbar/pooltoys_off.png" onmouseover="this.src='../assets/navbar/pooltoys_on.png';" onmouseout="this.src='../assets/navbar/pooltoys_off.png';"></img></a>
+				<a href="../gallery/"><img src="../assets/navbar/gallery_off.png" onmouseover="this.src='../assets/navbar/gallery_on.png';" onmouseout="this.src='../assets/navbar/gallery_off.png';"></img></a>
+				<a href="../projects/"><img src="../assets/navbar/projects_off.png" onmouseover="this.src='../assets/navbar/projects_on.png';" onmouseout="this.src='../assets/navbar/projects_off.png';"></img></a>
 			</div>
+		</div>
+		
+		<div class="mainitem">
+			<img class="float" src="floppyspin.gif"></img>
+			<h1>software projects</h1>
+			
+			<h2>audio snipping tool<h2>
+			<p>A program that records audio that your computer is playing for quick saving and sharing. It's basically the Windows Snipping Tool, but for audio</p>
+			<a href="https://github.com/Frostion/AudioSnippingTool"><img src="download.gif"></img></a>
 			<hr>
 			
-			<div class="projectpage">
-				<a href="scanlines/"><div class="projectcontainer">
-					<img src="thumbnails/scanlines.jpg"></img>
-					<h1>Scanlines</h1>
-					<h2>analog sample rate reduction (bitcrusher) effect</h2>
-				</div></a>
-				<a href="protocol/"><div class="projectcontainer">
-					<img src="thumbnails/protocol.jpg"></img>
-					<h1>Protocol</h1>
-					<h2>passive mixer with various signal routing options</h2>
-				</div></a>
-				<a href="video_hecker/"><div class="projectcontainer">
-					<img src="thumbnails/video_hecker.jpg"></img>
-					<h1>Video Hecker</h1>
-					<h2>stupid device that messes up analog video signals</h2>
-				</div></a>
-			</div>
+			<h2>vrqr</h2>
+			<p>QR code scanner for VRChat</p>
+			<a href="https://github.com/Frostion/VRQR"><img src="download.gif"></img></a>
+			<hr>
+			
+			<h2>unity package extractor</h2>
+			<p>A simple utility for pulling files out of a unitypackage without having to actually open Unity</p>
+			<a href="https://github.com/Frostion/UnityPackageExtractor"><img src="download.gif"></img></a>
+		</div>
+		
+		<div class="mainitem">
+			<img class="float" src="circuit2.gif"></img>
+			<h1>hardware projects</h1>
+			<img src="../assets/construction.gif"></img>
 		</div>
 	</body>
 </html>
