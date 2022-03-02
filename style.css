@@ -31,12 +31,10 @@ div.navbar
 {
 	font-size: 0;
 }
-
 div.navbar > div
 {
 	float: right;
 }
-
 div.navbar > div > a
 {
 	padding-left: 8px;
@@ -48,7 +46,7 @@ div.gallery
 	overflow-x: auto;
 	white-space: nowrap;
 }
-.galleryitem
+div.gallery > a > img
 {
 	margin: 4px;
 	max-height: 240px;
@@ -60,30 +58,31 @@ hr
 	border: 2px outset #B200FF;
 }
 
-table.gallery
+div.galleryrow
 {
-	width: 100%;
-	border-collapse: collapse;
-
+	display: flex;
+	margin-bottom: 12px;
 }
-td.item
+div.galleryrow > a > img
 {
 	width: 350px;
-	padding-bottom: 12px;
-	padding-right: 12px;
-}
-td.item > a > img
-{
-	width: 100%;
 	border: #888 solid 1px;
+	margin-right: 12px;
 }
-td.desc
+div.galleryrow > div
 {
-	padding-bottom: 12px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
-td.desc > p > img
+div.galleryrow > div > h2
 {
-	padding-right: 8px;
+	margin-bottom: 0;
+}
+div.galleryrow > div > p > img
+{
+	margin-right: 8px;
 }
 
 h1
