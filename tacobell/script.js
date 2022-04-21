@@ -1,6 +1,7 @@
 var frame_element = document.getElementById("frame");
 var container_element = document.getElementById("item_container");
 var display_element = document.getElementById("item_display");
+var bottom_bar_element = document.getElementById("bottom_bar");
 
 
 document.body.addEventListener("click", pageClicked);
@@ -21,6 +22,7 @@ function animationEnd(e)
 		frame_element.style.animation = "none";
 		display_element.innerHTML = generateItem();
 		container_element.style.animation = "fade_in 0.3s linear";
+		bottom_bar_element.style.animation = "bottom_bar_in 0.7s linear forwards";
 	}
 }
 

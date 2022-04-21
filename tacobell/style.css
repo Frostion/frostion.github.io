@@ -1,5 +1,10 @@
 @font-face { font-family: body_font; src: url("Perfect DOS VGA 437.ttf"); }
 
+body
+{
+	overflow: hidden;
+}
+
 div.bkgimg
 {
 	background: url("bkg.png");
@@ -48,6 +53,17 @@ div.frame > div > p
 	text-align: center;
 }
 
+div.bottom_bar
+{
+	image-rendering: pixelated;
+	background: url("ordering.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 324px; height: 64px;
+	position: fixed;
+	bottom: -64px; right: 16px;
+}
+
 @keyframes bkgimg_slide
 {
 	0% { transform: translate(0); }
@@ -78,4 +94,10 @@ div.frame > div > p
 {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
+}
+
+@keyframes bottom_bar_in
+{
+	0% { bottom: -64px; }
+	100% { bottom: 16px; }
 }
