@@ -29,9 +29,9 @@ function animationEnd(e)
 
 function generateItem()
 {
-	const modifier = ["Baja Blast", "Volcano", "Ranch", "Chipotle", "Avocado", "White Hot", "Crunchy", "Cheesy", "Doritos", "Nacho", "Cinnamon", "Grilled", "Fiesta", "Classic"];
-	const ingredient = ["Chicken", "Beef", "Steak", "Cheese", "Veggie"];
-	const type = ["Taco", "Burrito", "Nachos", "Bowl", "Crunchwrap", "Freeze", "Quesadilla", "Fries"];
+	const modifier = ["Baja Blast", "Volcano", "Ranch", "Chipotle", "Avocado", "White Hot", "Crunchy", "Cheesy", "Doritos", "Nacho", "Cinnamon", "Grilled", "Fiesta", "Classic", "Crispy"];
+	const ingredient = ["Chicken", "Beef", "Steak", "Cheese", "Veggie", "Potato"];
+	const type = ["Taco", "Burrito", "Nachos", "Bowl", "Crunchwrap", "Freeze", "Quesadilla", "Fries", "Quesarito"];
 	
 	var item = ingredient[Math.floor(Math.random() * ingredient.length)] + " " + type[Math.floor(Math.random() * type.length)];
 	if(Math.random() > 0.75) { item += " Supreme"; }
