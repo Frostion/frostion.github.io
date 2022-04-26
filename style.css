@@ -119,11 +119,11 @@ h3
 	font-family: title_font;
 	font-weight: normal;
 	color: #FFF;
-	line-height: 1;
+	line-height: 0.5;
 	font-size: 18pt;
 	padding: 0;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
