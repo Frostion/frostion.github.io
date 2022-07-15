@@ -184,3 +184,17 @@ div.bkgimg
 	left: 0; right: 0; top: 0; bottom: 0;
 	background-repeat: repeat;
 }
+
+table { border-collapse: collapse; }
+td { border: 2px solid #000; padding: 4px; }
+td > p { margin: 0; }
+col.header
+{
+	background: #620097;
+	width: 150px;
+}
+col.content
+{
+	background: #210049;
+	width: 845px;
+}
