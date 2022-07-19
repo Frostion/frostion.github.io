@@ -1,9 +1,29 @@
-a:link, a:visited { color: #E38AFF; text-decoration: underline; }
-a:hover, a:active { color: #04FFA6; text-decoration: underline; }
+/* ==================================================================================================================================================================================== */
+/* hyperlink styling and animation
+/* ==================================================================================================================================================================================== */
 
-@font-face { font-family: title_font; src: url('assets/planet opti.TTF'); }
-@font-face { font-family: body_font; src: url('assets/RotisSemiSansStd.otf'); }
-@font-face { font-family: menu_font; src: url('assets/planet bubble.TTF'); }
+
+a:link, a:visited { color: #B2FFFD; text-decoration: underline; text-shadow: 0 0 7px #B2FFFD; }
+a:hover, a:active
+{
+	color: #FFF; text-decoration: underline;
+	animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: sawblink;
+}
+@keyframes sawblink
+{
+	0% { opacity: 1; }
+	50% { opacity: 0.5; }
+	100% { opacity: 1; }
+}
+
+
+/* ==================================================================================================================================================================================== */
+/* html styling
+/* ==================================================================================================================================================================================== */
+
 
 html
 {
@@ -16,56 +36,123 @@ body
 	overflow-y: auto;
 }
 
-div.mainitem
+
+/* ==================================================================================================================================================================================== */
+/* background and header images
+/* ==================================================================================================================================================================================== */
+
+
+div.bkgimg
 {
-	border-radius: 6px;
-	margin-top: 16px;
-	margin-left: auto;
-	margin-right: auto;
-	background: #000;
-	padding: 8px;
-	width: 975px;
-	border: 2px outset #B200FF;
+	background-image: linear-gradient(to bottom, rgba(0, 148, 255, 0.52), rgba(0, 187, 255, 0.73)), url('assets/bkg.png');
+	z-index: -1;
+	position: fixed;
+	left: 0; right: 0; top: 0; bottom: 0;
 }
 
-div.navbar
+div.titlebar
 {
+	margin-top: 12px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+	padding: 0;
+	width: 950px;
+	background: none;
 	font-size: 0;
 }
-div.navbar > div
+
+
+/* ==================================================================================================================================================================================== */
+/* main page layout elements
+/* ==================================================================================================================================================================================== */
+
+
+div.page
 {
-	float: right;
-}
-div.navbaritem
-{
-	padding-left: 8px;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 950px;
 	position: relative;
-	display: inline-block;
 }
-div.navbardropdown
+
+
+div.sidebar
 {
-	display: none;
 	position: absolute;
-	border-radius: 6px;
-	margin: 0;
-	background: #000;
-	padding-left: 16px; padding-right: 16px;
-	padding-top: 8px; padding-bottom: 8px;
-	min-width: 110px;
-	white-space: nowrap;
-	border: 2px outset #B200FF;
+	width: 150px;
+}
+
+div.sidebar > div::after
+{
+	display: block;
+	z-index: -1;
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 10px;
+	bottom: 10px;
+	background: url('assets/sidebar_bkg.png'), linear-gradient(to bottom, rgba(168, 218, 255, 1), rgba(0, 148, 255, 1), rgba(0, 187, 255, 1));
+}
+
+div.sidebar > div
+{
+	background: url('assets/sidebar_top.png') left top no-repeat, url('assets/sidebar_bottom.png') left bottom no-repeat;
+	line-height: 0;
+}
+
+div.sidebar > div > img, div.sidebar > div > a > img
+{
+	margin-bottom: 4px;
+}
+
+div.leftcolumn { left: 0; }
+div.rightcolumn { right: 0; }
+
+
+div.centercolumn
+{
+	position: absolute;
+	left: 162px;
+	right: 162px;
 	
 }
-div.navbardropdown > p > a { text-decoration: none; }
-div.navbardropdown > p
+
+div.centercolumn > div
 {
-	margin: 0;
-	line-height: 1.4;
-	text-align: center;
-	font-family: menu_font;
-	font-size: 16pt;
+	background: url('assets/content_top.png') left top no-repeat, url('assets/content_bottom.png') left bottom no-repeat;
 }
-div.navbaritem:hover div.navbardropdown { display: block; }
+
+div.centercolumn > div::after
+{
+	display: block;
+	z-index: -1;
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 10px;
+	bottom: 10px;
+	background: url('assets/content_bkg.png'), linear-gradient(to bottom, rgba(150, 200, 255, 1), rgba(0, 148, 255, 1), rgba(0, 187, 255, 1));
+}
+
+
+div.sidebar > div, div.centercolumn > div
+{
+	margin-top: 12px;
+	border: 0;
+	box-sizing: border-box;
+	padding-left: 9px; padding-right: 9px; padding-top: 14px; padding-bottom: 14px;
+	position: relative;
+}
+
+
+/* ==================================================================================================================================================================================== */
+/* horizontally scrolling gallery
+/* ==================================================================================================================================================================================== */
+
 
 div.gallery
 {
@@ -76,14 +163,15 @@ div.gallery
 div.gallery > a > img
 {
 	margin: 4px;
-	max-height: 240px;
+	max-height: 200px;
 	max-width: 100%;
 }
 
-hr
-{
-	border: 2px outset #B200FF;
-}
+
+/* ==================================================================================================================================================================================== */
+/* vertical list gallery
+/* ==================================================================================================================================================================================== */
+
 
 div.galleryrow
 {
@@ -92,8 +180,8 @@ div.galleryrow
 }
 div.galleryrow > a > img
 {
-	width: 350px;
-	border: #888 solid 1px;
+	width: 250px;
+	border: #FFF solid 1px;
 	margin-right: 12px;
 }
 div.galleryrow > div
@@ -112,13 +200,22 @@ div.galleryrow > div > p > img
 	margin-right: 8px;
 }
 
+
+/* ==================================================================================================================================================================================== */
+/* fonts and text
+/* ==================================================================================================================================================================================== */
+
+
+@font-face { font-family: title_font; src: url('assets/planet opti.TTF'); }
+@font-face { font-family: body_font; src: url('assets/RotisSemiSansStd.otf'); }
+
 h1
 {
 	font-family: title_font;
 	font-weight: normal;
-	color: #04FFA6;
+	color: #FFF;
 	line-height: 1;
-	font-size: 36pt;
+	font-size: 30pt;
 	text-align: center;
 	padding: 0;
 	margin-top: 10px;
@@ -131,7 +228,7 @@ h2
 {
 	font-family: title_font;
 	font-weight: normal;
-	color: #E38AFF;
+	color: #FFF;
 	line-height: 1;
 	font-size: 24pt;
 	padding: 0;
@@ -146,6 +243,7 @@ h3
 	font-family: title_font;
 	font-weight: normal;
 	color: #FFF;
+	opacity: 0.8;
 	line-height: 0.5;
 	font-size: 16pt;
 	padding: 0;
@@ -159,42 +257,45 @@ p
 {
 	font-family: body_font;
 	font-weight: normal;
-	color: #CCC;
+	color: #FFF;
+	opacity: 0.9;
 	line-height: 1.1;
 	font-size: 12pt;
 	padding: 0;
 	margin-left: 0;
 	margin-right: 0;
+	margin-top: 12px; margin-bottom: 12px;
 }
 
-.center { text-align: center !important; }
+hr
+{
+	border: 1px solid #EAF6FF;
+}
 
 img.float
 {
 	float: right;
 	max-width: 35%;
-	margin: 12px;
+	margin-left: 8px;
 }
 
-div.bkgimg
-{
-	background-image: url(assets/bkg.png);
-	z-index: -1;
-	position: fixed;
-	left: 0; right: 0; top: 0; bottom: 0;
-	background-repeat: repeat;
-}
+
+/* ==================================================================================================================================================================================== */
+/* generic table for showing lists of interests and stuff
+/* ==================================================================================================================================================================================== */
+
 
 table { border-collapse: collapse; }
-td { border: 2px solid #000; padding: 4px; }
+td { border: 1px solid rgba(255, 255, 255, 0.7); padding: 4px; }
 td > p { margin: 0; }
 col.header
 {
-	background: #620097;
-	width: 150px;
+	background: rgba(255, 255, 255, 0.2);
+	width: 140px;
 }
 col.content
 {
-	background: #210049;
-	width: 845px;
+	background: none;
+	width: *;
 }
+

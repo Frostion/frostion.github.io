@@ -11,85 +11,93 @@
 	</head>
 	<body>
 		<div class="bkgimg"></div>
-		
-		<div class="mainitem navbar">
-			<img src="../assets/navbar/header.png"></img>
-			<div>
-				<div class="navbaritem">
-					<a href="../"><img src="../assets/navbar/home_off.png" onmouseover="this.src='../assets/navbar/home_on.png';" onmouseout="this.src='../assets/navbar/home_off.png';"></img></a>
+		<div class="titlebar"><img src="../assets/header.png"></img></div>
+		<div class="page">
+			
+			<!-- left sidebar -->
+			<div class="sidebar leftcolumn">
+				<div>
+					<img src="../assets/nav/navigation.png"></img>
+					<a href="../index.html"><img src="../assets/nav/aboutme.png"></img></a>
+					<a href="../journal/"><img src="../assets/nav/journal.png"></img></a>
+					<a href="../pooltoys/"><img src="../assets/nav/pooltoys.png"></img></a>
+					<a href="../art/"><img src="../assets/nav/artgallery.png"></img></a>
+					<a href="../vrchat/"><img src="../assets/nav/vrchat.png"></img></a>
+					<a href="../photos/"><img src="../assets/nav/photography.png"></img></a>
+					<a href="../projects/"><img src="../assets/nav/projects.png"></img></a>
 				</div>
-				<div class="navbaritem">
-					<img src="../assets/navbar/pooltoys_off.png" onmouseover="this.src='../assets/navbar/pooltoys_on.png';" onmouseout="this.src='../assets/navbar/pooltoys_off.png';"></img>
-					<div class="navbardropdown">
-						<p><a href="../pooltoys/hoard.html">my pool toy hoard</a><br>
-						<a href="../pooltoys/care.html">caring for pool toys</a></p>
+			</div>
+			
+			<!-- right sidebar -->
+			<div class="sidebar rightcolumn">
+				<div>
+					<img src="../assets/nav/mood.png"></img>
+					<img src="https://moods.imood.com/display/uname-frostsheridan/fg-FFFFFF/trans-1/imood.gif" alt="The current mood of frostsheridan at www.imood.com" border="0">
+				</div>
+				<div>
+					<img src="../assets/nav/contact.png"></img>
+					<a href="https://t.me/frost_sheridan"><img src="../assets/badges/telegram.png"></img></a>
+					<a href="https://vrchat.com/home/user/usr_a2408ac6-31db-488c-a30f-c4c5e5d0d227"><img src="../assets/badges/vrchat.png"></img></a>
+				</div>
+			</div>
+			
+			<!-- main content -->
+			<div class="centercolumn">
+				<div>
+					<h1>software projects</h1>
+					<p>all of the little PC software utilities i've made. most are written in C#.NET and are open-sourced on github.</p>
+					
+					<div class="galleryrow">
+						<a href="https://github.com/Frostion/AudioSnippingTool"><img src="audiosnippingtool.jpg"></img></a>
+						<div>
+							<h3>audio snipping tool</h3>
+							<p>a program that records any audio that your computer is playing for quick saving, sharing, and drag-and-dropping. it's basically the windows snipping tool, but for audio.</p>
+						</div>
+					</div>
+					
+					<div class="galleryrow">
+						<a href="https://github.com/Frostion/VRQR"><img src="vrqr.jpg"></img></a>
+						<div>
+							<h3>vrqr</h3>
+							<p>a QR code scanner for VRChat. just have this program running while you're in VRChat, and it will automatically scan all photos you take with the in-game camera for QR codes.</p>
+						</div>
+					</div>
+					
+					<div class="galleryrow">
+						<a href="https://github.com/Frostion/UnityPackageExtractor"><img src="unityextractor.jpg"></img></a>
+						<div>
+							<h3>unity package extractor</h3>
+							<p>a simple, straightforward utility that lets you explore and yoink files out of a unity package without having to go through the painful process of actually using unity. very helpful when importing avatars into neos that are only distributed as unity packages.</p>
+						</div>
 					</div>
 				</div>
-				<div class="navbaritem">
-					<img src="../assets/navbar/gallery_off.png" onmouseover="this.src='../assets/navbar/gallery_on.png';" onmouseout="this.src='../assets/navbar/gallery_off.png';"></img>
-					<div class="navbardropdown">
-						<p><a href="../gallery/artwork.html">artwork</a><br>
-						<a href="../gallery/vrchat.html">vrchat worlds</a><br>
-						<a href="../gallery/photos.html">photography</a></p>
+			
+				<div>
+					<h1>cybiko projects</h1>
+					<p>programs i've made for the cybiko platform. most are written in B2C and are open-sourced on github.</p>
+					
+					<div class="galleryrow">
+						<a href="https://github.com/Frostion/subiko"><img src="subiko.jpg"></img></a>
+						<div>
+							<h3>subiko</h3>
+							<p>a fully-featured sudoku game for the cybiko with auto candidate calculation and removal, incorrect move identification, and autofill. it even comes preloaded with 45 puzzles from the NY Times.</p>
+						</div>
 					</div>
 				</div>
-				<div class="navbaritem">
-					<a href="../projects/"><img src="../assets/navbar/projects_off.png" onmouseover="this.src='../assets/navbar/projects_on.png';" onmouseout="this.src='../assets/navbar/projects_off.png';"></img></a>
-				</div>
-			</div>
-		</div>
-
-		
-		<div class="mainitem">
-			<img class="float" src="floppyspin.gif"></img>
-			<h1>software projects</h1>
-			<p>all of the little PC software utilities i've made. most are written in C#.NET and are open-sourced on github.</p>
-			
-			<div class="galleryrow">
-				<a href="https://github.com/Frostion/AudioSnippingTool"><img src="audiosnippingtool.jpg"></img></a>
+				
 				<div>
-					<h2>audio snipping tool</h2>
-					<p>a program that records any audio that your computer is playing for quick saving, sharing, and drag-and-dropping. it's basically the windows snipping tool, but for audio.</p>
+					<h1>web projects</h1>
+					<p>stuff i've written that runs right in your web browser!</p>
+					
+					<div class="galleryrow">
+						<a href="../tacobell/"><img src="tacobell.jpg"></img></a>
+						<div>
+							<h3>taco bell item generator</h3>
+							<p>after encountering the <i>Steak White Hot Ranch Fries Burrito</i> at taco bell one day, i concluded that all new taco bell menu items are being computer-generated, so i wrote my own taco bell item generator to prove a point or something i guess.</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			
-			<div class="galleryrow">
-				<a href="https://github.com/Frostion/VRQR"><img src="vrqr.jpg"></img></a>
-				<div>
-					<h2>vrqr</h2>
-					<p>a QR code scanner for VRChat. just have this program running while you're in VRChat, and it will automatically scan all photos you take with the in-game camera for QR codes.</p>
-				</div>
-			</div>
-			
-			<div class="galleryrow">
-				<a href="https://github.com/Frostion/UnityPackageExtractor"><img src="unityextractor.jpg"></img></a>
-				<div>
-					<h2>unity package extractor</h2>
-					<p>a simple, straightforward utility that lets you explore and yoink files out of a unity package without having to go through the painful process of actually using unity. very helpful when importing avatars into neos that are only distributed as unity packages.</p>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="mainitem">
-			<img class="float" src="floppyspin.gif"></img>
-			<h1>cybiko projects</h1>
-			<p>programs I've made for the cybiko platform. most are written in B2C and are open-sourced on github.</p>
-			
-			<div class="galleryrow">
-				<a href="https://github.com/Frostion/subiko"><img src="subiko.jpg"></img></a>
-				<div>
-					<h2>subiko</h2>
-					<p>a fully-featured sudoku game for the cybiko with auto candidate calculation and removal, incorrect move identification, and autofill. it even comes preloaded with 45 puzzles from the NY Times.</p>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="mainitem">
-			<img class="float" src="circuit2.gif"></img>
-			<h1>hardware projects</h1>
-			<img src="../assets/construction.gif"></img>
 		</div>
 	</body>
 </html>
