@@ -84,7 +84,7 @@ div.sidebar
 	width: 150px;
 }
 
-div.sidebar > div::after
+div.sidebar > div::before
 {
 	display: block;
 	z-index: -1;
@@ -125,7 +125,7 @@ div.centercolumn > div
 	background: url('assets/content_top.png') left top no-repeat, url('assets/content_bottom.png') left bottom no-repeat;
 }
 
-div.centercolumn > div::after
+div.centercolumn > div::before
 {
 	display: block;
 	z-index: -1;
@@ -238,7 +238,7 @@ h2
 	margin-right: 0;
 }
 
-h3
+h3, h4
 {
 	font-family: title_font;
 	font-weight: normal;
@@ -264,7 +264,7 @@ p
 	padding: 0;
 	margin-left: 0;
 	margin-right: 0;
-	margin-top: 12px; margin-bottom: 12px;
+	margin-top: 11px; margin-bottom: 11px;
 }
 
 hr
@@ -279,6 +279,18 @@ img.float
 	margin-left: 8px;
 }
 
+img.returnbutton
+{
+	position: absolute;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+img.fullwidth
+{
+	width: 100%;
+}
+
 
 /* ==================================================================================================================================================================================== */
 /* generic table for showing lists of interests and stuff
@@ -286,7 +298,7 @@ img.float
 
 
 table { border-collapse: collapse; }
-td { border: 1px solid rgba(255, 255, 255, 0.7); padding: 4px; }
+td { border: 1px solid rgba(255, 255, 255, 0.6); padding: 4px; }
 td > p { margin: 0; }
 col.header
 {
@@ -299,3 +311,28 @@ col.content
 	width: *;
 }
 
+
+/* ==================================================================================================================================================================================== */
+/* yesterweb webring widget
+/* ==================================================================================================================================================================================== */
+
+div.ringcontainer
+{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 50px;
+	align-items: center;
+}
+
+div.ring
+{
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+div.yw-widget-full > *
+{
+	text-align: center;
+}
