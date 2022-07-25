@@ -3,16 +3,22 @@
 /* ==================================================================================================================================================================================== */
 
 
-a:link, a:visited { color: #B2FFFD; text-decoration: underline; text-shadow: 0 0 7px #B2FFFD; }
+a:link, a:visited
+{
+	color: #B2FFFD;
+	text-decoration: underline;
+	text-shadow: 0 0 7px #B2FFFD;
+}
 a:hover, a:active
 {
-	color: #FFF; text-decoration: underline;
+	color: #FFF;
+	text-decoration: underline;
 	animation-duration: 0.5s;
     animation-iteration-count: infinite;
 	animation-timing-function: linear;
-	animation-name: sawblink;
+	animation-name: triblink;
 }
-@keyframes sawblink
+@keyframes triblink
 {
 	0% { opacity: 1; }
 	50% { opacity: 0.5; }
@@ -106,6 +112,12 @@ div.sidebar > div
 div.sidebar > div > img, div.sidebar > div > a > img
 {
 	margin-bottom: 4px;
+}
+
+div.sidebar > div > p
+{
+	margin: 0;
+	font-size: 10pt;
 }
 
 div.leftcolumn { left: 0; }
@@ -273,6 +285,29 @@ ul
 	padding-left: 16px;
 }
 
+p.cybertext
+{
+	text-align: center;
+	font-family: "ＭＳ Ｐゴシック";
+	letter-spacing: 0.3em;
+	text-shadow: 2px 2px 3px #FFF;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	animation-duration: 2s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-delay: 2.5s;
+	animation-name: cyberblink;
+}
+@keyframes cyberblink
+{
+	0% { opacity: 1; }
+	10% { opacity: 0.3; }
+	20% { opacity: 1; }
+	30% { opacity: 0.3; }
+	40% { opacity: 1; }
+}
+
 hr
 {
 	border: 1px solid #EAF6FF;
@@ -297,6 +332,28 @@ img.fullwidth
 	width: 100%;
 }
 
+div.spinny
+{
+	perspective: 200px;
+}
+img.spinny
+{
+	position: absolute;
+	right: 20px;
+	bottom: 12px;
+	width: 250px;
+	z-index: -1;
+	opacity: 0.3;
+	animation-duration: 10s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: rotatez;
+}
+@keyframes rotatez
+{
+	0% { transform: rotateX(245deg) rotateY(50deg) rotateZ(0deg); }
+	100% { transform: rotateX(245deg) rotateY(50deg) rotateZ(360deg); }
+}
 
 /* ==================================================================================================================================================================================== */
 /* generic table for showing lists of interests and stuff
