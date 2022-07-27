@@ -83,7 +83,6 @@ div.page
 	position: relative;
 }
 
-
 div.sidebar
 {
 	position: absolute;
@@ -123,7 +122,6 @@ div.sidebar > div > p
 div.leftcolumn { left: 0; }
 div.rightcolumn { right: 0; }
 
-
 div.centercolumn
 {
 	position: absolute;
@@ -149,7 +147,6 @@ div.centercolumn > div::before
 	bottom: 10px;
 	background: url('assets/content_bkg.png'), linear-gradient(to bottom, rgba(150, 200, 255, 1), rgba(0, 148, 255, 1), rgba(0, 187, 255, 1));
 }
-
 
 div.sidebar > div, div.centercolumn > div
 {
@@ -285,29 +282,6 @@ ul
 	padding-left: 16px;
 }
 
-p.cybertext
-{
-	text-align: center;
-	font-family: "ＭＳ Ｐゴシック";
-	letter-spacing: 0.3em;
-	text-shadow: 2px 2px 3px #FFF;
-	margin-top: 18px;
-	margin-bottom: 18px;
-	animation-duration: 2s;
-    animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	animation-delay: 2.5s;
-	animation-name: cyberblink;
-}
-@keyframes cyberblink
-{
-	0% { opacity: 1; }
-	10% { opacity: 0.3; }
-	20% { opacity: 1; }
-	30% { opacity: 0.3; }
-	40% { opacity: 1; }
-}
-
 hr
 {
 	border: 1px solid #EAF6FF;
@@ -332,10 +306,12 @@ img.fullwidth
 	width: 100%;
 }
 
-div.spinny
-{
-	perspective: 200px;
-}
+
+/* ==================================================================================================================================================================================== */
+/* cool home page graphics
+/* ==================================================================================================================================================================================== */
+
+
 img.spinny
 {
 	position: absolute;
@@ -354,6 +330,31 @@ img.spinny
 	0% { transform: rotateX(245deg) rotateY(50deg) rotateZ(0deg); }
 	100% { transform: rotateX(245deg) rotateY(50deg) rotateZ(360deg); }
 }
+
+p.cybertext
+{
+	text-align: center;
+	font-family: "ＭＳ Ｐゴシック";
+	font-size: 12pt;
+	letter-spacing: 0.3em;
+	text-shadow: 2px 2px 3px #FFF;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	animation-duration: 2s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-delay: 2.5s;
+	animation-name: cyberblink;
+}
+@keyframes cyberblink
+{
+	0% { opacity: 1; }
+	10% { opacity: 0.3; }
+	20% { opacity: 1; }
+	30% { opacity: 0.3; }
+	40% { opacity: 1; }
+}
+
 
 /* ==================================================================================================================================================================================== */
 /* generic table for showing lists of interests and stuff
@@ -376,8 +377,9 @@ col.content
 
 
 /* ==================================================================================================================================================================================== */
-/* yesterweb webring widget
+/* webring widgets
 /* ==================================================================================================================================================================================== */
+
 
 div.ringcontainer
 {
@@ -401,7 +403,7 @@ div.ringcontainer > div
 	padding-right: 4px;
 }
 
-div.yw-widget-full > *
+div.centertext > *
 {
 	text-align: center;
 }
