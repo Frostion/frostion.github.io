@@ -22,7 +22,7 @@ function generateCybertext()
 	
 	function blinkCursor()
 	{
-		var cur_string = cur ? "█" : "░";
+		var cur_string = cur ? "█" : " ";
 		document.getElementsByClassName("cybertext")[0].innerHTML = "[&nbsp" + phrase.substring(0,i) + cur_string + "&nbsp]";
 		cur = !cur;
 		setTimeout(blinkCursor, 500);
@@ -34,6 +34,7 @@ function generateCybertext()
 // yesterweb ring widget
 //================================================================================================
 
+var my_url = "http://www.cyberdragon.digital/";
 
 requestYesterwebRing();
 function requestYesterwebRing()
@@ -54,11 +55,9 @@ function requestYesterwebRing()
 
 function createYesterwebRing(sites)
 {
-	var my_url = normalizeURL("https://www.cyberdragon.digital/");
 	for(var i = 0; i < sites.length; i++)
 	{
-		var test_url = normalizeURL(sites[i].url);
-		if(test_url === my_url)
+		if(sites[i].url === my_url)
 		{
 			var prev_url = sites[(i - 1 > 0 ? i : sites.length) - 1].url;
 			var next_url = sites[(i + 1) % sites.length].url;
@@ -70,19 +69,25 @@ function createYesterwebRing(sites)
 	}
 }
 
-function normalizeURL(url)
+
+//================================================================================================
+// da boyz ring widget
+//================================================================================================
+
+
+createDaboyzRing();
+function createDaboyzRing()
 {
-	url = (url + '').replace(/\/?$/, '/');
-	try
+	for(var i = 0; i < sites.length; i++)
 	{
-		var src = new URL(url);
-		var dst = new URL('https://example.com/');
-		dst.hostname = src.hostname;
-		dst.pathname = src.pathname;
-		return dst.toString();
-	}
-	catch (err)
-	{
-		return url;
+		if(my_url.startsWith(sites[i]))
+		{
+			var prev_url = sites[(i - 1 > 0 ? i : sites.length) - 1];
+			var next_url = sites[(i + 1) % sites.length];
+			var rand_url = sites[Math.random() * sites.length | 0];
+			
+			document.getElementById("daboyz-widget").innerHTML = "<p>This site is part of the <b>" + ringName + "</b> webring.</p><p><a href=\"" + prev_url + "\">← previous</a> | <a href=\"" + indexPage + "\">index</a> | <a href=\"" + rand_url + "\">random</a> | <a href=\"" + next_url + "\">next →</a></p>";
+			return;
+		}
 	}
 }

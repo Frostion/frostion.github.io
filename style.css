@@ -27,7 +27,7 @@ a:hover, a:active
 
 
 /* ==================================================================================================================================================================================== */
-/* html styling
+/* i don't remember why this was here
 /* ==================================================================================================================================================================================== */
 
 
@@ -116,7 +116,7 @@ div.sidebar > div > img, div.sidebar > div > a > img
 div.sidebar > div > p
 {
 	margin: 0;
-	font-size: 10pt;
+	
 }
 
 div.leftcolumn { left: 0; }
@@ -216,7 +216,9 @@ div.galleryrow > div > p > img
 
 
 @font-face { font-family: title_font; src: url('assets/planet opti.TTF'); }
-@font-face { font-family: body_font; src: url('assets/RotisSemiSansStd.otf'); }
+@font-face { font-family: body_font; src: url('assets/Nintendo-DS-BIOS.woff'); }
+@font-face { font-family: body_font_old; src: url('assets/NintendoDS_16px.ttf'); }
+@font-face { font-family: cyber_font; src: url('assets/FreePixel_16px.ttf'); }
 
 h1
 {
@@ -268,11 +270,10 @@ p, ul
 	font-weight: normal;
 	color: #FFF;
 	opacity: 0.9;
-	line-height: 1.1;
-	font-size: 12pt;
+	font-size: 16px;
+	line-height: 14px;
 	padding: 0;
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: 0; margin-right: 0;
 	margin-top: 11px; margin-bottom: 11px;
 }
 
@@ -320,23 +321,26 @@ img.spinny
 	width: 250px;
 	z-index: -1;
 	opacity: 0.3;
-	animation-duration: 10s;
-    animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	animation-name: rotatez;
+	animation: rotatez 10s linear infinite;
 }
 @keyframes rotatez
 {
 	0% { transform: rotateX(245deg) rotateY(50deg) rotateZ(0deg); }
 	100% { transform: rotateX(245deg) rotateY(50deg) rotateZ(360deg); }
 }
+@keyframes scalein
+{
+	0% { opacity: 0; right: 100px; }
+	100% { opacity: 0.3; right: 20px; }
+}
 
 p.cybertext
 {
 	text-align: center;
-	font-family: "ＭＳ Ｐゴシック";
-	font-size: 12pt;
-	letter-spacing: 0.3em;
+	font-family: cyber_font;
+	font-weight: normal;
+	font-size: 16px;
+	letter-spacing: 4px;
 	text-shadow: 2px 2px 3px #FFF;
 	margin-top: 18px;
 	margin-bottom: 18px;
@@ -403,7 +407,16 @@ div.ringcontainer > div
 	padding-right: 4px;
 }
 
+div.centertext
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 8px;
+}
 div.centertext > *
 {
 	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

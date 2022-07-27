@@ -36,7 +36,7 @@ function requestStatusCafe()
 			if(this.status == 200)
 			{
 				var status_data = JSON.parse(this.responseText);
-				document.getElementById("statuscafe-widget").innerHTML = status_data.face + " <i>" + status_data.timeAgo + "</i><br>" + status_data.content;
+				document.getElementById("statuscafe-widget").innerHTML = status_data.face + " - " + status_data.timeAgo + "<br>" + status_data.content;
 			}
 		}
 	}
