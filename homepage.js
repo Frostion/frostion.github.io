@@ -6,7 +6,7 @@
 generateCybertext();
 function generateCybertext()
 {
-	const phrases = ["choose your virtual echo.", "in the universe of the computer.", "welcome to the digital dimension.", "you are now connected.", "access the infinite.", "i can feel my soul collide.", "the void will answer.", "welcome to the next reality.", "look into the core of your soul.", "continue without saving?", "what does your mind's eye see?", "hyper unreality dynamic shift.", "ethereal reality reanimation.", "a path to experience digital eternity.", "behind the haze of digital abstraction.", "the gate remembers your signature.", "the transfer gate is revealed."];
+	const phrases = ["choose your virtual echo.", "in the universe of the computer.", "welcome to the digital dimension.", "you are now connected.", "access the infinite.", "i can feel my soul collide.", "the void will answer.", "welcome to the next reality.", "look into the core of your soul.", "continue without saving?", "what does your mind's eye see?", "hyper unreality dynamic shift.", "ethereal reality reanimation.", "a path to experience digital eternity.", "behind the haze of digital abstraction.", "the gate remembers your signature.", "i saw the transfer gate before me.", "all reality disappearing around me."];
 	var phrase = phrases[Math.floor(Math.random() * phrases.length)];
 	var i = 0;
 	var cur = true;
@@ -63,7 +63,7 @@ function createYesterwebRing(sites)
 			var next_url = sites[(i + 1) % sites.length].url;
 			var rand_url = sites[Math.random() * sites.length | 0].url;
 			
-			document.getElementById("yesterweb-widget").innerHTML = "<h4>Yesterweb Ring</h4><p>This site, <a href=\"" + sites[i].url + "\">" + sites[i].name + "</a>, is keeping the old web alive. Thanks, <b>" + sites[i].owner + "</b>!</p><p><a href=\"" + prev_url + "\">[Prev]</a> <a href=\"" + rand_url + "\">[Rand]</a> <a href=\"" + next_url + "\">[Next]</a></p>";
+			document.getElementById("yesterweb-widget").innerHTML = "<h2>Yesterweb Ring</h2><p>This site, <a href=\"" + sites[i].url + "\">" + sites[i].name + "</a>, is keeping the old web alive. Thanks, <b>" + sites[i].owner + "</b>!</p><p><a href=\"" + prev_url + "\">[Prev]</a> <a href=\"" + rand_url + "\">[Rand]</a> <a href=\"" + next_url + "\">[Next]</a></p>";
 			return;
 		}
 	}

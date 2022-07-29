@@ -40,6 +40,7 @@ body
 {
 	overflow-x: hidden;
 	overflow-y: auto;
+	margin: 0;
 }
 
 
@@ -206,7 +207,7 @@ div.galleryrow > div > h2
 }
 div.galleryrow > div > p > img
 {
-	margin-right: 8px;
+	margin-right: 4px;
 }
 
 
@@ -217,17 +218,17 @@ div.galleryrow > div > p > img
 
 @font-face { font-family: title_font; src: url('assets/planet opti.TTF'); }
 @font-face { font-family: body_font; src: url('assets/Nintendo-DS-BIOS.woff'); }
-@font-face { font-family: body_font_old; src: url('assets/NintendoDS_16px.ttf'); }
 @font-face { font-family: cyber_font; src: url('assets/FreePixel_16px.ttf'); }
 
 h1
 {
 	font-family: title_font;
 	font-weight: normal;
-	color: #FFF;
+	font-size: 32px;
 	line-height: 1;
-	font-size: 30pt;
 	text-align: center;
+	color: #FFF;
+	
 	padding: 0;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -239,26 +240,26 @@ h2
 {
 	font-family: title_font;
 	font-weight: normal;
-	color: #FFF;
+	font-size: 16px;
 	line-height: 1;
-	font-size: 24pt;
+	color: #FFF;
+	
 	padding: 0;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 	margin-left: 0;
 	margin-right: 0;
 }
 
 h3, h4
 {
-	font-family: title_font;
+	font-family: cyber_font;
 	font-weight: normal;
+	font-size: 16px;
 	color: #FFF;
-	opacity: 0.8;
-	line-height: 0.5;
-	font-size: 16pt;
+	
 	padding: 0;
-	margin-top: 10px;
+	margin-top: 8px;
 	margin-bottom: 0;
 	margin-left: 0;
 	margin-right: 0;
@@ -268,13 +269,16 @@ p, ul
 {
 	font-family: body_font;
 	font-weight: normal;
-	color: #FFF;
-	opacity: 0.9;
 	font-size: 16px;
 	line-height: 14px;
+	color: #FFF;
+	
 	padding: 0;
-	margin-left: 0; margin-right: 0;
-	margin-top: 11px; margin-bottom: 11px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left: 0;
+	margin-right: 0;
+	
 }
 
 ul
