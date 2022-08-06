@@ -60,7 +60,7 @@ function createYesterwebRing(sites)
 			var next_url = sites[(i + 1) % sites.length].url;
 			var rand_url = sites[Math.random() * sites.length | 0].url;
 			
-			document.getElementById("yesterweb-widget").innerHTML = "<h2>Yesterweb Ring</h2><p>This site, <a href=\"" + sites[i].url + "\">" + sites[i].name + "</a>, is keeping the old web alive. Thanks, <b>" + sites[i].owner + "</b>!</p><p><a href=\"" + prev_url + "\">[Prev]</a> <a href=\"" + rand_url + "\">[Rand]</a> <a href=\"" + next_url + "\">[Next]</a></p>";
+			document.getElementById("yesterweb-widget").innerHTML = "<h2>Yesterweb Ring</h2><p>This site, <a href=\"" + sites[i].url + "\">" + sites[i].name + "</a>, is keeping the old web alive.<br>Thanks, <b>" + sites[i].owner + "</b>!</p><p><a href=\"" + prev_url + "\">[Prev]</a> <a href=\"" + rand_url + "\">[Rand]</a> <a href=\"" + next_url + "\">[Next]</a></p>";
 			return;
 		}
 	}
