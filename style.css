@@ -134,6 +134,7 @@ div.centercolumn
 div.centercolumn > div
 {
 	background: url('assets/content_top.png') left top no-repeat, url('assets/content_bottom.png') left bottom no-repeat;
+	overflow: hidden;
 }
 
 div.centercolumn > div::before
@@ -159,6 +160,7 @@ div.sidebar > div, div.centercolumn > div
 }
 
 
+
 /* ======================================================================================================================================================= */
 /* horizontally scrolling gallery
 /* ======================================================================================================================================================= */
@@ -170,7 +172,7 @@ div.gallery
 	overflow-x: auto;
 	white-space: nowrap;
 }
-div.gallery > a > img
+div.gallery > a > img, div.gallery > img
 {
 	margin-right: 4px;
 	max-height: 200px;
@@ -265,7 +267,7 @@ h3, h4
 	padding: 0;
 	padding-left: 1px;
 	margin-top: 8px;
-	margin-bottom: 0;
+	margin-bottom: 8px;
 	margin-left: 0;
 	margin-right: 0;
 	
@@ -335,11 +337,13 @@ img.fullwidth
 img.center
 {
 	max-height: 250px;
+	max-width: 400px;
 	border: 1px solid #fff;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 
 /* ======================================================================================================================================================= */

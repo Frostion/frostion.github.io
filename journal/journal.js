@@ -1,4 +1,4 @@
-const entries = ["2022.08.03", "2022.07.28", "2022.07.18"];
+const entries = ["2022.08.11", "2022.08.07", "2022.08.03", "2022.07.28", "2022.07.18"];
 
 
 const url_params = new URLSearchParams(window.location.search);
