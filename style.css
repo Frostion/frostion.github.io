@@ -283,7 +283,7 @@ h3, h4
 	border-radius: 0;
 }
 
-p, ul
+p, ul, pre, label
 {
 	font-family: body_font;
 	font-weight: normal;
@@ -296,6 +296,15 @@ p, ul
 	margin-bottom: 8px;
 	margin-left: 0;
 	margin-right: 0;
+}
+
+pre
+{
+	font-family: cyber_font;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+	padding: 2px;
+	overflow-x: auto;
 }
 
 p.caption

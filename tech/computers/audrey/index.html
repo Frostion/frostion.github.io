@@ -20,14 +20,34 @@
 				<div>
 					<a href="/tech/"><img class="returnbutton" src="/assets/nav/return.png"></img></a>
 					<h1>3com ergo audrey</h1>
-
-					<img class="float" src="01.jpg"></img>
-					<p>ever since coming across this wild-looking thing online, i knew i had to have one for my collection someday. when i found one on ebay for a whole $20, i knew that it was time.</p>
-					<p>the 3com ergo audrey isn't a regular computer - it's an <a href="https://en.wikipedia.org/wiki/Internet_appliance">internet appliance</a>, a very limited type of computer that can only be used for accessing the internet, hence the name internet <i>appliance</i>. this type of computer was popular in the very early 2000s when people wanted to try out this cool new World Wide Web thing without having to buy and learn how to use a whole computer.</p>
-					<p>the audrey was intended to be set up in the kitchen for quickly looking up info on the web, such as recipes. it's designed to take up very little space - it uses a touchscreen instead of a mouse, and the included wireless keyboard can be stored on the back of the unit when not in use. in addition to web browsing, the audrey can also sync calendars with palm devices, send and receieve e-mail, and access web apps called "channels". it runs on a QNX-based OS with a <i>very</i> custom interface - using the audrey is nothing like using any other computer on the planet. it kinda feels like it was made by an alien who only has a very cursory knowledge of earth computers.</p>
+					<table>
+						<tr>
+							<td class="leftcol">
+								<h2>overview</h2>
+								<p>ever since coming across this wild-looking thing online, i knew i had to have one for my collection someday. when i found one on ebay for a whole $15, i knew that it was time. it checks all the boxes - it's a weirdly limited device that's heavily focused on the web and looks like actual alien technology. i couldn't resist!</p>
+								<p>the 3com ergo audrey isn't a regular computer - it's an <a href="https://en.wikipedia.org/wiki/Internet_appliance">internet appliance</a>, a very limited type of computer that can only be used for accessing the internet, hence the name internet <i>appliance</i>. this type of computer was popular in the very early 2000s when people wanted to try out this cool new World Wide Web thing without having to buy and learn how to use a whole computer.</p>
+								<p>the audrey was intended to be set up in the kitchen for quickly looking up info on the web (such as recipes). it's compact and takes up very little space - it uses a touchscreen instead of a mouse, and the included wireless keyboard can be stored on the back of the unit when not in use. in addition to web browsing, the audrey can also sync calendars with palm devices over serial, send and receieve e-mail, and access web apps called "channels". it runs on a QNX-based OS with a <i>very</i> custom interface that makes operating the audrey feel nothing like any other computer on the planet. it might as well have come from a parallel universe (especially with the way it looks).</p>
+								<p>the audrey was a pretty popular target for hacking and homebrew over the years. i haven't tried to get into any of that stuff myself, but the wayback machine has archived <a href="https://web.archive.org/web/20190811193908/http://files.audreyhacking.com/">a ton of useful files</a> if this is something you're interested in.</p>
+							</td>
+							
+							<td class="rightcol">
+								<img class="fullwidth" src="01.jpg"></img>
+								<h3>specifications</h3>
+								<ul>
+									<li>released: 2000</li>
+									<li>os: custom flavor of QNX</li>
+									<li>processor: geode GX 1 200MHz</li>
+									<li>memory: 32MB</li>
+									<li>storage: 16MB flash</li>
+									<li>display: 640x480 touch LCD</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
 				</div>
+				
 				<div>
-					<h2>getting it online</h2>
+					<h2>getting online</h2>
 					<p>audrey primarily wants to access the internet via dialup, which is a bit of a problem for me as i haven't had a landline phone in years. fortunately, it's also able to get online with a USB ethernet adapter... a very specific adapter made by 3com that's basically impossible to find these days, of course. other ethernet adapters that have the same chipset as the 3com one will work with the audrey, but their USB vendor and product IDs need to be reprogrammed to match the 3com one in order to be recognized by the audrey.</p>
 					<p>i went with a netgear EA101 because they're one of the most plentiful adapters with a compatible chipset. now i needed to use <a href="qttools.zip">qttools</a>, an internal manufacturer tool for reprogramming the VID and PID. supposedly, you can load a custom windows driver for the ethernet adapter and conveniently do the programming over USB, but that didn't work for me no matter what i tried. i noticed that the qttools program could also do programming over serial, so with the help of a friend, i cracked open the adapter, used the chipset datasheet to locate the RX/TX pins on the IC, and soldered bodge wires to it so i could connect it to a FTDI USB-to-serial adapter.</p>
 					<img class="center" src="02.jpg"></img>
