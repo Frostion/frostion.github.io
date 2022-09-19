@@ -2,7 +2,7 @@ draconicRing();
 
 function draconicRing()
 {
-	var ring_url = "https://cyberdragon.digital/rings/draconic/";
+	var ring_url = "https://www.cyberdragon.digital/rings/draconic/";
 	var widget_id = "draconic-widget";
 	var index_url = ring_url;
 	
