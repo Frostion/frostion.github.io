@@ -469,3 +469,4 @@ div.centertext > *
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+div.centertext > div { margin: 0 auto; }

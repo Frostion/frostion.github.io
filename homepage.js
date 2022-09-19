@@ -71,7 +71,7 @@ function createYesterwebRing(sites)
 // da boyz ring widget
 //================================================================================================
 
-
+/*
 createDaboyzRing();
 function createDaboyzRing()
 {
@@ -88,3 +88,4 @@ function createDaboyzRing()
 		}
 	}
 }
+*/
