@@ -83,7 +83,7 @@ function createDaboyzRing()
 			var next_url = sites[(i + 1) % sites.length];
 			var rand_url = sites[Math.random() * sites.length | 0];
 			
-			document.getElementById("daboyz-widget").innerHTML = "<p>This site is part of the <b>" + ringName + "</b> webring.</p><p><a href=\"" + prev_url + "\">← previous</a> | <a href=\"" + indexPage + "\">index</a> | <a href=\"" + rand_url + "\">random</a> | <a href=\"" + next_url + "\">next →</a></p>";
+			document.getElementById("daboyz-widget").innerHTML = "<p>This site is part of the <b>" + ringName + "</b> webring.</p><p><a href=\"" + prev_url + "\">← prev</a> | <a href=\"" + indexPage + "\">index</a> | <a href=\"" + rand_url + "\">random</a> | <a href=\"" + next_url + "\">next →</a></p>";
 			return;
 		}
 	}

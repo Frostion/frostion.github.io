@@ -19,6 +19,8 @@ var widgetpackage = "";
 
 function generateXML()
 {
+	location.hash = "";
+	
 	var myloconfig = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n\
 <config xmlns=\"" + v("siteURL") + "\" version=\"1.0\">\n\
 </config>";
@@ -61,6 +63,9 @@ function generateXML()
 	document.getElementById("myloconfig").innerHTML = escapeHTML(myloconfig);
 	document.getElementById("widgetpackage").innerHTML = escapeHTML(widgetpackage);
 	document.getElementById("results").removeAttribute("hidden");
+	
+	//scroll browser to results section
+	location.hash = "#results";
 }
 
 
