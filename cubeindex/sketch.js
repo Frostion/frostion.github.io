@@ -99,7 +99,7 @@ function draw()
 	if(state == 0 && state_in_time >= 250) { setState(1); }
 	if(state == 1 && state_in_time >= intro_length) { setState(2); }
 	if(state == 2 && state_in_time >= cubein_length) { setState(3); }
-	if(state == 4 && state_in_time >= accept_length) { location.reload(); }
+	if(state == 4 && state_in_time >= accept_length) { location.reload(); setState(0); }
 	
 	drawBackground();
 	drawIntro();
