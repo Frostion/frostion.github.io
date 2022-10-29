@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="Cache-Control" content="no-store">
+		<meta charset="UTF-8">
+		<meta name="theme-color" content="#00A7FF">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="icon" sizes="16x16" href="assets/favicon16.png">
+		<link rel="icon" sizes="128x128" href="assets/favicon128.png">
+		
+		<title>NETPORT</title>
+	</head>
+	
+	<body>
+		<div id="app">
+			<h1>NETPORT</h1>
+			
+			<button type="button" onclick="setVisible('status')">status</button>
+			<button type="button" onclick="setVisible('editor')">edit</button>
+			<button type="button" onclick="setVisible('helptext')">about</button>
+			
+			<div id="status" class="uitab" hidden></div>
+			
+			<div id="editor" class="uitab" hidden>
+				<textarea id="feedlisteditor" name="feedlisteditor" placeholder="enter feed URLs (one per line)" rows="10"></textarea>
+				<button type="button" onclick="saveFeeds()">save</button>
+			</div>
+			
+			<div id="helptext" class="uitab" hidden>
+				NETPORT is a tiny RSS reader that runs in your browser, created by <a href="http://www.cyberdragon.digital/">frost sheridan</a>. all of your feeds and settings are encoded into this page's URL, so after you've entered all the feeds you want to check, just save this page to your bookmarks and everything will be saved along with it. click the "edit" button above and enter some RSS feed URLs to begin!
+			</div>
+		</div>
+		
+		<iframe id="linkpreview" name="linkpreview" src="bkg.html"></iframe>
+		
+		<script src="script.js"></script>
+	</body>
+</html>
