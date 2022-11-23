@@ -3,7 +3,7 @@
 		"url": "http://www.cyberdragon.digital/",
 		"name": "cyberdragon",
 		"author": "Frost Sheridan",
-		"description": "Frost's personal home page featuring his artwork, tech projects, and inflatable dragon hoard!"
+		"description": "frost's personal home page featuring his artwork, tech projects, and inflatable dragon hoard!"
 	},
 	{
 		"url": "https://drakonic.zone/",
@@ -16,5 +16,11 @@
 		"name": "deb's place",
 		"author": "debleb",
 		"description": "the digital home of debleb the dragon and his scrawlings"
+	},
+	{
+		"url": "https://tomxcd.me",
+		"name": "tom's webplace",
+		"author": "tomxcd",
+		"description": "a personal blog/journal, as well as a place to put images and memes"
 	}
 ]
