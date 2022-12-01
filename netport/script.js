@@ -87,16 +87,18 @@ async function downloadFeeds(feed_urls)
 			//parse downloaded text into xml
 			var parser = new DOMParser();
 			var xml = parser.parseFromString(response, "application/xml");
+			console.log("[Parsing] " + url);
+			console.log(xml);
 			
 			//get data from rss xml
-			var author = xml.querySelector("title").innerHTML;
+			var author = removeCDATA(xml.querySelector("title").innerHTML);
 			var items = xml.querySelectorAll("item");
 			if(items.length == 0) { items = xml.querySelectorAll("entry"); } //atom feeds use 'entry' tags instead of 'item' tags
 			for(var j = 0; j < items.length; j++)
 			{
 				var new_item = Object.create(feed_item_template);
 				new_item.author = author;
-				new_item.title = items[j].querySelector("title").innerHTML;
+				new_item.title = removeCDATA(items[j].querySelector("title").innerHTML);
 				new_item.url = items[j].querySelector("link").getAttribute("href") ?? items[j].querySelector("link").innerHTML;
 				var date = items[j].querySelector("pubDate") ?? items[j].querySelector("published"); //atom feeds use 'published' tags instead of 'pubDate' tags
 				new_item.pubdate = new Date(date.innerHTML);
@@ -135,4 +137,10 @@ function displayFeedItems(feed_items)
 		
 		ul.appendChild(feed_items[i].toHTML());
 	}
+}
+
+
+function removeCDATA(src)
+{
+	return src.replace("<![CDATA[", "").replace("]]>", "");
 }

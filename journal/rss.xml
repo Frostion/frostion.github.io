@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>cyberdragon</title>
+		<link>http://www.cyberdragon.digital/journal/</link>
+		<description>frost sheridan's journal</description>
+		<language>en-us</language>
+		
+		<item>
+			<title>the journal has an rss feed now!</title>
+			<pubDate>Wed, 30 Nov 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=9</link>
+			<category>site update</category>
+		</item>
+		
+		<item>
+			<title>connected soul</title>
+			<pubDate>Tue, 29 Nov 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=8</link>
+			<category>artwork</category>
+		</item>
+		
+		<item>
+			<title>a terrible solution to my annoying car radio</title>
+			<pubDate>Fri, 4 Nov 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=7</link>
+			<category>project</category>
+		</item>
+		
+		<item>
+			<title>hacking a cheap lil LED bargraph</title>
+			<pubDate>Mon, 12 Sep 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=6</link>
+			<category>project</category>
+		</item>
+		
+		<item>
+			<title>reverse engineering a mylo com-2 widget</title>
+			<pubDate>Mon, 15 Aug 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=5</link>
+			<category>project</category>
+		</item>
+		
+		<item>
+			<title>phone launcher customization</title>
+			<pubDate>Thu, 11 Aug 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=4</link>
+			<category>project</category>
+		</item>
+		
+		<item>
+			<title>my childhood computer is back!</title>
+			<pubDate>Sun, 7 Aug 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=3</link>
+			<category>tech</category>
+		</item>
+		
+		<item>
+			<title>chilling with sage</title>
+			<pubDate>Wed, 3 Aug 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=2</link>
+			<category>dragon</category>
+		</item>
+		
+		<item>
+			<title>cool new vaio themes!</title>
+			<pubDate>Thu, 28 Jul 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=1</link>
+			<category>tech</category>
+		</item>
+		
+		<item>
+			<title>new website design</title>
+			<pubDate>Mon, 18 Jul 2022</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=0</link>
+			<category>site update</category>
+		</item>
+	</channel>
+</rss>
