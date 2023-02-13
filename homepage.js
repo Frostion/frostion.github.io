@@ -34,6 +34,7 @@ function generateCybertext()
 // yesterweb ring widget
 //================================================================================================
 
+
 var my_url = "http://www.cyberdragon.digital/";
 
 requestYesterwebRing();
@@ -68,24 +69,53 @@ function createYesterwebRing(sites)
 
 
 //================================================================================================
-// da boyz ring widget
+// get them RSS widgets populated
 //================================================================================================
 
-/*
-createDaboyzRing();
-function createDaboyzRing()
+
+populateRSS("updates.xml", "updates");
+populateRSS("journal/rss.xml", "journal");
+
+function populateRSS(feed_url, target_id)
 {
-	for(var i = 0; i < sites.length; i++)
-	{
-		if(my_url.startsWith(sites[i]))
+	var entries = [];
+	const entry_template = { title: "", page: "", date: "", category: null };
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200)
 		{
-			var prev_url = sites[(i - 1 > 0 ? i : sites.length) - 1];
-			var next_url = sites[(i + 1) % sites.length];
-			var rand_url = sites[Math.random() * sites.length | 0];
+			//parse rss feed as an xml document
+			var parser = new DOMParser();
+			var xml = parser.parseFromString(this.responseText, "application/xml");
 			
-			document.getElementById("daboyz-widget").innerHTML = "<p>This site is part of the <b>" + ringName + "</b> webring.</p><p><a href=\"" + prev_url + "\">← prev</a> | <a href=\"" + indexPage + "\">index</a> | <a href=\"" + rand_url + "\">random</a> | <a href=\"" + next_url + "\">next →</a></p>";
-			return;
+			//iterate through all rss feed items and generate a list of links
+			var items = xml.querySelectorAll("item");
+			for(var i = 0; i < items.length; i++)
+			{
+				var entry = Object.create(entry_template);
+				
+				entry.title = items[i].querySelector("title").innerHTML;
+				entry.page = items[i].querySelector("link").innerHTML;
+				var d = new Date(items[i].querySelector("pubDate").innerHTML);
+				entry.date = d.toLocaleDateString("default", { dateStyle: "medium" }).toLowerCase();
+				var category_element = items[i].querySelector("category");
+				if(category_element != null) { entry.category = category_element.innerHTML; }
+				
+				entries.push(entry);
+			}
+			
+			//create index
+			var html = "";
+			for(var i = 0; i < entries.length; i++)
+			{
+				html += "<li><a href=\"" + entries[i].page + "\">" + entries[i].date + "</a> ";
+				if(entries[i].category != null) { html += "<span class=\"tag\">" + entries[i].category + "</span> "; } else { html += "• "; }
+				html += entries[i].title + "</li>";
+			}
+			document.getElementById(target_id).innerHTML = html;
 		}
 	}
+	xhttp.open("GET", feed_url, true);
+	xhttp.send();
 }
-*/
