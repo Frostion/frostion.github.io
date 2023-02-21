@@ -8,25 +8,7 @@ function generateCybertext()
 {
 	const phrases = ["choose your virtual echo.", "in the universe of the computer.", "welcome to the digital dimension.", "you are now connected.", "access the infinite.", "i can feel my soul collide.", "the void will answer.", "welcome to the next reality.", "look into the core of your soul.", "continue without saving?", "what does your mind's eye see?", "hyper unreality dynamic shift.", "ethereal reality reanimation.", "a path to experience digital eternity.", "behind the haze of digital abstraction.", "the gate remembers your signature.", "i saw the transfer gate before me.", "all reality disappearing around me."];
 	var phrase = phrases[Math.floor(Math.random() * phrases.length)];
-	var i = 0;
-	var cur = true;
-	typeCybertext();
-	
-	function typeCybertext()
-	{
-		i++;
-		document.getElementsByClassName("cybertext")[0].innerHTML = "[&nbsp" + phrase.substring(0,i) + "&nbsp]";
-		if(i < phrase.length) { setTimeout(typeCybertext, 35); }
-		else { setTimeout(blinkCursor, 50); }
-	}
-	
-	function blinkCursor()
-	{
-		var cur_string = cur ? "█" : " ";
-		document.getElementsByClassName("cybertext")[0].innerHTML = "[&nbsp" + phrase.substring(0,i) + cur_string + "&nbsp]";
-		cur = !cur;
-		setTimeout(blinkCursor, 500);
-	}
+	document.getElementsByClassName("cybertext")[0].innerHTML = "[&nbsp" + phrase + "<span class=\"blinkcursor\">█</span>&nbsp]";
 }
 
 
