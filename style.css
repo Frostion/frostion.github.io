@@ -191,7 +191,7 @@ div.galleryrow
 	display: flex;
 	margin-bottom: 12px;
 }
-div.galleryrow > a > img
+div.galleryrow img
 {
 	width: 250px;
 	border: #FFF solid 1px;
@@ -210,6 +210,8 @@ div.galleryrow > div > h2
 }
 div.galleryrow > div > p > img
 {
+	width: unset;
+	border: unset;
 	margin-right: 4px;
 }
 

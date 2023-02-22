@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="/style.css" type="text/css" />
+		<link rel="icon" sizes="16x16" href="/assets/favicon16.png" />
+		<link rel="icon" sizes="128x128" href="/assets/favicon128.png" />
+		<meta name="theme-color" content="#00A7FF" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>cyberdragon | tech</title>
+		<style>td > p { margin-top: 0px !important; }</style>
+	</head>
+	
+	<body>
+		<div class="bkgimg"></div>
+		<div class="titlebar"><img src="/assets/header.png"></img></div>
+		
+		<div class="page">
+			<div class="centercolumn">
+				<div>
+					<a href="index.html"><img class="returnbutton" src="/assets/nav/return.png"></img></a>
+					<h1>sony mylo com-2</h1>
+					
+					<h2>widget xml generator</h2>
+					<p>this tool can help you generate the required myloConfig.xml and widgetPackage.xml files for a widget.</p>
+					<form>
+						<h3>widget info</h3>
+						<table>
+							<tr>
+								<td width="120px"><label for="packageName">widget name:</label></td>
+								<td><input type="text" id="packageName" name="packageName" size="25" value="A Cool Widget">
+								<p>the name of the widget displayed in the widget installer.</p></td>
+							</tr>
+							<tr>
+								<td><label for="abstract">widget description:</label></td>
+								<td><input type="text" id="abstract" name="abstract" size="50" value="A really cool widget I've developed!">
+								<p>a short description of the widget.</p></td>
+							</tr>
+							<tr>
+								<td><label for="createDate">widget creation date:</label></td>
+								<td><input type="date" id="createDate" name="createDate">
+								<p>the date that you created this version of the widget.</p></td>
+							</tr>
+							<tr>
+								<td><label for="version">widget version:</label></td>
+								<td><input type="text" id="version" name="version" size="5" value="1.000">
+								<p>the current revision of the widget.</p></td>
+							</tr>
+							<tr>
+								<td><label for="engine">minimum OS version:</label></td>
+								<td><input type="text" id="engine" name="engine" size="5" value="1.000">
+								<p>the mylo must be running at least this OS version in order to use your widget. for maximum compatibility, keep this at 1.000 whenever possible.</p></td>
+							</tr>
+							<tr>
+								<td><label for="locale">locale:</label></td>
+								<td><input type="text" id="locale" name="locale" size="5" value="US">
+								<p>two-letter locale code for the language of the widget.</p></td>
+							</tr>
+							<tr>
+								<td><label for="updateURL">widget download URL:</label></td>
+								<td><input type="text" id="updateURL" name="updateURL" size="50" value="http://yoursite.com/mylo/coolwidget/">
+								<p>the mylo will try to download the widget from this URL whenever it checks for updates. due to the TLS Apocalypse, this must be http, not https.</p></td>
+							</tr>
+						</table>
+						
+						<h3>author info</h3>
+						<table>
+							<tr>
+								<td width="120px"><label for="author">your (author's) name:</label></td>
+								<td><input type="text" id="author" name="author" size="25" value="Your Name">
+								<p>the name of the widget's author displayed in the widget manager.</p></td>
+							</tr>
+							<tr>
+								<td><label for="siteURL">your website URL:</label></td>
+								<td><input type="text" id="siteURL" name="siteURL" size="50" value="http://yoursite.com/mylo/">
+								<p>the website of the widget's author displayed in the widget manager. ideally, this would point to the page on your website that mentions the widget (if you have one).</p></td>
+							</tr>
+						</table>
+						
+						<h3>widget size</h3>
+						<p>* these units are not pixels - 64 units is equal to the width of the mylo's screen.</p>
+						<table>
+							<tr>
+								<td width="120px"><label>default widget size:</label></td>
+								<td>
+									<label for="defWidth">width:</label>
+									<input type="text" id="defWidth" name="defWidth" size="2" value="32">
+									<label for="defHeight"> height: </label>
+									<input type="text" id="defHeight" name="defHeight" size="2" value="32">
+								</td>
+							</tr>
+							<tr>
+								<td><label>horizontal resizing:</label></td>
+								<td>
+									<input type="checkbox" id="widthResize" name="widthResize" onclick="widthResizeCheckbox()">
+									<label for="widthResize">allow widget to be resized horizontally</label>
+								</td>
+								<td>
+									<label for="minWidth">min width:</label>
+									<input type="text" id="minWidth" name="minWidth" size="2" value="16" disabled="true">
+									<label for="maxWidth">max width:</label>
+									<input type="text" id="maxWidth" name="maxWidth" size="2" value="48" disabled="true">
+								</td>
+							</tr>
+							<tr>
+								<td><label>vertical resizing:</label></td>
+								<td width="230px">
+									<input type="checkbox" id="heightResize" name="heightResize" onclick="heightResizeCheckbox()">
+									<label for="heightResize">allow widget to be resized vertically</label>
+								</td>
+								<td>
+									<label for="minHeight">min height: </label>
+									<input type="text" id="minHeight" name="minHeight" size="2" value="16" disabled="true">
+									<label for="maxHeight">max height: </label>
+									<input type="text" id="maxHeight" name="maxHeight" size="2" value="48" disabled="true">
+								</td>
+							</tr>
+						</table>
+						<h3>ready?</h3>
+						<input type="button" value="generate!" onclick="generateXML()">
+					</form>
+				</div>
+				
+				<div id="results" hidden>
+					<h2>myloConfig.xml - <a id="downloadmyloconfig" target="_blank" download="myloConfig.xml">download!</a></h2>
+					<pre id="myloconfig"></pre>
+					<h2>widgetPackage.xml - <a id="downloadwidgetpackage" target="_blank" download="widgetPackage.xml">download!</a></h2>
+					<pre id="widgetpackage"></pre>
+				</div>
+			</div>
+		</div>
+		<script src="/inject.js"></script>
+		<script src="xmlgen.js"></script>
+	</body>
+</html>
