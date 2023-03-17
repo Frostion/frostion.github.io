@@ -64,5 +64,11 @@
 		"name": "the Moonhoard",
 		"author": "Dragonfly",
 		"description": "A personal site for pretty much whatever- every page has a different topic. Plenty of dragons, though!"
+	},
+	{
+		"url": "https://foreverliketh.is/",
+		"name": "foreverliketh.is",
+		"author": "foreverliketh.is",
+		"description": "A digital garden. Themes include: life, psychology and journaling."
 	}
 ]

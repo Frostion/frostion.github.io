@@ -13,44 +13,6 @@ function generateCybertext()
 
 
 //================================================================================================
-// yesterweb ring widget
-//================================================================================================
-
-
-var my_url = "http://www.cyberdragon.digital/";
-
-requestYesterwebRing();
-function requestYesterwebRing()
-{
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200)
-		{
-			createYesterwebRing(JSON.parse(this.responseText));
-		}
-	}
-	xhttp.open("GET", "https://webring.yesterweb.org/webring.json", true);
-	xhttp.send();
-}
-
-function createYesterwebRing(sites)
-{
-	for(var i = 0; i < sites.length; i++)
-	{
-		if(sites[i].url === my_url)
-		{
-			var prev_url = sites[(i - 1 > 0 ? i : sites.length) - 1].url;
-			var next_url = sites[(i + 1) % sites.length].url;
-			var rand_url = sites[Math.random() * sites.length | 0].url;
-			
-			document.getElementById("yesterweb-widget").innerHTML = "<h2>Yesterweb Ring</h2><p>This site, <a href=\"" + sites[i].url + "\">" + sites[i].name + "</a>, is keeping the old web alive.<br>Thanks, <b>" + sites[i].owner + "</b>!</p><p><a href=\"" + prev_url + "\">[Prev]</a> <a href=\"" + rand_url + "\">[Rand]</a> <a href=\"" + next_url + "\">[Next]</a></p>";
-			return;
-		}
-	}
-}
-
-
-//================================================================================================
 // get them RSS widgets populated
 //================================================================================================
 
