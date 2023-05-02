@@ -1,0 +1,69 @@
+html
+{
+	min-height: 100%;
+}
+
+body
+{
+	overflow-x: hidden;
+	overflow-y: hidden;
+	margin: 0;
+	background-image: url("background.png");
+	background-repeat: no-repeat;
+}
+
+@font-face { font-family: seg_font; src: url("alarmclock.ttf"); }
+@font-face { font-family: at_font; src: url("tahoma.ttf"); }
+
+p
+{
+	font-family: seg_font;
+	font-weight: normal;
+	font-size: 26px;
+	line-height: 31px;
+	text-align: center;
+	color: #3F8;
+	text-shadow: #3F8 0px 0px 4px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+}
+
+#current-beats::before, #target-beats::before
+{
+	content: '@ ';
+	font-family: at_font;
+	font-size: 16px;
+	font-style: italic;
+	opacity: 0.7;
+}
+
+#current-beats
+{
+	left: 13px; top: 67px;
+	width: 104px; height: 31px;
+}
+
+#current-centibeats
+{
+	font-size: 16px;
+}
+
+#target-beats
+{
+	left: 133px; top: 67px;
+	width: 104px; height: 31px;
+}
+
+#target-time
+{
+	left: 45px; top: 154px;
+	width: 160px; height: 31px;
+}
+
+#cyberdragon-link
+{
+	position: absolute;
+	left: 5px; top: 234px;
+	width: 120px; height: 12px;
+}

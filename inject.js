@@ -37,19 +37,3 @@ function requestStatusCafe()
 	xhttp.open("GET", "https://status.cafe/users/frostsheridan/status.json", true);
 	xhttp.send();
 }
-
-
-
-
-
-//================================================================================================
-// update page for mobile if necessary
-//================================================================================================
-
-/*console.log(navigator.userAgent);
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { renderMobileSite(); }
-function renderMobileSite()
-{
-	var content = document.getElementsByClassName("centercolumn")[0].innerHTML;
-	
-}*/
