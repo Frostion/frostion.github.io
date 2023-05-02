@@ -47,7 +47,7 @@ function updateTimeDisplay()
     var seconds = date.getUTCSeconds();
     var milliseconds = date.getUTCMilliseconds();
     //add hour to get time in Switzerland
-    hours = (hours + 1) % 23;
+    hours = (hours + 1) % 24;
     //time in seconds
     var timeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
     //there are 86.4 seconds in a beat
