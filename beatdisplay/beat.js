@@ -1,34 +1,28 @@
 //------------------------------------------------------------------------------------------------------------------------------
-//display target time
+//display target time and title
 //------------------------------------------------------------------------------------------------------------------------------
 
 //get target beat time from URL query string (?time=###)
-const url_params = new URLSearchParams(window.location.search);
-const target_beats = parseInt(url_params.get("beats"));
+var url_params = new URLSearchParams(window.location.search);
+var target_beats = parseInt(url_params.get("beats"));
+var widget_title = url_params.get("title");
+if(isNaN(target_beats) || target_beats < 0 || target_beats > 999) { target_beats = 0; }
 
-//if entered target time is invalid (missing or out of range), show error
-if(isNaN(target_beats) || target_beats < 0 || target_beats > 999)
-{
-	document.getElementById("target-beats").innerText = "ERR";
-	document.getElementById("target-time").innerText = "ERROR";
-}
+//display target beats and widget title
+document.getElementById("target-beats").innerText = target_beats.toString().padStart(3, "0");
+if(widget_title == null || widget_title == "") { document.getElementById("widget-title").hidden = true; }
+else { document.getElementById("widget-title").innerText = widget_title; }
 
-//if entered target time is valid, display it
-else
-{
-	//display target beats
-	document.getElementById("target-beats").innerText = target_beats.toString().padStart(3, "0");
-	
-	//convert target beat time to local time
-	var date = new Date();
-	var proportion = target_beats / 1000;
-	date.setUTCHours(Math.floor(24 * proportion) - 1); //hours in a day (minus 1 to adjust for swatch time offset)
-	date.setUTCMinutes(Math.floor(1440 * proportion) % 60); //minutes in a day
-	date.setUTCSeconds(Math.floor(86400 * proportion) % 60); //seconds in a day
-	
-	//display target time
-	document.getElementById("target-time").innerText = date.toLocaleTimeString([], { timeStyle: "short" });
-}
+
+//convert target beat time to local time
+var date = new Date();
+var proportion = target_beats / 1000;
+date.setUTCHours(Math.floor(24 * proportion) - 1); //hours in a day (minus 1 to adjust for swatch time offset)
+date.setUTCMinutes(Math.floor(1440 * proportion) % 60); //minutes in a day
+date.setUTCSeconds(Math.floor(86400 * proportion) % 60); //seconds in a day
+
+//display target time
+document.getElementById("target-time").innerText = date.toLocaleTimeString([], { timeStyle: "short" });
 	
 
 //------------------------------------------------------------------------------------------------------------------------------
@@ -59,3 +53,40 @@ function updateTimeDisplay()
 	document.getElementById("current-beats").childNodes[0].textContent = current_beat_time.split(".")[0];
 	document.getElementById("current-centibeats").innerText = current_beat_time.split(".")[1];
 }
+
+//------------------------------------------------------------------------------------------------------------------------------
+//widget editor
+//------------------------------------------------------------------------------------------------------------------------------
+
+function openEditor()
+{
+	document.getElementById("display").hidden = true;
+	document.getElementById("editor").hidden = false;
+}
+
+function cancelEdits()
+{
+	document.getElementById("display").hidden = false;
+	document.getElementById("editor").hidden = true;
+	document.getElementById("complete").hidden = true;
+}
+
+function saveEdits()
+{
+	var beats = parseInt(document.getElementById("target-beats-entry").value);
+	if(isNaN(beats) || beats < 0 || beats > 999)
+	{
+		document.getElementById("editor-text").innerText = "please enter a valid beat time (between 0 and 999)."
+		return;
+	}
+	
+	document.getElementById("editor").hidden = true;
+	document.getElementById("complete").hidden = false;
+	
+	var beats = document.getElementById("target-beats-entry").value;
+	var title = document.getElementById("widget-title-entry").value;
+	var url = window.location.href.split("?")[0] + "?beats=" + beats + "&title=" + encodeURIComponent(title);
+	document.getElementById("bbcode").value = "[webgarden]" + url + "[/webgarden]";
+	document.getElementById("finish-button").onclick = function() { window.location.href = url; };
+}
+

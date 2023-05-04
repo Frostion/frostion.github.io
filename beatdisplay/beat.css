@@ -8,14 +8,28 @@ body
 	overflow-x: hidden;
 	overflow-y: hidden;
 	margin: 0;
-	background-image: url("background.png");
+	background-image: url("bkg.png");
 	background-repeat: no-repeat;
 }
 
 @font-face { font-family: seg_font; src: url("alarmclock.ttf"); }
 @font-face { font-family: at_font; src: url("tahoma.ttf"); }
 
-p
+/* -------------------------------------------------------------------------------- */
+/* time display                                                                     */
+/* -------------------------------------------------------------------------------- */
+
+#display
+{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0; top: 0; width: 250px; height: 250px;
+	background-image: url("display.png");
+	background-repeat: no-repeat;
+}
+
+#display p:not(#widget-title)
 {
 	font-family: seg_font;
 	font-weight: normal;
@@ -29,6 +43,31 @@ p
 	position: absolute;
 }
 
+#widget-title
+{
+	font-family: at_font;
+	font-weight: bold;
+	font-size: 12px;
+	color: #3F8;
+	text-shadow: #3F8 0px 0px 4px;
+	line-height: 17px;
+	text-align: center;
+	text-transform: uppercase;
+	overflow: hidden;
+	
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	left: 25px; top: 26px;
+	width: 200px; height: 21px;
+	
+	background-image: linear-gradient(to bottom, #004223, #000);
+	border-radius: 5px;
+	border: 2px ridge #999;
+	box-sizing: border-box;
+	
+}
+
 #current-beats::before, #target-beats::before
 {
 	content: '@ ';
@@ -40,7 +79,7 @@ p
 
 #current-beats
 {
-	left: 13px; top: 67px;
+	left: 13px; top: 74px;
 	width: 104px; height: 31px;
 }
 
@@ -51,19 +90,77 @@ p
 
 #target-beats
 {
-	left: 133px; top: 67px;
+	left: 133px; top: 74px;
 	width: 104px; height: 31px;
 }
 
 #target-time
 {
-	left: 45px; top: 154px;
+	left: 45px; top: 147px;
 	width: 160px; height: 31px;
 }
 
 #cyberdragon-link
 {
 	position: absolute;
-	left: 5px; top: 234px;
+	left: 7px; top: 232px;
 	width: 120px; height: 12px;
+}
+
+#edit-button
+{
+	position: absolute;
+	left: 157px; top: 217px;
+	width: 87px; height: 27px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* widget editor                                                                    */
+/* -------------------------------------------------------------------------------- */
+
+#editor, #complete
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 8px;
+	position: absolute;
+	left: 9px; top: 21px; width: 232px; height: 191px;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#editor p, #complete p
+{
+	font-family: at_font;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	color: #FFF;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+#editor label
+{
+	font-family: at_font;
+	font-weight: normal;
+	font-size: 12px;
+	text-align: center;
+	color: #FFF;
+	padding: 0;
+	margin: 0;
+}
+
+#editor form
+{
+	text-align: center;
 }
