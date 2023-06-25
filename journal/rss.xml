@@ -7,9 +7,18 @@
 		<language>en-us</language>
 		
 		<item>
+			<title>get connected</title>
+			<pubDate>Sat, 24 Jun 2023</pubDate>
+			<link>http://www.cyberdragon.digital/journal/?p=13</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=13</guid>
+			<category>artwork</category>
+		</item>
+		
+		<item>
 			<title>VCF east 2023</title>
 			<pubDate>Tue, 2 May 2023</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=12</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=12</guid>
 			<category>tech</category>
 		</item>
 		
@@ -17,6 +26,7 @@
 			<title>got some "new" minidiscs!</title>
 			<pubDate>Wed, 22 Mar 2023</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=11</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=11</guid>
 			<category>tech</category>
 		</item>
 		
@@ -24,6 +34,7 @@
 			<title>making a digital copy of augi</title>
 			<pubDate>Wed, 15 Mar 2023</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=10</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=10</guid>
 			<category>project</category>
 		</item>
 		
@@ -31,6 +42,7 @@
 			<title>the journal has an rss feed now!</title>
 			<pubDate>Wed, 30 Nov 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=9</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=9</guid>
 			<category>site update</category>
 		</item>
 		
@@ -38,6 +50,7 @@
 			<title>connected soul</title>
 			<pubDate>Tue, 29 Nov 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=8</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=8</guid>
 			<category>artwork</category>
 		</item>
 		
@@ -45,6 +58,7 @@
 			<title>a terrible solution to my annoying car radio</title>
 			<pubDate>Fri, 4 Nov 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=7</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=7</guid>
 			<category>project</category>
 		</item>
 		
@@ -52,6 +66,7 @@
 			<title>hacking a cheap lil LED bargraph</title>
 			<pubDate>Mon, 12 Sep 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=6</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=6</guid>
 			<category>project</category>
 		</item>
 		
@@ -59,6 +74,7 @@
 			<title>reverse engineering a mylo com-2 widget</title>
 			<pubDate>Mon, 15 Aug 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=5</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=5</guid>
 			<category>project</category>
 		</item>
 		
@@ -66,6 +82,7 @@
 			<title>phone launcher customization</title>
 			<pubDate>Thu, 11 Aug 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=4</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=4</guid>
 			<category>project</category>
 		</item>
 		
@@ -73,6 +90,7 @@
 			<title>my childhood computer is back!</title>
 			<pubDate>Sun, 7 Aug 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=3</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=3</guid>
 			<category>tech</category>
 		</item>
 		
@@ -80,6 +98,7 @@
 			<title>chilling with sage</title>
 			<pubDate>Wed, 3 Aug 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=2</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=2</guid>
 			<category>misc</category>
 		</item>
 		
@@ -87,6 +106,7 @@
 			<title>cool new vaio themes!</title>
 			<pubDate>Thu, 28 Jul 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=1</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=1</guid>
 			<category>tech</category>
 		</item>
 		
@@ -94,6 +114,7 @@
 			<title>new website design</title>
 			<pubDate>Mon, 18 Jul 2022</pubDate>
 			<link>http://www.cyberdragon.digital/journal/?p=0</link>
+			<guid>http://www.cyberdragon.digital/journal/?p=0</guid>
 			<category>site update</category>
 		</item>
 	</channel>
