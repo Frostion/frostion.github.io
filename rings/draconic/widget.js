@@ -41,67 +41,28 @@ function draconicRing()
 	function createWidget(prev_url, next_url)
 	{
 		var html = `
-		<h4>Draconic Ring</h4>
-		<p><a href="${prev_url}">previous</a> • <a href="${index_url}">index</a> • <a href="${next_url}">next</a></p>`;
+		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png"></a>
+		<a href="${prev_url}"><img class="prevbtn" src="${ring_url}prevbtn.png"></a>
+		<a href="${next_url}"><img class="nextbtn" src="${ring_url}nextbtn.png"></a>`;
 		
 		var html_url_not_found = `
-		<p>this website was not found in the <a href="${index_url}">Draconic Ring</a> members list.</p>`;
+		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png"></a>
+		<img class="urlnotfound" src="${ring_url}notfound.png">`;
 		
 		var css = `
 		#${widget_id}
 		{
-			width: 150px; height: 75px;
-			
-			background-image: url('${ring_url}bkg.png');
-			background-position: 8px 8px;
-			border: 6px ridge #777;
+			width: 150px; height: 90px;
+			background-image: url('${ring_url}widgetbkg.png');
+			border: none;
 			clip-path: none;
-			
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			padding: 8px;
+			position: relative;
 		}
-		
-		#${widget_id} *
-		{
-			text-align: center;
-			margin-top: 5px;
-			margin-bottom: 5px;
-			padding: 0;
-			
-		}
-		
-		@font-face { font-family: draconic_title; src: url('${ring_url}OldLondon.ttf'); }
-		@keyframes draconic_title_glow
-		{
-			0% { color: #c30; }
-			100% { color: #d60; }
-		}
-		
-		#${widget_id} h4
-		{
-			font-family: draconic_title;
-			font-size: 19pt;
-			font-weight: bold;
-			color: #c30;
-			text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
-			animation: draconic_title_glow 2s linear alternate infinite;
-		}
-		
-		#${widget_id} p
-		{
-			font-family: unset;
-			font-size: 12px;
-			color: #000;
-			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-		}
-		
-		#${widget_id} a:link { color: #a20; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3); }
-		#${widget_id} a:hover { color: #a20; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3); }
-		#${widget_id} a:active { color: #a20; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3); }
-		#${widget_id} a:visited { color: #a20; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3); }`;
-		
+		#${widget_id} img { position: absolute; display: block; }
+		#${widget_id} img.urlnotfound { left: 28px; top: 51px; }
+		#${widget_id} img.indexbtn { left: 20px; top: 22px; }
+		#${widget_id} img.prevbtn { left: 26px; top: 52px; }
+		#${widget_id} img.nextbtn { left: 88px; top: 52px; }`;
 		
 		document.head.innerHTML += "<style>" + css + "</style>";
 		document.getElementById(widget_id).innerHTML = (prev_url != null) ? html : html_url_not_found;

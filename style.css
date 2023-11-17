@@ -1,4 +1,80 @@
 /* ================================================================================================================================================ */
+/* main page layout
+/* ================================================================================================================================================ */
+
+
+html
+{
+	min-height: 100%;
+}
+
+body
+{
+	background-image: linear-gradient(to bottom, rgba(0, 148, 255, 0.52), rgba(0, 187, 255, 0.73)), url('assets/bkg.png');
+	background-attachment: fixed;
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12px;
+	margin-bottom: 0;
+	width: 950px;
+	
+	display: grid;
+	grid-template-columns: 150px 1fr 150px;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"header header header"
+		"leftcolumn centercolumn rightcolumn";
+	gap: 12px;
+	justify-items: stretch;
+	align-items: start;
+}
+
+#headerimg
+{
+	grid-area: header;
+	border: 0;
+	padding: 0;
+	display: block;
+}
+#leftcolumn { grid-area: leftcolumn; }
+#rightcolumn { grid-area: rightcolumn; }
+#centercolumn { grid-area: centercolumn; }
+
+
+/* ================================================================================================================================================ */
+/* fancy content div styling
+/* ================================================================================================================================================ */
+
+
+body > div > div
+{
+	overflow: hidden;
+	box-sizing: border-box;
+	margin-bottom: 7px;
+	padding: 4px;
+	
+	border-style: solid;
+	border-width: 10px 5px 10px 5px;
+	border-color: transparent;
+	border-image-source: url("/assets/border.png");
+	border-image-repeat: repeat;
+	border-image-outset: 0;
+	border-image-slice: 12 34 12 71; /*top right bottom left*/
+	border-image-width: 12px 34px 12px 71px; /*top right bottom left*/
+	
+	background: url("assets/scanlines.png"), linear-gradient(to bottom, #AADBFF, rgba(0, 148, 255, 1) 32px, rgba(0, 148, 255, 1) calc(100% - 32px), #00BBFF);
+	background-clip: padding-box;
+}
+
+#leftcolumn p, #rightcolumn p { margin: 0; padding: 0; }
+#leftcolumn img, #rightcolumn img { display: block; padding-bottom: 4px; }
+
+
+/* ================================================================================================================================================ */
 /* hyperlink styling and animation
 /* ================================================================================================================================================ */
 
@@ -24,141 +100,6 @@ a:hover, a:active
 	50% { opacity: 0.5; }
 	100% { opacity: 1; }
 }
-
-
-/* ================================================================================================================================================ */
-/* i don't remember why this was here
-/* ================================================================================================================================================ */
-
-
-html
-{
-	min-height: 100%;
-}
-
-body
-{
-	overflow-x: hidden;
-	overflow-y: auto;
-	margin: 0;
-}
-
-
-/* ================================================================================================================================================ */
-/* background and header images
-/* ================================================================================================================================================ */
-
-
-div.bkgimg
-{
-	background-image: linear-gradient(to bottom, rgba(0, 148, 255, 0.52), rgba(0, 187, 255, 0.73)), url('assets/bkg.png');
-	z-index: -1;
-	position: fixed;
-	left: 0; right: 0; top: 0; bottom: 0;
-}
-
-div.titlebar
-{
-	margin-top: 12px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 0;
-	padding: 0;
-	width: 950px;
-	background: none;
-	font-size: 0;
-}
-
-
-/* ================================================================================================================================================ */
-/* main page layout elements
-/* ================================================================================================================================================ */
-
-
-div.page
-{
-	margin-top: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: 950px;
-	position: relative;
-}
-
-div.sidebar
-{
-	position: absolute;
-	width: 150px;
-}
-
-div.sidebar > div::before
-{
-	display: block;
-	z-index: -1;
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 10px;
-	bottom: 10px;
-	background: url('assets/sidebar_bkg.png'), linear-gradient(to bottom, #AADBFF, rgba(0, 148, 255, 1) 32px, rgba(0, 148, 255, 1) calc(100% - 32px), #00BBFF);
-}
-
-div.sidebar > div
-{
-	background: url('assets/sidebar_top.png') left top no-repeat, url('assets/sidebar_bottom.png') left bottom no-repeat;
-	line-height: 0;
-}
-
-div.sidebar > div > img, div.sidebar > div > a > img
-{
-	margin-bottom: 4px;
-}
-
-div.sidebar > div > p
-{
-	margin: 0;
-	
-}
-
-div.leftcolumn { left: 0; }
-div.rightcolumn { right: 0; }
-
-div.centercolumn
-{
-	position: absolute;
-	left: 162px;
-	right: 162px;
-	
-}
-
-div.centercolumn > div
-{
-	background: url('assets/content_top.png') left top no-repeat, url('assets/content_bottom.png') left bottom no-repeat;
-	overflow: hidden;
-}
-
-div.centercolumn > div::before
-{
-	display: block;
-	z-index: -1;
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 10px;
-	bottom: 10px;
-	background: url('assets/content_bkg.png'), linear-gradient(to bottom, #AADBFF, rgba(0, 148, 255, 1) 32px, rgba(0, 148, 255, 1) calc(100% - 32px), #00BBFF);
-}
-
-div.sidebar > div, div.centercolumn > div
-{
-	margin-top: 12px;
-	border: 0;
-	box-sizing: border-box;
-	padding-left: 9px; padding-right: 9px; padding-top: 14px; padding-bottom: 14px;
-	position: relative;
-}
-
 
 
 /* ================================================================================================================================================ */
@@ -290,7 +231,10 @@ pre
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 4px;
 	padding: 2px;
+	max-width: 580px;
 	overflow-x: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 p.caption
@@ -330,6 +274,8 @@ hr
 	border: 1px solid #EAF6FF;
 }
 
+* { image-rendering: pixelated; }
+
 img.float
 {
 	float: right;
@@ -366,27 +312,6 @@ img.center, video.center
 /* ================================================================================================================================================ */
 
 
-img.spinny
-{
-	position: absolute;
-	right: 20px;
-	bottom: 12px;
-	width: 250px;
-	z-index: -1;
-	opacity: 0.3;
-	animation: rotatez 10s linear infinite;
-}
-@keyframes rotatez
-{
-	0% { transform: rotateX(245deg) rotateY(50deg) rotateZ(0deg); }
-	100% { transform: rotateX(245deg) rotateY(50deg) rotateZ(360deg); }
-}
-@keyframes scalein
-{
-	0% { opacity: 0; right: 100px; }
-	100% { opacity: 0.3; right: 20px; }
-}
-
 p.cybertext
 {
 	text-align: center;
@@ -404,7 +329,7 @@ p.cybertext
 }
 @keyframes cybertextin
 {
-	0% { filter: blur(7px); letter-spacing: 1px; }
+	0% { filter: blur(7px); letter-spacing: 0px; }
 	100% { filter: none; letter-spacing: 4px; }
 }
 
@@ -429,28 +354,44 @@ span.blinkcursor
 /* ================================================================================================================================================ */
 
 
-table { border-collapse: collapse; }
-table, tr, td { border: 0; margin: 0; }
-td { vertical-align: top; padding: 0; padding-bottom: 4px; }
-
-table.toc td { vertical-align: middle; }
-table.gallery td { padding-bottom: 12px; }
-table.toc tr:nth-last-child(1) td { padding-bottom: 0; }
-table.toc td:nth-child(2) { padding-left: 8px; width: 100%; }
-
-table.toc td:nth-child(1) img { border: 1px solid #fff; display: block; }
-table.gallery td:nth-child(1) img { width: 250px; }
-table.gallery td:nth-child(2) img { padding-right: 5px; vertical-align: bottom; }
-
-
-td.leftcol
+div.gridgallery
 {
-	padding-right: 8px;
+	width: 100%;
+	display: grid;
+	align-items: stretch;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 4px;
 }
-td.rightcol
+div.gridgallery.cols2 { grid-template-columns: 1fr 1fr; }
+div.gridgallery div
+{
+	background: rgba(255, 255, 255, 0.27);
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+	box-sizing: border-box;
+	padding: 4px;
+}
+div.gridgallery a img
+{
+	max-width: 100%;
+	max-height: 100%;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+}
+div.gridgallery p img
+{
+	padding-right: 4px;
+}
+
+div.split
+{
+	display: grid;
+	grid-template-columns: 1fr 30%;
+	grid-template-rows: auto;
+	gap: 8px;
+}
+div.split > div:nth-child(2)
 {
 	background: rgba(255, 255, 255, 0.2);
-	width: 30%;
 	padding: 4px; 
 }
 
@@ -480,12 +421,6 @@ div.ringcontainer > div
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
 	padding-left: 4px;
 	padding-right: 4px;
-}
-
-details[open]
-{
-	padding: 4px;
-	background: rgba(255, 255, 255, 0.27);
 }
 
 div.centertext

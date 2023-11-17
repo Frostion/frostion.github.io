@@ -3,19 +3,29 @@
 //================================================================================================
 
 
-injectSidebars();
-function injectSidebars()
+getColumns();
+function getColumns()
 {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
+	var xhrl = new XMLHttpRequest();
+	xhrl.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200)
 		{
-			document.getElementsByClassName("page")[0].innerHTML += this.responseText;
+			document.getElementById("leftcolumn").innerHTML += this.responseText;
+		}
+	}
+	xhrl.open("GET", "/leftcolumn.html", true);
+	xhrl.send();
+	
+	var xhrr = new XMLHttpRequest();
+	xhrr.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200)
+		{
+			document.getElementById("rightcolumn").innerHTML += this.responseText;
 			requestStatusCafe();
 		}
 	}
-	xhttp.open("GET", "/sidebars.html", true);
-	xhttp.send();
+	xhrr.open("GET", "/rightcolumn.html", true);
+	xhrr.send();
 }
 
 

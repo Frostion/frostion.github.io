@@ -56,7 +56,7 @@ function loadEntry(entries, num)
 {
 	const index_button = "<a href=\"/journal/\"><img class=\"returnbutton\" src=\"/assets/nav/return.png\"></img></a>";
 	document.getElementById("header").innerHTML = index_button + document.getElementById("header").innerHTML;
-	document.getElementById("page").innerHTML += "<div id=\"entry\"></div>";
+	document.getElementById("centercolumn").innerHTML += "<div id=\"entry\"></div>";
 	
 	var entry = null;
 	for(var i = 0; i < entries.length; i++)

@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 	<head>
-		<meta http-equiv="Cache-Control" content="no-store" />
 		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="/style.css" type="text/css" />
-		<link rel="icon" sizes="16x16" href="/assets/favicon16.png" />
-		<link rel="icon" sizes="128x128" href="/assets/favicon128.png" />
-		<meta name="theme-color" content="#00A7FF" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>cyberdragon | draconic webring</title>
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<link rel="stylesheet" href="directory.css" type="text/css" />
+		<meta name="viewport" content="width=1000" />
+		<title>draconic webring</title>
 	</head>
 	
 	<body>
-		<div class="bkgimg"></div>
-		<div class="titlebar"><img src="/assets/header.png"></img></div>
+		<img id="headerimg" src="header.png">
+		<p class="header">Welcome to the Draconic Webring, hosted by <a href="http://www.cyberdragon.digital/">Frost Sheridan</a>.<br>If your website features dragons or you yourself are a dragon, then this webring is for you!</p>
+		<p class="header"><a href="javascript:showHowToJoin()">How to join the webring</a> • <a href="javascript:showDirectory()">View member directory</a></p>
 		
-		<div class="page">
-			<div class="centercolumn">
-				<div>
-					<h1>draconic webring</h1>
-					<p>if your website features dragons, you yourself are a dragon, or you just love dragons, then the <u>Draconic Webring</u> is for you!</p>
-					
-					<h2>join the webring!</h2>
-					<div style="float: right;"><div id="draconic-widget"></div></div>
-					<p>to join, just <a href="mailto:frostsheridan@posteo.net?subject=draconic webring application">send me an email</a> containing the following info about your site. all of this info will be displayed in the member directory below.</p>
-					<ul>
-						<li>your website's URL, including http:// or https://</li>
-						<li>the name or title of your website</li>
-						<li>your (the webmaster's) name</li>
-						<li>a short description of your website</li>
-					</ul>
-					<p>once i've added you to the ring, i'll let you know via email. please place the widget somewhere on your website as soon as possible after getting accepted!</p>
-					
-					<h2>add the widget to your site</h2>
-					<p>the webring widget is a div that's 150px wide by 75px tall. add the following HTML to your page wherever you want the widget to show up:</p>
-					<pre>&lt;div id="draconic-widget"&gt;&lt;/div&gt;</pre>
-					<p>then, at the bottom of your HTML &lt;body&gt;, add this line to include the javascript that makes the widget work:</p>
-					<pre>&lt;script src="https://www.cyberdragon.digital/rings/draconic/widget.js"&gt;&lt;/script&gt;</pre>
-				</div>
-				
-				<div id="directory">
-					<h2>member directory</h2>
-				</div>
-			</div>
-			
+		<div id="howtojoin" hidden>
+			<div style="float: right; margin-left: 5px;"><div id="draconic-widget"></div></div>
+			<p>If you're interested in having your website be a part of the Draconic Webring, just send me an email at <a href="mailto:frostsheridan@posteo.net?subject=draconic webring application">frostsheridan@posteo.net</a> and include the following information about your site. This information will be displayed in the member directory.</p>
+			<ul>
+				<li>Your website's URL, including http:// or https://</li>
+				<li>The name of title of your website</li>
+				<li>Your (the webmaster's) name</li>
+				<li>A short description of your website</li>
+			</ul>
+			<p>Once I've added you to the ring, I'll let you know via email. Please place the widget somewhere on your website as soon as possible after getting accepted!</p>
+			<p>The widget is a div that's 150px wide by 90px tall. Add the following HTML to your page wherever you want the widget to show up:</p>
+			<pre>&lt;div id="draconic-widget"&gt;&lt;/div&gt;</pre>
+			<p>Then, at the bottom of your HTML &lt;body&gt;, add this line to include the javascript that makes the widget work:</p>
+			<pre>&lt;script src="https://www.cyberdragon.digital/rings/draconic/widget.js"&gt;&lt;/script&gt;</pre>
 		</div>
-		<script src="/inject.js"></script>
+		
+		<div id="directory" hidden>
+			<div id="members"></div>
+			<p class="header"><a href="javascript:directoryPrev()">&lt; Previous</a> • <a href="javascript:directoryGoto()">Visit Site</a> • <a href="javascript:directoryNext()">Next &gt;</a>
+		</div>
+		
 		<script src="directory.js"></script>
 		<script src="widget.js"></script>
 	</body>

@@ -3,7 +3,7 @@
 		"url": "http://www.cyberdragon.digital/",
 		"name": "cyberdragon",
 		"author": "Frost Sheridan",
-		"description": "frost's personal home page featuring his artwork, tech projects, and inflatable dragon hoard!"
+		"description": "frost's personal home page featuring my artwork, tech projects, and inflatable dragon hoard!"
 	},
 	{
 		"url": "https://drakonic.zone/",
@@ -70,5 +70,53 @@
 		"name": "foreverliketh.is",
 		"author": "foreverliketh.is",
 		"description": "A digital garden. Themes include: life, psychology and journaling."
+	},
+	{
+		"url": "https://sostrata.neocities.org/",
+		"name": "The Ecumene",
+		"author": "Elia Rowan",
+		"description": "Elia Rowan's personal site, with a lot of worldbuilding and some personal stuff and not really much else."
+	},
+	{
+		"url": "https://crisis.city/",
+		"name": "the flames of disaster",
+		"author": "corvidae",
+		"description": "my personal corner of the web! :)"
+	},
+	{
+		"url": "https://skyhold.org/",
+		"name": "Skyhold",
+		"author": "Jackdaw",
+		"description": "where I talk about magic, my writing, and cozy web stuff, 2/3 of which are sometimes dragon related."
+	},
+	{
+		"url": "https://sleepycircus.neocities.org/",
+		"name": "Sleepy Circus",
+		"author": "Calaban",
+		"description": "My little corner of the web where I also share my photography. :3"
+	},
+	{
+		"url": "https://joshtrademark.neocities.org/",
+		"name": "printed circuit board",
+		"author": "joshtrademark",
+		"description": "My website is kind of just a personal website for me to put my stuff, but I really like web design so I also do it for fun!!!"
+	},
+	{
+		"url": "https://thecozy.cat/",
+		"name": "The Cozy Cat",
+		"author": "Aevisia",
+		"description": "A cozy personal website features blogs, hobbies, interests, web revival resources, and more!"
+	},
+	{
+		"url": "https://applesayce.neocities.org/",
+		"name": "applesayce",
+		"author": "Aaron",
+		"description": "Personal site, featuring a dragon adventure game leading to the Graphics page."
+	},
+	{
+		"url": "https://storydragon.nl/",
+		"name": "Storydragon's HTTPS Den",
+		"author": "StoryDragon",
+		"description": "Personal website with no general topic, of someone who loves dragons."
 	}
 ]
