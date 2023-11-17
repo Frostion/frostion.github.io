@@ -41,9 +41,9 @@ function draconicRing()
 	function createWidget(prev_url, next_url)
 	{
 		var html = `
-		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png"></a>
-		<a href="${prev_url}"><img class="prevbtn" src="${ring_url}prevbtn.png"></a>
-		<a href="${next_url}"><img class="nextbtn" src="${ring_url}nextbtn.png"></a>`;
+		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png" alt="Draconic Webring"></a>
+		<a href="${prev_url}"><img class="prevbtn" src="${ring_url}prevbtn.png" alt="Previous Site"></a>
+		<a href="${next_url}"><img class="nextbtn" src="${ring_url}nextbtn.png" alt="Next Site"></a>`;
 		
 		var html_url_not_found = `
 		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png"></a>
