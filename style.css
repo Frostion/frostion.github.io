@@ -75,6 +75,96 @@ body > div > div
 
 
 /* ================================================================================================================================================ */
+/* gallery grid
+/* ================================================================================================================================================ */
+
+
+div.gridgallery
+{
+	width: 100%;
+	display: grid;
+	align-items: stretch;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 4px;
+}
+div.gridgallery.cols2 { grid-template-columns: 1fr 1fr; }
+div.gridgallery div
+{
+	background: rgba(255, 255, 255, 0.27);
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+	box-sizing: border-box;
+	padding: 4px;
+}
+div.gridgallery a img
+{
+	max-width: 100%;
+	max-height: 100%;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+}
+div.gridgallery p img
+{
+	padding-right: 4px;
+}
+
+div.split
+{
+	display: grid;
+	grid-template-columns: 1fr 30%;
+	grid-template-rows: auto;
+	gap: 8px;
+}
+div.split > div:nth-child(2)
+{
+	background: rgba(255, 255, 255, 0.2);
+	padding: 4px; 
+}
+
+
+/* ================================================================================================================================================ */
+/* webring widgets
+/* ================================================================================================================================================ */
+
+
+div.ringcontainer
+{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 4px;
+	align-items: stretch;
+	flex-wrap: wrap;
+	padding-bottom: 4px;
+}
+
+div.ringcontainer > div
+{
+	flex-grow: 1;
+	flex-basis: 0;
+	background: rgba(255, 255, 255, 0.27);
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+div.centertext
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 8px;
+}
+div.centertext > *
+{
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+div.centertext > div { margin: 0 auto; }
+
+/* ================================================================================================================================================ */
 /* hyperlink styling and animation
 /* ================================================================================================================================================ */
 
@@ -99,43 +189,6 @@ a:hover, a:active
 	0% { opacity: 1; }
 	50% { opacity: 0.5; }
 	100% { opacity: 1; }
-}
-
-
-/* ================================================================================================================================================ */
-/* horizontally scrolling gallery
-/* ================================================================================================================================================ */
-
-
-div.gallery
-{
-	width: 100%;
-	overflow-x: auto;
-	white-space: nowrap;
-}
-div.gallery > a > img, div.gallery > img
-{
-	margin-right: 4px;
-	max-height: 200px;
-	max-width: 100%;
-	border: 1px solid #fff;
-}
-
-
-/* ================================================================================================================================================ */
-/* vertical list gallery
-/* ================================================================================================================================================ */
-
-
-div.galleryrow > div > h2
-{
-	margin-bottom: 0;
-}
-div.galleryrow > div > p > img
-{
-	width: unset;
-	border: unset;
-	margin-right: 4px;
 }
 
 
@@ -231,7 +284,7 @@ pre
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 4px;
 	padding: 2px;
-	max-width: 580px;
+	width: 590px;
 	overflow-x: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -274,6 +327,12 @@ hr
 	border: 1px solid #EAF6FF;
 }
 
+
+/* ================================================================================================================================================ */
+/* images and videos
+/* ================================================================================================================================================ */
+
+
 * { image-rendering: pixelated; }
 
 img.float
@@ -304,137 +363,3 @@ img.center, video.center
 	margin-left: auto;
 	margin-right: auto;
 }
-
-
-
-/* ================================================================================================================================================ */
-/* cool home page graphics
-/* ================================================================================================================================================ */
-
-
-p.cybertext
-{
-	text-align: center;
-	font-family: cyber_font;
-	font-weight: normal;
-	font-size: 16px;
-	letter-spacing: 4px;
-	text-shadow: 2px 2px 3px #FFF;
-	margin-top: 18px;
-	margin-bottom: 18px;
-	animation-duration: 1s;
-    animation-iteration-count: 1;
-	animation-timing-function: ease-out;
-	animation-name: cybertextin;
-}
-@keyframes cybertextin
-{
-	0% { filter: blur(7px); letter-spacing: 0px; }
-	100% { filter: none; letter-spacing: 4px; }
-}
-
-span.blinkcursor
-{
-	animation-duration: 1s;
-    animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	animation-name: blinkcursor;
-}
-@keyframes blinkcursor
-{
-	0% { opacity: 1; }
-	33% { opacity: 1; }
-	66% { opacity: 0; }
-	100% { opacity: 0; }
-}
-
-
-/* ================================================================================================================================================ */
-/* generic table for showing lists of interests and stuff
-/* ================================================================================================================================================ */
-
-
-div.gridgallery
-{
-	width: 100%;
-	display: grid;
-	align-items: stretch;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 4px;
-}
-div.gridgallery.cols2 { grid-template-columns: 1fr 1fr; }
-div.gridgallery div
-{
-	background: rgba(255, 255, 255, 0.27);
-	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
-	box-sizing: border-box;
-	padding: 4px;
-}
-div.gridgallery a img
-{
-	max-width: 100%;
-	max-height: 100%;
-	border: 1px solid #fff;
-	box-sizing: border-box;
-}
-div.gridgallery p img
-{
-	padding-right: 4px;
-}
-
-div.split
-{
-	display: grid;
-	grid-template-columns: 1fr 30%;
-	grid-template-rows: auto;
-	gap: 8px;
-}
-div.split > div:nth-child(2)
-{
-	background: rgba(255, 255, 255, 0.2);
-	padding: 4px; 
-}
-
-
-/* ================================================================================================================================================ */
-/* webring widgets
-/* ================================================================================================================================================ */
-
-
-div.ringcontainer
-{
-	display: flex;
-	width: 100%;
-	flex-direction: row;
-	justify-content: space-between;
-	gap: 4px;
-	align-items: stretch;
-	flex-wrap: wrap;
-	padding-bottom: 4px;
-}
-
-div.ringcontainer > div
-{
-	flex-grow: 1;
-	flex-basis: 0;
-	background: rgba(255, 255, 255, 0.27);
-	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
-	padding-left: 4px;
-	padding-right: 4px;
-}
-
-div.centertext
-{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 8px;
-}
-div.centertext > *
-{
-	text-align: center;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-div.centertext > div { margin: 0 auto; }

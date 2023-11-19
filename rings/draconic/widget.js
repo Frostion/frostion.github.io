@@ -46,8 +46,8 @@ function draconicRing()
 		<a href="${next_url}"><img class="nextbtn" src="${ring_url}nextbtn.png" alt="Next Site"></a>`;
 		
 		var html_url_not_found = `
-		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png"></a>
-		<img class="urlnotfound" src="${ring_url}notfound.png">`;
+		<a href="${index_url}"><img class="indexbtn" src="${ring_url}indexbtn.png" alt="Draconic Webring"></a>
+		<img class="urlnotfound" src="${ring_url}notfound.png" alt="Site not found in members list.">`;
 		
 		var css = `
 		#${widget_id}

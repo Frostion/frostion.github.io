@@ -1,0 +1,51 @@
+p.cybertext
+{
+	text-align: center;
+	font-family: cyber_font;
+	font-weight: normal;
+	font-size: 16px;
+	letter-spacing: 4px;
+	text-shadow: 2px 2px 3px #FFF;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	animation-duration: 1s;
+    animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-name: cybertextin;
+}
+@keyframes cybertextin
+{
+	0% { filter: blur(7px); letter-spacing: 0px; }
+	100% { filter: none; letter-spacing: 4px; }
+}
+
+span.blinkcursor
+{
+	animation-duration: 1s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: blinkcursor;
+}
+@keyframes blinkcursor
+{
+	0% { opacity: 1; }
+	33% { opacity: 1; }
+	66% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+img.spinny
+{
+	position: absolute;
+	right: 10px;
+	top: -20px;
+	height: 300px;
+	z-index: -1;
+	opacity: 0.3;
+	animation: rotatez 10s linear infinite;
+}
+@keyframes rotatez
+{
+	0% { transform: rotateX(245deg) rotateY(50deg) rotateZ(0deg); }
+	100% { transform: rotateX(245deg) rotateY(50deg) rotateZ(360deg); }
+}
