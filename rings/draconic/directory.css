@@ -113,7 +113,7 @@ p.header
 	position: absolute; 
 	left: 50%; top: 50%;
 	width: 130px;
-	background-color: rgba(80, 0, 140, 0.9);
+	background-color: rgba(30, 0, 60, 0.8);
 	padding: 3px;
 	border: 1px solid rgb(150, 0, 255);
 }

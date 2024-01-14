@@ -26,8 +26,8 @@ function directoryGoto()
 	window.open(sites[site]["url"], "_blank");
 }
 
-var translation_amt = 400;
-var scale_amt = 0.8;
+var translation_amt = 410;
+var scale_amt = 0.75;
 var rotation_per_member = 0;
 var current_member = 0;
 var sites;
