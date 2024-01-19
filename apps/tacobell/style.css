@@ -1,0 +1,103 @@
+@font-face { font-family: body_font; src: url("Perfect DOS VGA 437.ttf"); }
+
+body
+{
+	overflow: hidden;
+}
+
+div.bkgimg
+{
+	background: url("bkg.png");
+	background-repeat: repeat;
+	position: fixed;
+	z-index: -1;
+	left: 0; right: -132px; top: 0; bottom: -132px;
+	animation: bkgimg_slide 2s linear infinite;
+}
+
+div.frame_container
+{
+	perspective: 700px;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+div.frame
+{
+	image-rendering: pixelated;
+	background: url("frame.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 512px; height: 256px;
+	position: relative;
+		
+}
+
+div.frame > div
+{
+	position: absolute;
+	left: 32px; top: 32px; width: 456px; height: 194px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.frame > div > p
+{
+	font-size: 16pt;
+	font-family: body_font;
+	color: #0F0;
+	animation: text_glow 1s linear infinite;
+	text-align: center;
+}
+
+div.bottom_bar
+{
+	image-rendering: pixelated;
+	background: url("ordering.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 324px; height: 64px;
+	position: fixed;
+	bottom: -64px; right: 16px;
+}
+
+@keyframes bkgimg_slide
+{
+	0% { transform: translate(0); }
+	100% { transform: translate(-132px, -132px); }
+}
+
+@keyframes frame_rotate
+{
+	0% { transform: rotateY(0deg); }
+	50% { transform: rotateY(180deg); }
+	100% { transform: rotateY(360deg); }
+}
+
+@keyframes text_glow
+{
+	0% { opacity: 1; }
+	50% { opacity: 0.5; }
+	100% { opacity: 1; }
+}
+
+@keyframes fade_out
+{
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes fade_in
+{
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes bottom_bar_in
+{
+	0% { bottom: -64px; }
+	100% { bottom: 16px; }
+}

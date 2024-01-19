@@ -1,0 +1,127 @@
+*
+{
+	box-sizing: border-box;
+	font-family: sans-serif;
+	color: #fff;
+	font-size: 10pt;
+	text-shadow: 0 0 3px #000;
+}
+
+body
+{
+	background-image: linear-gradient(to bottom, #201F25, #33516B 35%, #4376A3 50%, #558EBB 75%, #314359);
+	background-size: cover;
+	background-attachment: fixed;
+	width: 90vw;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-top: 5px;
+	
+}
+
+#bkgimg
+{
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	transition: opacity 1s ease-in-out 0.3s;
+	opacity: 0;
+}
+
+
+body > div > div
+{
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 8px;
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 30px);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	backdrop-filter: blur(8px);
+	
+	animation: fadein 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes fadein {
+  0%    {opacity: 0; transform: scale(0.3); }
+  100%  {opacity: 1; transform: none; }
+}
+
+#header > div, #footer > div
+{
+	background-color: rgba(0, 0, 50, 0.1);
+}
+
+#alerts > div
+{
+	background-color: rgba(200, 0, 0, 0.4);
+	text-align: center;
+}
+
+#forecast > div
+{
+	background-color: rgba(0, 100, 200, 0.4);
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: 1fr;
+	gap: 8px;
+	align-items: start;
+}
+
+#loading
+{
+	margin: 0 auto;
+	display: block;
+}
+
+#header, #footer
+{
+	text-align: center;
+	text-shadow: 0 0 6px #000;
+}
+
+#forecast > div > img
+{
+	box-shadow: 0 0 7px #fff;
+}
+#forecast p img
+{
+	margin: 0 auto;
+	display: block;
+}
+span
+{
+	text-align: center;
+}
+span img, #location img, #alerts img
+{
+	height: 1.5em;
+	vertical-align: middle;
+}
+
+h2, p, summary, details
+{
+	margin: 0;
+}
+h2
+{
+	font-size: 12pt;
+}
+span, details
+{
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 3px;
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin: 2px;
+	display: inline-block;
+}
+summary
+{
+	cursor: pointer;
+}
+
+#alerts details { text-align: left; }
