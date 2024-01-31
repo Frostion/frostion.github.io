@@ -2,6 +2,7 @@
 // get user's geolocation
 //==============================================================================================================================
 
+
 navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, { enableHighAccuracy: true });
 
 function geolocationSuccess(position)
@@ -20,111 +21,232 @@ function hideLoading()
 	document.getElementById("loading").style.display = "none";
 }
 
-//==============================================================================================================================
+
+//=======================================================================================================================================================================
 // get data from NWS API about user's location and forecast
-//==============================================================================================================================
-
-var json_location = null, json_forecast = null, json_hourly = null, json_grid = null, json_alerts = null;
+//=======================================================================================================================================================================
 
 
-function apiGetLocationProperties(latitude, longitude)
+function map(x, in_min, in_max, out_min, out_max) { return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min; }
+function CtoF(c) { return c * 1.8 + 32; }
+
+
+function apiGet(url, success, failure)
 {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function() {
 		if(this.readyState == 4)
 		{
-			if(this.status == 200)
-			{
-				json_location = JSON.parse(this.responseText);
-				document.getElementById("location").innerHTML = json_location.properties.relativeLocation.properties.city + ", "  + json_location.properties.relativeLocation.properties.state;
-				
-				apiGetForecast(json_location.properties.forecast);
-				apiGetAlerts(latitude, longitude);
-			}
-			else
-			{
-				document.getElementById("header").innerHTML = "<div><h2>NWS location error (HTTP " + this.status + ")</h2><p>Try refreshing the page.</p></div>";
-			}
-		}
-	}
-	xhr.open("GET", "https://api.weather.gov/points/" + latitude.toFixed(4) + "," + longitude.toFixed(4), true);
-	xhr.send();
-}
-
-
-function apiGetForecast(url)
-{
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-		if(this.readyState == 4)
-		{
-			if(this.status == 200)
-			{
-				json_forecast = JSON.parse(this.responseText);
-				const data = json_forecast.properties.periods;
-				var html = "";
-				for(var i = 0; i < data.length; i++)
-				{
-					html += "<div><img src=\"" + data[i].icon + "\">";
-					html += "<div><h2>" + data[i].name + "</h2>";
-					html += "<p><span><img src=\"icons/temperature.png\"> " + data[i].temperature + "°</span>"
-					html += "<span><img src=\"icons/humidity.png\"> " + data[i].relativeHumidity.value + "%</span>"
-					html += "<span><img src=\"icons/dewpoint.png\"> " + CtoF(data[i].dewpoint.value) + "°</span>"
-					html += "<span><img src=\"icons/precip.png\"> " + (data[i].probabilityOfPrecipitation.value || 0) + "%</span>"
-					html += "<span><img src=\"icons/wind.png\"> " + data[i].windSpeed.replace(" to ", "-") + "</span></p>";
-					html += "<details><summary>" + data[i].shortForecast + "</summary>" + data[i].detailedForecast + "</details></div></div>";
-				}
-				document.getElementById("forecast").innerHTML += html;
-				
-				//select background image based on current conditions
-				const imgs = [
-					["snow", "Cascade Valley Metro Park, OH"],
-					["rain", "Shenandoah National Park, VA"],
-					["sunset2", "Shenandoah National Park, VA"],
-					["cloudy2", "Shenandoah National Park, VA"],
-					["cloudy", "Cades Cove, TN"],
-					["sun", "Vail, CO"],
-					["sunset", "Vail, CO"],
-					["lake", "Piney Lake, CO"],
-					["day", "Millersburg, OH"],
-				];
-				const rand = Math.floor(Math.random() * imgs.length);
-				document.getElementById("bkgimg").style.backgroundImage = "url('bkg/" + imgs[rand][0] + ".jpg')";
-				document.getElementById("bkgimg").style.opacity = 1;
-				document.getElementById("footer").innerHTML = "<div>Background: " + imgs[rand][1] + "<br>© 2024 Frost Sheridan</div>";
-			}
-			else
-			{
-				document.getElementById("header").innerHTML = "<div><h2>NWS forecast error (HTTP " + this.status + ")</h2><p>Try refreshing the page.</p></div>";
-			}
-			hideLoading();
+			if(this.status == 200) { success(JSON.parse(this.responseText)); }
+			else if(failure != undefined) { failure(this.status); }
 		}
 	}
 	xhr.open("GET", url, true);
 	xhr.send();
 }
 
-function CtoF(c) { return c * 1.8 + 32; }
+
+function apiGetLocationProperties(latitude, longitude)
+{
+	apiGet("https://api.weather.gov/points/" + latitude.toFixed(4) + "," + longitude.toFixed(4), success, failure);
+	
+	function success(json)
+	{
+		document.getElementById("location").innerHTML = json.properties.relativeLocation.properties.city + ", "  + json.properties.relativeLocation.properties.state;
+		apiGetForecast(json.properties.forecast, json.properties.forecastHourly);
+		apiGetAlerts(latitude, longitude);
+	}
+	
+	function failure(code)
+	{
+		document.getElementById("header").innerHTML = "<h2>NWS location error (HTTP " + code + ")</h2><p>Try refreshing the page.</p>";
+	}
+}
+
+
+var forecastdays = new Array();
+
+function apiGetForecast(dailyurl, hourlyurl)
+{
+	apiGet(dailyurl, successDaily, failure);
+	
+	function successDaily(json)
+	{
+		const data = json.properties.periods;
+		var day = null;
+		for(var i = 0; i < data.length; i++)
+		{
+			if(data[i].isDaytime || day == null)
+			{
+				day = new Object();
+				day["date"] = new Date(data[i].startTime);
+				day["daily"] = new Array();
+				day["hourly"] = new Array();
+			}
+			day.daily.push(data[i]);
+			if(!data[i].isDaytime)
+			{
+				forecastdays.push(day);
+			}
+		}
+		apiGet(hourlyurl, successHourly, failure);
+	}
+	
+	function successHourly(json)
+	{
+		const data = json.properties.periods;
+		for(var i = 0; i < data.length; i++)
+		{
+			const date = new Date(data[i].startTime);
+			for(var day = 0; day < forecastdays.length; day++)
+			{
+				if(forecastdays[day].date.getDate() == date.getDate())
+				{
+					forecastdays[day].hourly.push(data[i]);
+					break;
+				}
+			}
+		}
+		hideLoading();
+		displayForecast();
+		randomBackgroundImage();
+	}
+	
+	function failure(code)
+	{
+		document.getElementById("header").innerHTML = "<h2>NWS forecast error (HTTP " + code + ")</h2><p>Try refreshing the page.</p>";
+	}
+}
+
 
 function apiGetAlerts(latitude, longitude)
 {
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200)
+	apiGet("https://api.weather.gov/alerts/active?point=" + latitude.toFixed(4) + "," + longitude.toFixed(4), success);
+	
+	function success(json)
+	{
+		const data = json.features;
+		if(data.length == 0) { return; }
+		
+		var html = "";
+		for(var i = 0; i < data.length; i++)
 		{
-			json_alerts = JSON.parse(this.responseText);
-			const data = json_alerts.features;
-			if(data.length == 0) { return; }
-			
-			var html = "";
-			for(var i = 0; i < data.length; i++)
-			{
-				var formatted = data[i].properties.description.replace(/\n\s*\n/g, "<br>");
-				html += "<details><summary><img src=\"icons/alert.png\"> " + data[i].properties.event + "</summary>" + formatted + "</details>";
-			}
-			document.getElementById("alerts").innerHTML = "<div>" + html + "</div>";
+			var formatted = data[i].properties.description.replace(/\n\s*\n/g, "<br>");
+			html += "<details><summary><img src=\"icons/alert.png\"> " + data[i].properties.event + "</summary>" + formatted + "</details>";
 		}
+		document.getElementById("alerts").innerHTML = "<div>" + html + "</div>";
+		document.getElementById("alerts").className = "";
 	}
-	xhr.open("GET", "https://api.weather.gov/alerts/active?point=" + latitude.toFixed(4) + "," + longitude.toFixed(4), true);
-	xhr.send();
+}
+
+
+//=======================================================================================================================================================================
+// create forecast display graphics
+//=======================================================================================================================================================================
+
+
+function displayForecast()
+{
+	for(var daynum = 0; daynum < forecastdays.length; daynum++)
+	{
+		var day = forecastdays[daynum];
+		document.getElementById("forecast").innerHTML += `<h2>${day.daily[0].name}</h2>`;
+		document.getElementById("forecast").appendChild(generateDailyForecastDiv(day.daily));
+		document.getElementById("forecast").appendChild(generateHourlyForecastDiv(daynum, "temperature", "icons/temperature.png"));
+		document.getElementById("forecast").appendChild(generateHourlyForecastDiv(daynum, "relativeHumidity", "icons/humidity.png", 0, 100));
+		document.getElementById("forecast").appendChild(generateHourlyForecastDiv(daynum, "probabilityOfPrecipitation", "icons/precip.png", 0, 100));
+		document.getElementById("forecast").appendChild(generateHourlyForecastDiv(daynum, "windSpeed", "icons/wind.png", 0));
+	}
+	document.getElementById("forecast").className = "";
+	
+	
+	function generateDailyForecastDiv(data)
+	{
+		var div = document.createElement("div");
+		div.className = "dailyforecast";
+		
+		for(var i = 0; i < data.length; i++)
+		{
+			div.innerHTML += `
+				<img src="${data[i].icon}">
+				<p>${data[i].shortForecast}</p>
+				<p>
+					<img src="icons/temperature.png">${data[i].temperature}° <img src="icons/humidity.png">${data[i].relativeHumidity.value}%<br>
+					<img src="icons/precip.png"> ${(data[i].probabilityOfPrecipitation.value || 0)}%<br><img src="icons/wind.png"> ${data[i].windSpeed.replace(" to ", "-")}
+				</p>`;
+		}
+		return div;
+	}
+	
+	
+	function generateHourlyForecastDiv(daynum, datapoint_name, iconurl, min, max)
+	{
+		var div = document.createElement("div");
+		div.className = "hourlyforecast";
+		
+		//first, get min and max values across all days
+		var allvalues = new Array();
+		var values = new Array();
+		for(var d = 0; d < forecastdays.length; d++)
+		{
+			for(var i = 0; i < forecastdays[d].hourly.length; i++)
+			{
+				var value = forecastdays[d].hourly[i][datapoint_name];
+				if(typeof value === "object")
+				{
+					if(value.unitCode == "wmoUnit:degC") { value = CtoF(value.value); }
+					else { value = value.value; }
+				}
+				else if(typeof value === "string")
+				{
+					value = parseInt(value);
+				}
+				allvalues.push(value);
+				if(d == daynum) { values.push(value); }
+			}
+		}
+		if(min == undefined) { min = Math.floor(Math.min(...allvalues) / 10) * 10; }
+		if(max == undefined) { max = Math.ceil(Math.max(...allvalues) / 10) * 10; }
+		
+		//now create all div bars
+		for(var i = 0; i < values.length; i++)
+		{
+			var bar = document.createElement("div");
+			bar.className = "bar";
+			if(!forecastdays[daynum].hourly[i].isDaytime) { bar.className += " night"; }
+			bar.style.height = map(values[i], min, max, 0, 100) + "%";
+			if(values.length <= 15 || i % 2 == 0)
+			{
+				bar.innerHTML = values[i];
+			}
+			div.appendChild(bar);
+		}
+		
+		if(daynum == 0)
+		{
+			div.innerHTML += `<img src="${iconurl}">`;
+		}
+		return div;
+	}
+}
+
+
+function randomBackgroundImage()
+{
+	const imgs = [
+		["snow", "Cascade Valley Metro Park, OH"],
+		["rain", "Shenandoah National Park, VA"],
+		["sunset2", "Shenandoah National Park, VA"],
+		["cloudy2", "Shenandoah National Park, VA"],
+		["cloudy", "Cades Cove, TN"],
+		["sun", "Vail, CO"],
+		["sunset", "Vail, CO"],
+		["lake", "Piney Lake, CO"],
+		["day", "Millersburg, OH"],
+	];
+	const rand = Math.floor(Math.random() * imgs.length);
+	document.getElementById("bkgimg").style.backgroundImage = "url('bkg/" + imgs[rand][0] + ".jpg')";
+	document.getElementById("bkgimg").style.opacity = 1;
+	document.getElementById("footer").innerHTML = "Background: " + imgs[rand][1] + "<br>by Frost Sheridan";
+	document.getElementById("footer").className = "";
 }
