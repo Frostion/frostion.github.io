@@ -24,7 +24,7 @@
 		"description": "the home of various writings by a dang bat and fan of dragons"
 	},
 	{
-		"url": "https://choiyoona.neocities.org/",
+		"url": "https://y2kstardust.neocities.org/",
 		"name": "yoona's space",
 		"author": "yoona",
 		"description": "my personal webpage on the 'net - i'm an old 'net kid who ADORES dragons and i would love to make a page about my favourite dragon game eventually!"
@@ -48,8 +48,8 @@
 		"description": "A fluffy sparkledragon's personal home on the web! Their site consists of nostalgic graphics, rambling shrines, and oddly enough, transcriptions for obscure albums."
 	},
 	{
-		"url": "https://doubleincision.com/",
-		"name": "DOUBLEINCISION",
+		"url": "https://versipellis.net/",
+		"name": "versipellis",
 		"author": "surge",
 		"description": "my personal site, where i put art, journals, and other misc. stuff!"
 	},
@@ -75,7 +75,7 @@
 		"url": "https://crisis.city/",
 		"name": "the flames of disaster",
 		"author": "corvidae",
-		"description": "my personal corner of the web! :)"
+		"description": "my personal website! features my blog, art gallery, my collections of resources and graphics, and more!"
 	},
 	{
 		"url": "https://skyhold.org/",
@@ -130,5 +130,11 @@
 		"name": "Rings around the Internet",
 		"author": "Nicki",
 		"description": "This is my fansite dedicated to these virtual cool kids clubs from way back when. Join if you had one and/or you're a fan of webrings!"
+	},
+	{
+		"url": "https://melvian.xyz/",
+		"name": "Melvian",
+		"author": "Melvian",
+		"description": "On my website, I make animations and describe how they're made, write about animation theory and anything I feel like, and at some point I'm also going to put character information, programming projects, and even some typefaces."
 	}
 ]

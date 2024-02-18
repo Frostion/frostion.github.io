@@ -57,6 +57,7 @@ function draconicRing()
 			border: none;
 			clip-path: none;
 			position: relative;
+			box-sizing: border-box;
 		}
 		#${widget_id} img { position: absolute; display: block; }
 		#${widget_id} img.urlnotfound { left: 28px; top: 51px; }
