@@ -1,24 +1,66 @@
 //==============================================================================================================================
-// get user's geolocation
+// first, check if a location is supplied or not
 //==============================================================================================================================
 
 
-navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, { enableHighAccuracy: true });
+const url_params = new URLSearchParams(window.location.search);
+var location_param = url_params.get("location");
+if(location_param != null) { apiGetLocationProperties(location_param); }
 
-function geolocationSuccess(position)
+
+function showStatus(txt, loading)
 {
-	apiGetLocationProperties(position.coords.latitude, position.coords.longitude);
+	document.getElementById("status").innerText = txt;
+	setLoading(loading);
+}
+function setLoading(loading) { document.getElementById("loadingicon").hidden = !loading; }
+
+//==============================================================================================================================
+// get location
+//==============================================================================================================================
+
+
+function getGeolocation()
+{
+	showStatus("Finding location...", true);
+	navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, { enableHighAccuracy: true });
+	
+	function geolocationSuccess(position)
+	{
+		coordsString(position.coords.latitude, position.coords.longitude);
+	}
+
+	function geolocationError(position)
+	{
+		showStatus("Cannot find location");
+	}
 }
 
-function geolocationError(position)
+
+//use openstreetmap nominatim API to search for a location
+function searchLocation()
 {
-	document.getElementById("location").innerHTML = "Error finding location";
-	hideLoading();
+	showStatus("Searching location...", true);
+	const search_text = document.getElementById("locationinput").value;
+	apiGet("https://nominatim.openstreetmap.org/search?q=" + encodeURIComponent(search_text) + "&format=json&addressdetails=0&limit=1&countrycodes=us", success, failure);
+	
+	function success(json)
+	{
+		if(json.length == 1) { coordsString(parseFloat(json[0].lat), parseFloat(json[0].lon)); }
+		else { showStatus("No results found"); }
+	}
+	
+	function failure(code)
+	{
+		showStatus("Search error (HTTP " + code + ")");
+	}
 }
 
-function hideLoading()
+
+//NWS API requires specific coordinate formatting
+function coordsString(latitude, longitude)
 {
-	document.getElementById("loading").style.display = "none";
+	window.location.href = "?location=" + latitude.toFixed(4) + "," + longitude.toFixed(4);
 }
 
 
@@ -46,20 +88,21 @@ function apiGet(url, success, failure)
 }
 
 
-function apiGetLocationProperties(latitude, longitude)
+function apiGetLocationProperties(coords_string)
 {
-	apiGet("https://api.weather.gov/points/" + latitude.toFixed(4) + "," + longitude.toFixed(4), success, failure);
+	showStatus("NWS location lookup...", true);
+	apiGet("https://api.weather.gov/points/" + coords_string, success, failure);
 	
 	function success(json)
 	{
-		document.getElementById("location").innerHTML = json.properties.relativeLocation.properties.city + ", "  + json.properties.relativeLocation.properties.state;
+		showStatus(json.properties.relativeLocation.properties.city + ", "  + json.properties.relativeLocation.properties.state, true);
 		apiGetForecast(json.properties.forecast, json.properties.forecastHourly);
-		apiGetAlerts(latitude, longitude);
+		apiGetAlerts(coords_string);
 	}
 	
 	function failure(code)
 	{
-		document.getElementById("header").innerHTML = "<h2>NWS location error (HTTP " + code + ")</h2><p>Try refreshing the page.</p>";
+		showStatus("NWS location error (HTTP " + code + ")");
 	}
 }
 
@@ -107,21 +150,21 @@ function apiGetForecast(dailyurl, hourlyurl)
 				}
 			}
 		}
-		hideLoading();
+		setLoading(false);
 		displayForecast();
 		randomBackgroundImage();
 	}
 	
 	function failure(code)
 	{
-		document.getElementById("header").innerHTML = "<h2>NWS forecast error (HTTP " + code + ")</h2><p>Try refreshing the page.</p>";
+		showStatus("NWS forecast error (HTTP " + code + ")");
 	}
 }
 
 
-function apiGetAlerts(latitude, longitude)
+function apiGetAlerts(coords_string)
 {
-	apiGet("https://api.weather.gov/alerts/active?point=" + latitude.toFixed(4) + "," + longitude.toFixed(4), success);
+	apiGet("https://api.weather.gov/alerts/active?point=" + coords_string, success);
 	
 	function success(json)
 	{

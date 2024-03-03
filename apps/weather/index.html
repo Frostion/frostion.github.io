@@ -12,7 +12,10 @@
 		<div id="bkgimg"></div>
 		<div id="content">
 			<div id="header">
-				<img id="loading" src="loading.svg"><h2 id="location">Finding location...</h2>
+				<img id="loadingicon" src="loading.svg" hidden><h2 id="status">Cyberdragon Weather</h2>
+				<input type="search" id="locationinput" placeholder="Enter location..." size="20">
+				<button type="button" onclick="searchLocation()"><img src="icons/search.png"> Search</button>
+				<button type="button" onclick="getGeolocation()"><img src="icons/gps.png"> Use GPS Location</button>
 			</div>
 			<div id="alerts" class="hide"></div>
 			<div id="forecast" class="hide"></div>
