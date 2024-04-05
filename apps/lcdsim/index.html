@@ -14,16 +14,17 @@
 			<canvas id="output" width="32" height="16"></canvas>
 			
 			<h2>render settings</h2>
-			rows: <input id="rows" type="number" value="2" min="1" max="8" />
-			columns: <input id="cols" type="number" value="16" min="8" max="40" />
-			scale: <input id="scale" type="number" value="2" min="1" max="4" />
+			rows: <input id="rows" type="number" oninput="draw()" value="2" min="1" max="8" />
+			columns: <input id="cols" type="number" oninput="draw()" value="16" min="8" max="40" />
+			scale: <input id="scale" type="number" oninput="draw()" value="2" min="1" max="4" />
 			color: 
-			<select id="colorscheme">
+			<select id="colorscheme" oninput="draw()">
 				<option value="0" selected>transflective</option>
 				<option value="1">blue backlit</option>
 				<option value="2">rackmount green</option>
 				<option value="3">vfd</option>
 			</select>
+			<button type="button" onclick="reset()">💥 clear all</button>
 			
 			<h2>text to display</h2>
 			insert custom character:
@@ -36,21 +37,18 @@
 			<button type="button" onclick="insertChar(6)"><canvas id="charbutton6" width="5" height="8"></canvas></button>
 			<button type="button" onclick="insertChar(7)"><canvas id="charbutton7" width="5" height="8"></canvas></button>
 			<br>
-			<textarea id="textinput" placeholder="enter text here..." cols="80" rows="8"></textarea>
-			<br>
-			<button type="button" onclick="saveToQueryString()">render</button>
-			<button type="button" onclick="reset()">clear all</button>
+			<textarea id="textinput" oninput="draw()" placeholder="enter text here..." cols="80" rows="8"></textarea>
 			
 			<h2>custom characters</h2>
 			select character to edit:
-			<label><input type="radio" name="charselect" value="0" onclick="editChar()" checked /><canvas id="charselect0" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="1" onclick="editChar()" /><canvas id="charselect1" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="2" onclick="editChar()" /><canvas id="charselect2" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="3" onclick="editChar()" /><canvas id="charselect3" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="4" onclick="editChar()" /><canvas id="charselect4" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="5" onclick="editChar()" /><canvas id="charselect5" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="6" onclick="editChar()" /><canvas id="charselect6" width="5" height="8"></canvas></label>
-			<label><input type="radio" name="charselect" value="7" onclick="editChar()" /><canvas id="charselect7" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="0" onclick="loadCharIntoEditor()" checked /><canvas id="charselect0" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="1" onclick="loadCharIntoEditor()" /><canvas id="charselect1" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="2" onclick="loadCharIntoEditor()" /><canvas id="charselect2" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="3" onclick="loadCharIntoEditor()" /><canvas id="charselect3" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="4" onclick="loadCharIntoEditor()" /><canvas id="charselect4" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="5" onclick="loadCharIntoEditor()" /><canvas id="charselect5" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="6" onclick="loadCharIntoEditor()" /><canvas id="charselect6" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="7" onclick="loadCharIntoEditor()" /><canvas id="charselect7" width="5" height="8"></canvas></label>
 			<br>
 			<canvas id="chareditor" width="5" height="8"></canvas>
 			

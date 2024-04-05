@@ -16,13 +16,15 @@ const fontimg = new Image();
 fontimg.onload = function()
 {
 	loadFromQueryString();
-	updateChars();
+	updateCharThumbnails();
 	draw();
 }
 fontimg.src = "font.png";
 
 function draw()
 {
+	saveToQueryString();
+	
 	const border_width = 2;
 	//read rendering settings from user inputs
 	const color = color_scheme[parseInt(document.getElementById("colorscheme").value)];
@@ -61,12 +63,13 @@ function draw()
 	for(var i = 0; i < string.length; i++)
 	{
 		const c = string[i];
-		if(c == "\n" || col >= cols)
+		if(c == "\n")
 		{
 			row++;
 			col = 0;
 		}
 		if(row >= rows) { break; }
+		if(col >= cols) { continue; }
 		
 		for(var custom = 0; custom < 8; custom++)
 		{
@@ -92,7 +95,7 @@ function draw()
 }
 
 
-function editChar()
+function loadCharIntoEditor()
 {
 	currently_editing = parseInt(document.querySelector("input[name='charselect']:checked").value);
 	const ctx = document.getElementById("chareditor").getContext("2d");
@@ -108,17 +111,18 @@ function charEditorClicked(e)
 	
 	const bmp = custom_chars[currently_editing];
 	bmp.data[i*4+3] = bmp.data[i*4+3] == 255 ? 0 : 255;
-	updateChars();
+	updateCharThumbnails();
+	draw();
 }
 
-function updateChars()
+function updateCharThumbnails()
 {
 	for(var c = 0; c < 8; c++)
 	{
 		getCustomCharCanvas(c).getContext("2d").putImageData(custom_chars[c], 0, 0);
 		getCustomCharButton(c).getContext("2d").putImageData(custom_chars[c], 0, 0);
 	}
-	editChar();
+	loadCharIntoEditor();
 }
 
 function charEditorHovered(e)
@@ -127,7 +131,7 @@ function charEditorHovered(e)
 	const y = Math.floor(e.offsetY / 15);
 	const i = y * 5 + x;
 	
-	editChar();
+	loadCharIntoEditor();
 	const ctx = document.getElementById("chareditor").getContext("2d");
 	ctx.fillStyle = "rgba(0, 100, 200, 0.5)";
 	ctx.fillRect(x, y, 1, 1);
@@ -136,6 +140,7 @@ function charEditorHovered(e)
 function insertChar(c)
 {
 	document.getElementById("textinput").value += custom_char_text[c];
+	draw();
 }
 
 function getCustomCharCanvas(c) { return document.getElementById("charselect" + c); }
@@ -144,7 +149,8 @@ function getCustomCharButton(c) { return document.getElementById("charbutton" + 
 
 function saveToQueryString()
 {
-	const params = new URLSearchParams(window.location.search);
+	const url = new URL(window.location);
+	const params = url.searchParams;
 	setParam("rows");
 	setParam("cols");
 	setParam("scale");
@@ -166,7 +172,8 @@ function saveToQueryString()
 		var bin = BigInt("0b" + str);
 		params.set("c" + c, bin.toString(16));
 	}
-	window.location.search = params.toString();
+	
+	window.history.pushState(null, '', url.toString());
 }
 
 function loadFromQueryString()
