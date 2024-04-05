@@ -1,0 +1,53 @@
+*
+{
+	font-family: sans-serif;
+}
+
+body
+{
+	background: url("bkg.gif");
+}
+
+#main
+{
+	min-width: 700px;
+	width: fit-content;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 5px;
+	padding: 16px;
+	box-shadow: 0 0 10px #fff;
+}
+
+#output
+{
+	border: 10px inset #333;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px #777;
+	image-rendering: pixelated;
+}
+
+#rows, #cols, #scale { width: 3em; }
+
+textarea
+{
+	resize: none;
+	font-family: monospace;
+}
+
+label canvas, button canvas
+{
+	image-rendering: pixelated;
+	width: 10px;
+	height: 16px;
+	border: 2px solid #CDD8B1;
+	background: #BDC6A3;
+}
+#chareditor
+{
+	image-rendering: pixelated;
+	width: 75px;
+	height: 120px;
+	border: 8px solid #CDD8B1;
+	background: #BDC6A3;
+}
