@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="lcd.css" type="text/css" />
+		<meta name="viewport" content="initial-scale=1.0" />
+		<title>character LCD simulator</title>
+	</head>
+	
+	<body>
+		<div id="main">
+			<h1>character LCD simulator, by <a href="/">frost sheridan</a></h1>
+			<canvas id="output" width="32" height="16"></canvas>
+			
+			<h2>render settings</h2>
+			rows: <input id="rows" type="number" oninput="draw()" value="2" min="1" max="8" />
+			columns: <input id="cols" type="number" oninput="draw()" value="16" min="8" max="40" />
+			scale: <input id="scale" type="number" oninput="draw()" value="2" min="1" max="4" />
+			color: 
+			<select id="colorscheme" oninput="draw()">
+				<option value="0" selected>transflective</option>
+				<option value="1">blue backlit</option>
+				<option value="2">rackmount green</option>
+				<option value="3">vfd</option>
+			</select>
+			<button type="button" onclick="reset()">💥 clear all</button>
+			
+			<h2>text to display</h2>
+			insert custom character:
+			<button type="button" onclick="insertChar(0)"><canvas id="charbutton0" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(1)"><canvas id="charbutton1" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(2)"><canvas id="charbutton2" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(3)"><canvas id="charbutton3" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(4)"><canvas id="charbutton4" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(5)"><canvas id="charbutton5" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(6)"><canvas id="charbutton6" width="5" height="8"></canvas></button>
+			<button type="button" onclick="insertChar(7)"><canvas id="charbutton7" width="5" height="8"></canvas></button>
+			<br>
+			<textarea id="textinput" oninput="draw()" placeholder="enter text here..." cols="80" rows="8"></textarea>
+			
+			<h2>custom characters</h2>
+			select character to edit:
+			<label><input type="radio" name="charselect" value="0" onclick="loadCharIntoEditor()" checked /><canvas id="charselect0" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="1" onclick="loadCharIntoEditor()" /><canvas id="charselect1" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="2" onclick="loadCharIntoEditor()" /><canvas id="charselect2" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="3" onclick="loadCharIntoEditor()" /><canvas id="charselect3" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="4" onclick="loadCharIntoEditor()" /><canvas id="charselect4" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="5" onclick="loadCharIntoEditor()" /><canvas id="charselect5" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="6" onclick="loadCharIntoEditor()" /><canvas id="charselect6" width="5" height="8"></canvas></label>
+			<label><input type="radio" name="charselect" value="7" onclick="loadCharIntoEditor()" /><canvas id="charselect7" width="5" height="8"></canvas></label>
+			<br>
+			<canvas id="chareditor" width="5" height="8"></canvas>
+			
+			<script src="lcd.js"></script>
+		</div>
+	</body>
+</html>

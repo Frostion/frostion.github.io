@@ -1,0 +1,45 @@
+<h1><span class="headeroutline">photo</span>graphy.</h1>
+
+<h2 id="title"></h2>
+<p id="metadata"></p>
+<p id="caption"></p>
+
+<div class="gallery grid" id="gallery">
+</div>
+
+<script>
+	const url_params = new URLSearchParams(window.location.search);
+	const gallery_path = url_params.get("g");
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200)
+		{
+			galleries = JSON.parse(this.responseText);
+			for(var i = 0; i < galleries.length; i++)
+			{
+				if(galleries[i].date == gallery_path)
+				{
+					document.getElementById("title").innerHTML = galleries[i].title.toLowerCase() + ".";
+					document.getElementById("metadata").innerHTML = galleries[i].date + " • " + galleries[i].camera;
+					document.getElementById("caption").innerHTML = galleries[i].caption;
+					for(var p = 1; p <= galleries[i].photos; p++)
+					{
+						document.getElementById("gallery").innerHTML += "<div><img src='/photos/gallery/" + galleries[i].date + "/" + p + ".jpeg'></div>";
+					}
+					if(galleries[i].extrafiles)
+					{
+						for(var p = 0; p < galleries[i].extrafiles.length; p++)
+						{
+							document.getElementById("gallery").innerHTML += "<div><img src='/photos/gallery/" + galleries[i].date + "/" + galleries[i].extrafiles[p] + "'></div>";
+						}
+					}
+					break;
+				}
+			}
+		}
+	}
+	xhr.open("GET", "/photos/gallery/galleries.json", false);
+	xhr.send();
+</script>
+<script src="/imgpopup.js"></script>

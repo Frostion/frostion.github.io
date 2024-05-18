@@ -1,61 +1,33 @@
 <!DOCTYPE html>
+<html>
 	<head>
-		<meta charset="UTF-8" />
 		<meta http-equiv="Cache-Control" content="no-store" />
-		<link rel="stylesheet" href="/style.css" type="text/css" />
-		<link rel="stylesheet" href="/homepage.css" type="text/css" />
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="/index.css" type="text/css" />
 		<link rel="icon" sizes="16x16" href="/assets/favicon16.png" />
 		<link rel="icon" sizes="128x128" href="/assets/favicon128.png" />
-		<meta name="viewport" content="width=1000" />
-		<title>cyberdragon | home</title>
+		<meta name="viewport" content="width=960" />
+		<title>cyberdragon</title>
 	</head>
 	
 	<body>
-		<img id="headerimg" src="/assets/header.png">
-		<div id="leftcolumn"></div>
-		<div id="rightcolumn"></div>
+		<div id="content"></div>
 		
-		<div id="centercolumn">
-			<div style="perspective:500px;">
-				<p class="cybertext"></p>
-				<img style="float: right;" src="frostrender.png"></img>
-				<img class="spinny" src="spinny.png"></img>
-				<p>welcome! you've stumbled across my digital den. i'm frost sheridan, a digital mechadragon who's eternally stuck in the year 2003.</p>
-				<p>this site documents my technology collection, inflatable dragon hoard, and various creative projects. while you're here, feel free to <a href="/journal/">read my journal</a>, <a href="/art/">view my artwork</a>, <a href="/vrchat/">visit my VRChat worlds</a>, and <a href="/dev/">check out my tech projects</a>.</p>
-				
-				<a href="http://www.cyberdragon.digital/"><img src="/assets/badges/cyberdragon.png"></a>
-				<a href="https://forum.melonland.net/"><img src="/assets/badges/melonlandforum.gif"></a>
-				<a href="https://discord.com/invite/mg6uWGk4rV"><img src="/assets/badges/cybiko1.gif"></a><br>
-				<img src="/assets/badges/winxp.png">
-				<img src="/assets/badges/mobilehostile.png">
-				<img src="/assets/badges/gigadramon.png">
-			</div>
-			
-			<div class="ringcontainer">
-				<div>
-					<h3>what's new <a href="updates.xml">[rss]</a></h3>
-					<ul id="updates" style="max-height:100px; overflow-y:auto;">
-						<li>please wait...</li>
-					</ul>
-				</div>
-				<div>
-					<h3>journal entries <a href="/journal/rss.xml">[rss]</a></h3>
-					<ul id="journal" style="max-height:100px; overflow-y:auto;">
-						<li>please wait...</li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="ringcontainer">
-				<div class="centertext">
-					<object id="melonland-surf-club" data="https://melonland.net/surf-badge.svg?fill=#383838" type="image/svg+xml" style="width: 100px; height: 100px;"></object>
-				</div>
-				<div class="centertext"><div id="draconic-widget"></div></div>
+		<div id="header">
+			<img id="headerbkg" src="/assets/hp.png">
+			<div id="titletext"><span class="headeroutline">cyber</span>dragon.</div>
+			<div id="navbartext">▼ <span id="navbardesc"><span class="headerbold">select</span> your destination.</span></div>
+			<div id="navbar">
+				<a href="?p=about"    onmouseover="setNavbarDesc('about me.')"       onmouseout="resetNavbarDesc()"><img src="/assets/navbtn1.png"></a>
+				<a href="?p=dragons"  onmouseover="setNavbarDesc('dragon hoard.')"   onmouseout="resetNavbarDesc()"><img src="/assets/navbtn2.png"></a>
+				<a href="?p=art"      onmouseover="setNavbarDesc('art gallery.')"    onmouseout="resetNavbarDesc()"><img src="/assets/navbtn3.png"></a>
+				<a href="?p=photos"   onmouseover="setNavbarDesc('photography.')"    onmouseout="resetNavbarDesc()"><img src="/assets/navbtn4.png"></a>
+				<a href="?p=hardware" onmouseover="setNavbarDesc('hardware.')"       onmouseout="resetNavbarDesc()"><img src="/assets/navbtn5.png"></a>
+				<a href="?p=apps"     onmouseover="setNavbarDesc('software.')"       onmouseout="resetNavbarDesc()"><img src="/assets/navbtn6.png"></a>
+				<a href="?p=journal"  onmouseover="setNavbarDesc('dragon journal.')" onmouseout="resetNavbarDesc()"><img src="/assets/navbtn7.png"></a>
 			</div>
 		</div>
 		
-		<script src="/inject.js"></script>
-		<script src="/homepage.js"></script>
-		<script src="https://www.cyberdragon.digital/rings/draconic/widget.js"></script>
+		<script src="common.js"></script>
 	</body>
 </html>

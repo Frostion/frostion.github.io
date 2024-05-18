@@ -1,0 +1,101 @@
+<h1><span class="headeroutline">hard</span>ware.</h1>
+
+<h2>the lyte:byte.</h2>
+<img class="float" src="/hardware/lytebyte/cover.jpg">
+<p>The lyte:byte is a pocket-sized wireless text messaging toy that uses a single LED to both transmit and receive messages. I got the idea for it after a friend sent me <a href="https://hackaday.com/2019/12/22/optical-communication-using-leds-alone/" target="_blank">a Hackaday article</a> showcasing digital communication between two microcontrollers using only LEDs. This works because in addition to generating light, LEDs can also be used to sense light - when light of a similar wavelength is shined directly into an LED, it'll act like a photodiode and generate a small amount of voltage in response. An op-amp can be used to amplify that small voltage so that it can be sensed by a microcontroller, allowing it to be used as a method of both transmitting and detecting light pulses. Because I'm weirdly obsessed with useless tech toys, I thought it would be fun to use that method to make the worst chat toy ever!</p>
+<ul>
+	<li><b>Microcontroller:</b> Raspberry Pi Pico</li>
+	<li><b>Display:</b> 4 line, 16 column character LCD</li>
+	<li><b>Input:</b> 16-key T9-style keypad for entering text</li>
+	<li><b>Audio:</b> 1-bit audio output using piezo speaker</li>
+	<li><b>Power:</b> 2x AAA batteries</li>
+</ul>
+
+<h2>media gallery</h2>
+<div class="gallery grid">
+	<div>
+		<img src="/hardware/lytebyte/assembledunits.jpg">Front and rear of finished units
+	</div>
+	<div>
+		<img src="/hardware/lytebyte/assembledpcb.jpg">Assembled PCB
+	</div>
+	<div>
+		<img src="/hardware/lytebyte/pcblayout.png">PCB design
+	</div>
+	<div>
+		<img src="/hardware/lytebyte/schematic.png">Schematic
+	</div>
+	<div>
+		<img src="/hardware/lytebyte/cover.jpg">Video showing unit in operation
+	</div>
+</div>
+
+<h2>physical design</h2>
+<p>From the start, I wanted the lyte:byte to really look, feel, and behave like an early 2000s tech toy, so I decided on using a transflective non-backlit character LCD for the display, a small piezo speaker for plenty of annoying bips and beeps, and a T9-style phone keypad for entering text.</p>
+<p>For the 3D printed enclosure, I used <a href="https://www.microcenter.com/product/644078/ic3d-175mm-bluerazz-recycled-petg-3d-printer-filament-1kg-spool-(22-lbs)" target="_blank">IC3D BlueRazz filament</a> (which bears a striking resemblance to Bondi Blue), and standard white PLA for the keycaps. I think this color scheme combined with the slightly greenish transflective LCD really makes it look authentic! I'm planning on (2D) printing legends for the keycaps and enclosure onto some clear Avery labels and just cutting them to size.</p>
+<p>I used Eagle to design the custom PCB, then sent it to PCBWay for manufacturing. I've been using PCBWay for custom PCB manufacturing for almost 10 years now, and I've always gotten great results from them. Since then, they've started doing a lot of YouTube sponsorships though which I feel kinda weird about, but their service is still great, so I'll probably just keep using them for the time being.</p>
+<p>If you want to build your own lyte:byte, the firmware, STL files for the enclosure, and CAD files for the PCB are available at the bottom of this page.</p>
+
+<h2>using the lyte:byte</h2>
+<p>Here's a detailed overview of the screens and functions of the lyte:byte. <i>(If you want to make screenshots like these, try out my <a href="/apps/lcdsim">LCD Simulator</a>!)</i></p>
+<h3>main menu</h3>
+<div class="table">
+	<img src="/hardware/lytebyte/lcd_lockscreen.png">
+	When switched on, you're first presented with the "lock screen", which displays your nickname, number of unread messages, and battery status. The unread message and battery status indicators are present on all screens. From here, press [OK] to open the main menu.
+	<img src="/hardware/lytebyte/lcd_mainmenu.png">
+	At the main menu, you can use the up/down buttons to select whether you want to write a message (compose), read your received messages (inbox), or set your nickname.
+</div>
+<h3>sending a message</h3>
+<div class="table">
+	<img src="/hardware/lytebyte/lcd_compose.png">
+	To send a message, select "compose" from the main menu, then type out your message (up to 115 characters long) on the keypad using cell-phone-style "abc" typing. (There isn't real T9 here because I'm way too lazy to implement that, so you'll just have to make do with abc typing, sorry!) After you've typed your message, press [OK] to begin transmitting it.
+	<img src="/hardware/lytebyte/lcd_sending.png">
+	The LED will begin blinking rapidly as the lyte:byte searches for another unit within range to send the message to. Point the two units directly at each other and hold them 1-3 inches apart. Once the units see each other, the receiver will flash its LED in response and the transmitter will emit a low tone as it transmits the message.
+	<img src="/hardware/lytebyte/lcd_sent.png">
+	Once the message has been sent successfully, both units will beep in harmony. The message can now be read in the receiving unit's "inbox".
+</div>
+<h3>reading a message</h3>
+<div class="table">
+	<img src="/hardware/lytebyte/lcd_newmessage.png">
+	On the receiving unit, the unread message indicator at the top of the screen will show that there's a new message waiting! To read it, select "inbox" from the main menu.
+	<img src="/hardware/lytebyte/lcd_inbox.png">
+	In the inbox, unread messages are indicated with an envelope icon beside the nickname of the sender. Use the up/down buttons to scroll through all received messages. The lyte:byte can store up to 30 received messages in the inbox (if the inbox is full and a new message is received, the oldest message will be deleted to make room).
+	<img src="/hardware/lytebyte/lcd_message.png">
+	If the message is too long to fit on the screen, use the up/down buttons to scroll line by line. Press [ESC] to return to the inbox, or press [DEL] to delete the message.
+</div>
+<h3>setting your nickname</h3>
+<div class="table">
+	<img src="/hardware/lytebyte/lcd_nickname.png">
+	Your nickname is displayed on every message you send to indicate to the recipient who the sender was. To change your nickname, select "set nickname" from the main menu, then use the same "abc" typing as on the compose screen to enter your new nickname (up to 10 characters long).
+</div>
+
+<h2>transmission protocol</h2>
+<p>The lyte:byte encodes short ASCII messages into a series of pulses that are transmitted by flashing the LED on one unit and sensing the incoming light pulses on the other unit as described above. Because each unit only has a single LED that's used for both transmitting and receiving, the communication is half-duplex. The protocol used is similar to PWM - each bit of the message is sent as a single pulse, and the width of the pulse indicates whether it's a 0 or 1. A 300us pulse indicates a 0, while a 600us pulse indicates a 1. This results in a communication speed of a little over 1000 baud. Slow, but good enough for a silly little chat toy! To speed up the transmission a bit (lol), only the lower 7 bits of each byte are transmitted, as the messages are encoded using non-extended ASCII, which doesn't require the most significant bit.</p>
+<p>Also, because I'm using a Raspberry Pi Pico, a dual-core microcontroller, I can dedicate the 2nd core to monitoring for and responding to incoming transmissions in a tight loop, ensuring that no messages will be dropped even if the main UI routine is busy.</p>
+<h3>message transmission process</h3>
+<p>Because this communication method is extremely sensitive to the alignment and distance between the two units - and because it's supposed to be a fun, not aggrivating, toy - I wanted it to be as reliable as possible. The message transmission process uses several checks along the way to ensure that the units are aligned and that the message has been sent successfully, and if not, it will automatically and transparently retry until it's successful. The transmission process works like this:</p>
+<ol>
+	<li>The user of the transmitting unit types a message and presses "OK" to start the transmission process. The unit begins sending out a single "ping" byte every 100ms in an infinite loop to search for a recieving unit within range.</li>
+	<li>Once the users bring their units together, the receiving unit will see the "ping" byte and respond immediately with an "ack" byte. The transmitter will keep a count of how many of its pings consecutively resulted in an ack.</li>
+	<li>Once two pings in a row have been successfully acked, the transmitter will consider the alignment satisfactory and begin transmitting the message. The format of the message is:
+		<ul>
+			<li>"Start of message" byte, which tells the receiver that a full message is incoming</li>
+			<li>Username of sender as an ASCII string up to 10 characters in length, null terminated</li>
+			<li>Content of message as an ASCII string up to 115 characters in length, null terminated</li>
+		</ul></li>
+	<li>Once the receiver receives a full message consisting of a "start of message" byte directly followed by two null-terminated strings that don't exceed their maximum lengths, it considers the message successfully received and responds with a "message ack" byte. However, if the message reception failed due to a timeout or some other fault, the receiver will ignore it and not respond with an ack.</li>
+	<li>If the transmitter sees an ack from the receiver, it considers the message transmission successful and exits from the transmission subroutine. Otherwise, if it doesn't see an ack within 100ms, it jumps back to the infinite "ping" loop and begins searching for a receiver within range again in order to retry sending the message.</li>
+</ol>
+
+<h2>files and downloads</h2>
+<ul>
+	<li><a href="/hardware/lytebyte/lytebyte_firmware.zip">Arduino source code</a> (requires the <a href="https://github.com/earlephilhower/arduino-pico" target="_blank">Arduino-Pico</a> core and <a href="">my modified version</a> of the SSD1803A LCD library)</li>
+	<li>Eagle PCB design: <a href="/hardware/lytebyte/lyte-byte-pcb.sch">[Schematic]</a> <a href="/hardware/lytebyte/lyte-byte-pcb.brd">[Layout]</a> <a href="/hardware/lytebyte/lyte-byte-pcb-gerber.zip">[Gerber files]</a></li>
+	<li>3D printed enclosure design: <a href="/hardware/lytebyte/toppanel.stl">[Top panel]</a> <a href="/hardware/lytebyte/enclosure.stl">[Enclosure]</a> <a href="/hardware/lytebyte/keycap.stl">[Key cap]</a> (16x required) <a href="/hardware/lytebyte/switchcap.stl">[Power switch cap]</a><br>
+	<i>You will also need two #4-40 x 5/16" screws to assemble the enclosure.</i></li>
+	<li><s><a href="">Key cap labels</a> (use with <a href="">Avery</a> clear labels)</s> (coming soon!)</li>
+	<li><a href="https://docs.google.com/spreadsheets/d/1vA9pmlueYKaTwyVrikKwW6s8izEMv4nO-lVhWbTHl2U/edit?usp=sharing" target="_blank">Bill of materials</a><br>
+	<i>The TXB0104 level shifter is an optional part that's only necessary if you want to use the GPIO header (beside the LCD) with 5V logic levels. If you want to use the GPIO header with 3.3V logic, just bridge the three solder jumpers inside its PCB footprint, and if you don't plan on using the GPIO header, then you don't have to do anything at all here!</i></li>
+</ul>
+
+<script src="/imgpopup.js"></script>

@@ -1,0 +1,321 @@
+@font-face { font-family: header; src: url("/assets/swiss.ttf"); }
+@font-face { font-family: header-outline; src: url("/assets/swissbo.ttf"); }
+@font-face { font-family: header-bold; src: url("/assets/swissk.woff"); }
+@font-face { font-family: body; src: url("/assets/ITC-Officina-Sans-Std-Book-Font.otf"); }
+
+
+/* ======================================================================================================================= */
+/* overall page layout
+/* ======================================================================================================================= */
+
+
+body
+{
+	background: #002757 url("assets/line.png") center bottom 107px no-repeat;
+	margin: 0;
+	margin-left: auto; margin-right: auto;
+	padding: 0;
+	width: 940px;
+	height: 100vh;
+	overflow: clip;
+	display: grid;
+	grid-template-rows: 1fr 240px;
+}
+
+
+/* ======================================================================================================================= */
+/* header and navbar
+/* ======================================================================================================================= */
+
+
+#header
+{
+	position: relative;
+}
+#headerbkg
+{
+	position: absolute;
+	right: -53px; bottom: -131px;
+	opacity: 0.5;
+}
+
+#titletext
+{
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	right: 20px; bottom: 96px;
+	color: #fff;
+	font-family: header-bold;
+	font-size: 56pt;
+	letter-spacing: -0.1em;
+	line-height: 1;
+}
+
+#navbartext
+{
+	position: absolute;
+	left: 10px; bottom: 152px;
+	color: #fff;
+	font-family: header;
+	font-size: 9pt;
+	letter-spacing: -0.09em;
+	line-height: 1;
+}
+span.headeroutline { font-family: header-outline; }
+span.headerbold { font-family: header-bold; }
+
+#navbar
+{
+	position: absolute;
+	left: 10px; bottom: 115px;
+	display: flex;
+	gap: 10px;
+}
+#navbar a
+{
+	font-size: 0;
+}
+#navbar a:hover
+{
+	transform: scale(1.1);
+	filter: brightness(1.5);
+}
+
+
+/* ======================================================================================================================= */
+/* content and text layout
+/* ======================================================================================================================= */
+
+
+#content
+{
+	position: relative;
+	background: rgba(255, 255, 255, 0.2) url("/assets/scanline.png") repeat-y;
+	border-radius: 0 0 15px 15px;
+	z-index: 1;
+	padding: 12px;
+	padding-left: 60px;
+	overflow: auto;
+	font-family: body;
+	color: #fff;
+	box-sizing: border-box;
+	font-size: 10pt;
+	
+	opacity: 0;
+	filter: blur(15px);
+	transition: opacity 0.7s, filter 0.7s;
+}
+div.show
+{
+	opacity: 1 !important;
+	filter: none !important;
+}
+
+h1
+{
+	position: absolute;
+	right: calc(100% - 50px);
+	top: -20px;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	font-family: header-bold;
+	font-size: 32pt;
+	letter-spacing: -0.1em;
+	line-height: 1;
+	transform-origin: bottom right;
+	transform: rotate(-90deg);
+	font-weight: normal;
+}
+
+h2
+{
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1) 15px), url("/assets/hpsmol.png") no-repeat center right;
+	border-radius: 3px;
+	padding: 4px;
+	padding-bottom: 2px;
+	line-height: 1;
+	font-size: 18pt;
+	clear: both;
+	font-weight: normal;
+}
+
+h3
+{
+	background-image: url("/assets/hpoint.png");
+	background-position: left 0 bottom 3px;
+	background-repeat: no-repeat;
+	padding: 0;
+	padding-left: 12px;
+	line-height: 1;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 12pt;
+	clear: both;
+	font-weight: normal;
+}
+
+p
+{
+	padding-left: 5px;
+}
+#metadata
+{
+	opacity: 0.6;
+}
+
+h2, h3, p, ul, div.gallery, div.table
+{
+	margin: 0;
+	margin-bottom: 12px;
+}
+
+#content a:link, #content a:visited
+{
+	color: #6ff;
+	text-decoration: underline;
+}
+#content a:hover, #content a:active
+{
+	color: #6ff;
+	text-decoration: underline;
+	animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-name: triblink;
+}
+@keyframes triblink
+{
+	0% { opacity: 1; }
+	50% { opacity: 0.5; }
+	100% { opacity: 1; }
+}
+
+
+/* ======================================================================================================================= */
+/* images
+/* ======================================================================================================================= */
+
+
+#content img, #imgpopup img
+{
+	filter: drop-shadow(4px 4px 4px rgba(255, 255, 255, 0.5));
+	border: 1px solid #fff;
+	box-sizing: border-box;
+}
+img.float
+{
+	float: right;
+	max-width: 40%;
+	margin-left: 8px;
+	margin-bottom: 12px;
+}
+img.float.left
+{
+	float: left;
+	margin-left: 0;
+	margin-right: 8px;
+}
+img.noborder, div.noborder img
+{
+	border: none !important;
+}
+
+
+/* ======================================================================================================================= */
+/* more layout options
+/* ======================================================================================================================= */
+
+div.table
+{
+	display: grid;
+	gap: 12px;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+}
+
+div.gallery
+{
+	gap: 10px;
+}
+div.gallery.row
+{
+	display: flex;
+}
+div.gallery.grid
+{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+div.gallery div
+{
+	padding: 5px;
+	border-radius: 3px;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1) 15px);
+}
+div.gallery.row div
+{
+	flex-grow: 1;
+}
+
+div.gallery.grid img
+{
+	max-width: 100%;
+	max-height: 130px;
+	margin-bottom: 12px;
+	display: block;
+	margin-left: auto; margin-right: auto;
+	object-fit: cover;
+}
+
+div.gallery h3
+{
+	margin-bottom: 4px;
+}
+
+div.webrings
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+
+/* ======================================================================================================================= */
+/* modal popup for viewing a larger image
+/* ======================================================================================================================= */
+
+#imgpopup
+{
+	z-index: 1;
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 1200px;
+}
+#imgpopup img
+{
+	max-width: 100%;
+	max-height: 100%;
+	animation-name: imgpopupin;
+	animation-duration: 0.25s;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
+}
+
+@keyframes imgpopupin
+{
+	from { transform: scale(0) rotateX(120deg) rotateY(50deg) rotateZ(-110deg); }
+	to { transform: none; }
+}
+@keyframes imgpopupout
+{
+	from { transform: none; }
+	to { transform: scale(0) rotateX(-120deg) rotateY(-50deg) rotateZ(110deg); }
+}
