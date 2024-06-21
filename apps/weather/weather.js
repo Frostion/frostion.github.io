@@ -214,8 +214,8 @@ function displayForecast()
 				<img src="${data[i].icon}">
 				<p>${data[i].shortForecast}</p>
 				<p>
-					<img src="icons/temperature.png">${data[i].temperature}° <img src="icons/humidity.png">${data[i].relativeHumidity.value}%<br>
-					<img src="icons/precip.png"> ${(data[i].probabilityOfPrecipitation.value || 0)}%<br><img src="icons/wind.png"> ${data[i].windSpeed.replace(" to ", "-")}
+					<img src="icons/temperature.png">${data[i].temperature}° <img src="icons/precip.png">${(data[i].probabilityOfPrecipitation.value || 0)}%<br>
+     					<img src="icons/wind.png">${data[i].windSpeed.replace(" to ", "-")}
 				</p>`;
 		}
 		return div;
