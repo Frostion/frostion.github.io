@@ -211,7 +211,7 @@ function displayForecast()
 		for(var i = 0; i < data.length; i++)
 		{
 			div.innerHTML += `
-				<img src="https://api.weather.gov${data[i].icon}">
+				<img src="${data[i].icon}">
 				<p>${data[i].shortForecast}</p>
 				<p>
 					<img src="icons/temperature.png">${data[i].temperature}° <img src="icons/precip.png">${(data[i].probabilityOfPrecipitation.value || 0)}%<br>
