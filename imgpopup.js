@@ -6,7 +6,7 @@ function gallery()
 	for(var i = 0; i < imgs.length; i++)
 	{
 		var a = document.createElement("a");
-		a.href = "javascript:openImgPopup('" + imgs[i].src + "')";
+		a.href = "javascript:openImgPopup('" + imgs[i].src.replace(".thumb", "") + "')";
 		imgs[i].parentNode.insertBefore(a, imgs[i]);
 		a.appendChild(imgs[i]);
 	}

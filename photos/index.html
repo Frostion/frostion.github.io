@@ -1,27 +1,10 @@
 <h1><span class="headeroutline">photo</span>graphy.</h1>
 
-<h2>my photo galleries.</h2>
-<p>Photography is something that I've always been interested in, and have recently started pursuing more seriously as a hobby. I primarily focus on abstract-ish and architecture photography with older digital cameras from the late 90s and early 2000s. Some of my favorite photography excursions have been uploaded to the galleries below:</p>
+<h2>outside of time, outside of life.</h2>
+<p>Photography is something that I've always been interested in, and have recently started pursuing more seriously as a hobby. I primarily photograph arcitecture, textures, and cityscapes in ways that feel dreamlike, surreal, or otherwise not quite from this time or life. I mostly use older digital cameras from the 90s and early 2000s, such as the Sony Mavica series, due to their unrealistic, unique, and characterful portrayals of colors, contrast, and lighting. Below is a gallery of the best photos that I've taken - click on a thumbnail to view the full-size image.</p>
+<p id="camerafilter"><img src="/assets/filtericon.png"> </p>
 
-<div class="gallery grid" id="galleries">
+<div class="gallery grid four" id="photogallery">
 </div>
 
-<script>
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200)
-		{
-			galleries = JSON.parse(this.responseText);
-			for(var i = 0; i < galleries.length; i++)
-			{
-				var div = document.createElement("div");
-				div.innerHTML = "<a href='?p=photos/gallery&g=" + galleries[i].date + "'><img src='/photos/gallery/" + galleries[i].date + "/1.jpeg'></a>";
-				div.innerHTML += "<h3>" + galleries[i].title.toLowerCase() + "</h3>";
-				div.innerHTML += galleries[i].date + " • " + galleries[i].camera;
-				document.getElementById("galleries").appendChild(div);
-			}
-		}
-	}
-	xhr.open("GET", "/photos/gallery/galleries.json", true);
-	xhr.send();
-</script>
+<script src="/photos/photogallery.js"></script>
