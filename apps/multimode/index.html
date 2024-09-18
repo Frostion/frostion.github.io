@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Cache-Control" content="no-store" />
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="multimode.css" type="text/css" />
+		<meta name="viewport" content="initial-scale=1.0" />
+		<title>multi-mode gif converter</title>
+	</head>
+	
+	<body>
+		<div id="main">
+			<h1>multi-mode gif converter, by <a href="/">frost sheridan</a></h1>
+			<p>convert Mavica FD71/73/75 multi-mode images into animated gifs!</p>
+			<p>select a multi-mode image: <input type="file" id="fileselect" name="fileselect" accept="image/jpeg" /></p>
+			
+			<div id="output" hidden>
+				<a href="" download><img></a><br>
+				your gif is complete! click it to download.
+			</div>
+			
+			<p class="smoltext">uses <a href="https://github.com/antimatter15/jsgif">jsgif</a> by antimatter15</p>
+			
+			<script src="jsgif/LZWEncoder.js"></script>
+			<script src="jsgif/NeuQuant.js"></script>
+			<script src="jsgif/GIFEncoder.js"></script>
+			<script src="jsgif/b64.js"></script>
+			<script src="multimode.js"></script>
+		</div>
+	</body>
+</html>

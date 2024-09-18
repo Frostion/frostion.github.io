@@ -1,0 +1,32 @@
+*
+{
+	font-family: sans-serif;
+}
+
+body
+{
+	background: url("bkg.png");
+}
+
+#main
+{
+	min-width: 700px;
+	width: fit-content;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 5px;
+	padding: 16px;
+	box-shadow: 0 0 10px #fff;
+}
+
+#output img
+{
+	box-shadow: 0 0 5px #000;
+}
+
+.smoltext
+{
+	font-size: 9pt;
+	color: #aaa;
+	text-align: right;
+}
