@@ -13,7 +13,15 @@
 			<h1>multi-mode gif converter, by <a href="/">frost sheridan</a></h1>
 			<p>convert Mavica FD71/73/75 multi-mode images into animated gifs!</p>
 			<p>select a multi-mode image: <input type="file" id="fileselect" name="fileselect" accept="image/jpeg" /></p>
-			
+			<p>playback speed:
+				<input type="radio" id="speed-slow" name="speedselect" value="500"onchange="makegif()">
+				<label for="speed-slow">0.5x realtime</label>
+				<input type="radio" id="speed-med" name="speedselect" value="250" onchange="makegif()" checked>
+				<label for="speed-med">1x realtime</label>
+				<input type="radio" id="speed-fast" name="speedselect" value="125" onchange="makegif()">
+				<label for="speed-fast">2x realtime</label>
+				<a href="javascript:showhelp()">(?)</a>
+			</p>
 			<div id="output" hidden>
 				<a href="" download><img></a><br>
 				your gif is complete! click it to download.

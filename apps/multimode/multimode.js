@@ -1,22 +1,31 @@
+var input_image;
+var image_loaded = false;
+
 document.getElementById("fileselect").onchange = function(event) {
 	var files = event.target.files;
 	if (FileReader && files && files.length)
 	{
         var fr = new FileReader();
         fr.onload = function() {
-			var img = new Image();
-			img.onload = function() { makegif(img); };
-            img.src = fr.result;
+			input_image = new Image();
+			input_image.onload = function() {
+				image_loaded = true;
+				makegif();
+			};
+            input_image.src = fr.result;
         };
 		fr.readAsDataURL(files[0]);
     }
 };
 
-function makegif(input_image)
+function makegif()
 {
+	if(!image_loaded) { return; }
+	
 	var encoder = new GIFEncoder();
 	encoder.setRepeat(0); //repeat forever
-	encoder.setDelay(100); //delay between frames in milliseconds
+	var gifspeed = document.querySelector('input[name="speedselect"]:checked').value;
+	encoder.setDelay(gifspeed); //delay between frames in milliseconds
 	encoder.start();
 	for(var i = 0; i < 9; i++)
 	{
@@ -31,4 +40,9 @@ function makegif(input_image)
 	document.querySelector("#output img").src = data_url;
 	document.querySelector("#output a").href = data_url;
 	document.querySelector("#output").hidden = false;
+}
+
+function showhelp()
+{
+	alert("\"0.5x realtime\" is the speed at which the mavica plays back multi-mode images on its LCD.\n\"1x realtime\" is the speed at which the mavica records multi-mode images.\n\"2x realtime\" was the original playback speed of this tool.");
 }
